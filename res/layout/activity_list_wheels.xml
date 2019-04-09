@@ -11,10 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:animateLayoutChanges="false"
-        android:background="@android:color/white"
-        app:layout_constrainedHeight="false"
-        app:layout_constrainedWidth="false">
+        android:background="@android:color/white">
 
         <ImageView
             android:id="@+id/exitActivity"
@@ -39,8 +36,6 @@
             android:id="@+id/mainLinear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/imageView6"
-            android:layout_marginTop="0dp"
             android:orientation="vertical">
 
             <TextView
@@ -48,12 +43,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
                 android:gravity="center_horizontal|top"
-                android:text="@string/cars_list_activity"
+                android:text="@string/wheels_list_activity"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
                 android:textStyle="bold"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/available"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="center_horizontal|top"
+                android:text="@string/layout_available_wheels"
+                android:textColor="@android:color/black"
+                android:textSize="13sp"
                 android:typeface="sans" />
 
         </LinearLayout>
@@ -65,7 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteY="96dp"
-        android:layout_marginTop="52dp"/>
+        android:layout_marginTop="85dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
