@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.feluu.pylife.Adapters.Adapter;
-import com.feluu.pylife.Adapters.CarsAdapter;
+import com.feluu.pylife.adapters.Adapter;
+import com.feluu.pylife.adapters.CarsAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,21 +17,20 @@ import java.util.List;
 
 public class CarsListActivity extends AppCompatActivity {
 
+    private RecyclerView recyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-
         ImageView leaveActivity;
         TextView activityTitle;
 
         leaveActivity = findViewById(R.id.exitActivity);
         activityTitle = findViewById(R.id.textView1);
-
-        List<Adapter> carsList;
-        RecyclerView recyclerView;
-
+        recyclerView = findViewById(R.id.recyclerView);
         activityTitle.setText(R.string.cars_list_activity);
+
         leaveActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,12 +38,16 @@ public class CarsListActivity extends AppCompatActivity {
             }
         });
 
-        recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        carsList = new ArrayList<>();
+        addCarsToRecycler();
+    }
 
+    private void addCarsToRecycler() {
+        List<Adapter> carsList;
+
+        carsList = new ArrayList<>();
         carsList.add(new Adapter(R.string.admiral_name, R.string.admiral_vmax, R.string.admiral_vmaxfmk, R.string.admiral_tax, R.string.admiral_reset, R.drawable.admiral));
         carsList.add(new Adapter(R.string.alpha_name, R.string.alpha_vmax, R.string.alpha_vmaxfmk, R.string.alpha_tax, R.string.alpha_reset, R.drawable.alpha));
         carsList.add(new Adapter(R.string.bandito_name, R.string.bandito_vmax, R.string.bandito_vmaxfmk, R.string.bandito_tax, R.string.bandito_reset, R.drawable.bandito));
