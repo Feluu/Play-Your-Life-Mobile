@@ -3,4 +3,5 @@
 
 ## Aplikacja z informacjami na temat cen na serwerze MTA Play Your Life
 > Autor: Feluu
+>
 > Minimalna wersja androida: Android Lollipop (5.0)
