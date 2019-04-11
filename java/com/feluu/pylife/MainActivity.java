@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 
-import com.feluu.pylife.Adapters.Adapter;
-import com.feluu.pylife.Adapters.InfoAdapter;
+import com.feluu.pylife.adapters.Adapter;
+import com.feluu.pylife.adapters.InfoAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -44,9 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
     private Drawer result = null;
 
+    private ScrollView scroll;
+    private BottomNavigationView navigation;
     private TextView title, desc;
     private CardView carsList, mechanicalTune, lightsTune, wheelsTune;
-    public RelativeLayout home, info, used;
+    private RelativeLayout home, info, used;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -108,9 +110,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        AccountHeader headerResult;
         ImageView menuImg;
-        final ScrollView scroll;
         scroll = findViewById(R.id.scroll);
         menuImg = findViewById(R.id.menuToggle);
         home = findViewById(R.id.home_layout);
@@ -130,12 +130,43 @@ public class MainActivity extends AppCompatActivity {
         info.setVisibility(View.GONE);
         used.setVisibility(View.GONE);
 
-        final BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Menu menuNav = navigation.getMenu();
         MenuItem menuItem = menuNav.findItem(R.id.navigation_earnings);
         menuItem.setEnabled(false);
 
+        prepareDrawer(savedInstanceState);
+
+        menuImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result.openDrawer();
+            }
+        });
+
+        new AppUpdater(this)
+            .setUpdateFrom(UpdateFrom.JSON)
+            .setUpdateJSON("https://feluu.pl/update.json")
+            .start();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (result != null && result.isDrawerOpen()) {
+            result.closeDrawer();
+        } else if (home.getVisibility() == View.GONE) {
+            info.setVisibility(View.GONE);
+            used.setVisibility(View.GONE);
+            home.setVisibility(View.VISIBLE);
+            result.setSelection(1);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    private void prepareDrawer(Bundle savedInstanceState) {
+        AccountHeader headerResult;
         final IProfile profile = new ProfileDrawerItem().withName("Play Your Life").withEmail("Mobile").withIcon(R.drawable.pylife);
 
         headerResult = new AccountHeaderBuilder()
@@ -210,43 +241,17 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             });
                         }
-                       /** if (position == 5) {
-                            //home.setVisibility(View.GONE);
-                           // info.setVisibility(View.GONE);
-                            //used.setVisibility(View.VISIBLE);
-                           // navigation.setVisibility(View.GONE);
-                           // scroll.setLayoutParams(noMargin);
-                        }*/
+                        /** if (position == 5) {
+                         //home.setVisibility(View.GONE);
+                         // info.setVisibility(View.GONE);
+                         //used.setVisibility(View.VISIBLE);
+                         // navigation.setVisibility(View.GONE);
+                         // scroll.setLayoutParams(noMargin);
+                         }*/
                         return false;
                     }
                 })
                 .withSavedInstance(savedInstanceState)
                 .build();
-
-        menuImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                result.openDrawer();
-            }
-        });
-
-        new AppUpdater(this)
-            .setUpdateFrom(UpdateFrom.JSON)
-            .setUpdateJSON("https://feluu.pl/update.json")
-            .start();
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (result != null && result.isDrawerOpen()) {
-            result.closeDrawer();
-        } else if (home.getVisibility() == View.GONE) {
-            info.setVisibility(View.GONE);
-            used.setVisibility(View.GONE);
-            home.setVisibility(View.VISIBLE);
-            result.setSelection(1);
-        } else {
-            super.onBackPressed();
-        }
     }
 }
