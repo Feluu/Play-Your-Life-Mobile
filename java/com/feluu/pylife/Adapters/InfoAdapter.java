@@ -13,8 +13,8 @@ import java.util.ArrayList;
 
 public class InfoAdapter extends ArrayAdapter<Adapter> {
 
-    private ArrayList<Adapter> dataSet;
-    private Context mContext;
+    ArrayList<Adapter> dataSet;
+    Context mContext;
 
     private static class ViewHolder {
         private TextView firstText, secondText;
