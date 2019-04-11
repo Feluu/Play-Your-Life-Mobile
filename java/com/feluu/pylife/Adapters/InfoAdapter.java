@@ -1,4 +1,4 @@
-package com.feluu.pylife.Adapters;
+package com.feluu.pylife.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public class InfoAdapter extends ArrayAdapter<Adapter> {
 
-    ArrayList<Adapter> dataSet;
-    Context mContext;
+    private ArrayList<Adapter> dataSet;
+    private Context mContext;
 
     private static class ViewHolder {
-        TextView firstText, secondText;
+        private TextView firstText, secondText;
     }
 
     public InfoAdapter(ArrayList<Adapter> data, Context context) {
