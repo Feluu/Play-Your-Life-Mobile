@@ -1,4 +1,4 @@
-package com.feluu.pylife.Adapters;
+package com.feluu.pylife.adapters;
 
 public class Adapter {
 
