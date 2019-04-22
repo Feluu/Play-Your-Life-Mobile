@@ -16,13 +16,12 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".CarsListActivity"
-            android:label="@string/cars_list_activity"></activity>
+            android:label="@string/cars_list_activity" />
         <activity
             android:name=".MechanicalTuneActivity"
             android:label="@string/mechanical_list_activity" />
@@ -32,6 +31,9 @@
         <activity
             android:name=".WheelsTuneActivity"
             android:label="@string/wheels_list_activity" />
+        <activity
+            android:name=".CasualJobsActivity"
+            android:label="@string/casual_jobs_activity" />
     </application>
 
 </manifest>
