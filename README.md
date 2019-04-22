@@ -6,8 +6,8 @@
 >
 > Minimalna wersja androida: Android Lollipop (5.0)
 ## Funkcje
-1. Lista pojazdów,
-2. Tuning mechaniczny,
+- 1. Lista pojazdów,
+- 2. Tuning mechaniczny,
 3. Kolorowe światła,
 4. Felgi samochodowe,
 5. Prace dorywcze.
