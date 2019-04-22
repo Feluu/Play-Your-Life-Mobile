@@ -5,15 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 
-import com.feluu.pylife.adapters.Adapter;
 import com.feluu.pylife.adapters.InfoAdapter;
+import com.feluu.pylife.models.ListModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.util.TypedValue;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private ScrollView scroll;
     private BottomNavigationView navigation;
     private TextView title, desc;
-    private CardView carsList, mechanicalTune, lightsTune, wheelsTune;
+    private CardView carsList, mechanicalTune, lightsTune, wheelsTune, casualJobs;
     private RelativeLayout home, info, used;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -65,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                     mechanicalTune.setVisibility(View.GONE);
                     lightsTune.setVisibility(View.GONE);
                     wheelsTune.setVisibility(View.GONE);
+                    casualJobs.setVisibility(View.GONE);
                     return true;
                 case R.id.navigation_prices:
                     title.setText(R.string.title_tune);
@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                     carsList.setVisibility(View.GONE);
                     lightsTune.setVisibility(View.VISIBLE);
                     wheelsTune.setVisibility(View.VISIBLE);
+                    casualJobs.setVisibility(View.GONE);
                     return true;
                 case R.id.navigation_earnings:
                     title.setText(R.string.title_earnings);
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     mechanicalTune.setVisibility(View.GONE);
                     lightsTune.setVisibility(View.GONE);
                     wheelsTune.setVisibility(View.GONE);
+                    casualJobs.setVisibility(View.VISIBLE);
                     return true;
             }
         }
@@ -106,6 +108,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void casualJobsPage(View v) {
+        Intent intent = new Intent(MainActivity.this, CasualJobsActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,19 +129,18 @@ public class MainActivity extends AppCompatActivity {
         mechanicalTune = findViewById(R.id.card_view2);
         lightsTune = findViewById(R.id.card_view3);
         wheelsTune = findViewById(R.id.card_view4);
+        casualJobs = findViewById(R.id.card_view5);
         carsList.setVisibility(View.VISIBLE);
         mechanicalTune.setVisibility(View.GONE);
         lightsTune.setVisibility(View.GONE);
         wheelsTune.setVisibility(View.GONE);
+        casualJobs.setVisibility(View.GONE);
         home.setVisibility(View.VISIBLE);
         info.setVisibility(View.GONE);
         used.setVisibility(View.GONE);
 
         navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        Menu menuNav = navigation.getMenu();
-        MenuItem menuItem = menuNav.findItem(R.id.navigation_earnings);
-        menuItem.setEnabled(false);
 
         prepareDrawer(savedInstanceState);
 
@@ -223,10 +229,10 @@ public class MainActivity extends AppCompatActivity {
                             ImageView backBtn;
                             backBtn = findViewById(R.id.menuToggleInfo);
 
-                            ArrayList<Adapter> infoData = new ArrayList<>();
-                            infoData.add(new Adapter(R.string.info_author, R.string.info_author_name, R.string.layout_null, R.string.layout_null, R.string.layout_null, R.string.layout_null));
-                            infoData.add(new Adapter(R.string.info_app_version, R.string.versionName, R.string.layout_null, R.string.layout_null, R.string.layout_null, R.string.layout_null));
-                            infoData.add(new Adapter(R.string.info_thanks, R.string.info_thanks_to_maszek, R.string.layout_null, R.string.layout_null, R.string.layout_null, R.string.layout_null));
+                            ArrayList<ListModel> infoData = new ArrayList<>();
+                            infoData.add(new ListModel(R.string.info_author, R.string.info_author_name, R.string.layout_null, R.string.layout_null, R.string.layout_null, R.string.layout_null));
+                            infoData.add(new ListModel(R.string.info_app_version, R.string.versionName, R.string.layout_null, R.string.layout_null, R.string.layout_null, R.string.layout_null));
+                            infoData.add(new ListModel(R.string.info_thanks, R.string.info_thanks_to_maszek, R.string.layout_null, R.string.layout_null, R.string.layout_null, R.string.layout_null));
                             ListView listView;
                             listView = findViewById(R.id.listView);
 

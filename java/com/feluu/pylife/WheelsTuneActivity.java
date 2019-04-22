@@ -9,8 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.feluu.pylife.Adapters.Adapter;
-import com.feluu.pylife.Adapters.WheelsAdapter;
+import com.feluu.pylife.adapters.WheelsAdapter;
+import com.feluu.pylife.models.ListModel;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -34,7 +34,7 @@ public class WheelsTuneActivity extends AppCompatActivity {
         activityTitle = findViewById(R.id.textView1);
         availableWheels = findViewById(R.id.available);
 
-        List<Adapter> wheelsList;
+        List<ListModel> wheelsList;
         RecyclerView recyclerView;
 
         activityTitle.setText(R.string.wheels_list_activity);
@@ -51,23 +51,23 @@ public class WheelsTuneActivity extends AppCompatActivity {
 
         wheelsList = new ArrayList<>();
 
-        wheelsList.add(new Adapter(R.string.ahab_name, R.string.ahab_price, R.string.ahab_demont, R.string.layout_null, R.string.layout_null, R.drawable.ahab));
-        wheelsList.add(new Adapter(R.string.classic_name, R.string.classic_price, R.string.classic_demont, R.string.layout_null, R.string.layout_null, R.drawable.classic));
-        wheelsList.add(new Adapter(R.string.cutter_name, R.string.cutter_price, R.string.cutter_demont, R.string.layout_null, R.string.layout_null, R.drawable.cutter));
-        wheelsList.add(new Adapter(R.string.dollar_name, R.string.dollar_price, R.string.dollar_demont, R.string.layout_null, R.string.layout_null, R.drawable.dollar));
-        wheelsList.add(new Adapter(R.string.grove_name, R.string.grove_price, R.string.grove_demont, R.string.layout_null, R.string.layout_null, R.drawable.grove));
-        wheelsList.add(new Adapter(R.string.import_name, R.string.import_price, R.string.import_demont, R.string.layout_null, R.string.layout_null, R.drawable.importy));
-        wheelsList.add(new Adapter(R.string.mega_name, R.string.mega_price, R.string.mega_demont, R.string.layout_null, R.string.layout_null, R.drawable.mega));
-        wheelsList.add(new Adapter(R.string.mesh_name, R.string.mesh_price, R.string.mesh_demont, R.string.layout_null, R.string.layout_null, R.drawable.mesh));
-        wheelsList.add(new Adapter(R.string.offroad_name, R.string.offroad_price, R.string.offroad_demont, R.string.layout_null, R.string.layout_null, R.drawable.offroad));
-        wheelsList.add(new Adapter(R.string.rimshine_name, R.string.rimshine_price, R.string.rimshine_demont, R.string.layout_null, R.string.layout_null, R.drawable.rimshine));
-        wheelsList.add(new Adapter(R.string.rittle_name, R.string.rittle_price, R.string.rittle_demont, R.string.layout_null, R.string.layout_null, R.drawable.rittle));
-        wheelsList.add(new Adapter(R.string.stalowe_name, R.string.stalowe_price, R.string.stalowe_demont, R.string.layout_null, R.string.layout_null, R.drawable.stalowe));
-        wheelsList.add(new Adapter(R.string.switch_name, R.string.switch_price, R.string.switch_demont, R.string.layout_null, R.string.layout_null, R.drawable.switche));
-        wheelsList.add(new Adapter(R.string.timer_name, R.string.timer_price, R.string.timer_demont, R.string.layout_null, R.string.layout_null, R.drawable.timer));
-        wheelsList.add(new Adapter(R.string.twist_name, R.string.twist_price, R.string.twist_demont, R.string.layout_null, R.string.layout_null, R.drawable.twist));
-        wheelsList.add(new Adapter(R.string.virtual_name, R.string.virtual_price, R.string.virtual_demont, R.string.layout_null, R.string.layout_null, R.drawable.virtual));
-        wheelsList.add(new Adapter(R.string.wires_name, R.string.wires_price, R.string.wires_demont, R.string.layout_null, R.string.layout_null, R.drawable.wires));
+        wheelsList.add(new ListModel(R.string.ahab_name, R.string.ahab_price, R.string.ahab_demont, R.string.layout_null, R.string.layout_null, R.drawable.ahab));
+        wheelsList.add(new ListModel(R.string.classic_name, R.string.classic_price, R.string.classic_demont, R.string.layout_null, R.string.layout_null, R.drawable.classic));
+        wheelsList.add(new ListModel(R.string.cutter_name, R.string.cutter_price, R.string.cutter_demont, R.string.layout_null, R.string.layout_null, R.drawable.cutter));
+        wheelsList.add(new ListModel(R.string.dollar_name, R.string.dollar_price, R.string.dollar_demont, R.string.layout_null, R.string.layout_null, R.drawable.dollar));
+        wheelsList.add(new ListModel(R.string.grove_name, R.string.grove_price, R.string.grove_demont, R.string.layout_null, R.string.layout_null, R.drawable.grove));
+        wheelsList.add(new ListModel(R.string.import_name, R.string.import_price, R.string.import_demont, R.string.layout_null, R.string.layout_null, R.drawable.importy));
+        wheelsList.add(new ListModel(R.string.mega_name, R.string.mega_price, R.string.mega_demont, R.string.layout_null, R.string.layout_null, R.drawable.mega));
+        wheelsList.add(new ListModel(R.string.mesh_name, R.string.mesh_price, R.string.mesh_demont, R.string.layout_null, R.string.layout_null, R.drawable.mesh));
+        wheelsList.add(new ListModel(R.string.offroad_name, R.string.offroad_price, R.string.offroad_demont, R.string.layout_null, R.string.layout_null, R.drawable.offroad));
+        wheelsList.add(new ListModel(R.string.rimshine_name, R.string.rimshine_price, R.string.rimshine_demont, R.string.layout_null, R.string.layout_null, R.drawable.rimshine));
+        wheelsList.add(new ListModel(R.string.rittle_name, R.string.rittle_price, R.string.rittle_demont, R.string.layout_null, R.string.layout_null, R.drawable.rittle));
+        wheelsList.add(new ListModel(R.string.stalowe_name, R.string.stalowe_price, R.string.stalowe_demont, R.string.layout_null, R.string.layout_null, R.drawable.stalowe));
+        wheelsList.add(new ListModel(R.string.switch_name, R.string.switch_price, R.string.switch_demont, R.string.layout_null, R.string.layout_null, R.drawable.switche));
+        wheelsList.add(new ListModel(R.string.timer_name, R.string.timer_price, R.string.timer_demont, R.string.layout_null, R.string.layout_null, R.drawable.timer));
+        wheelsList.add(new ListModel(R.string.twist_name, R.string.twist_price, R.string.twist_demont, R.string.layout_null, R.string.layout_null, R.drawable.twist));
+        wheelsList.add(new ListModel(R.string.virtual_name, R.string.virtual_price, R.string.virtual_demont, R.string.layout_null, R.string.layout_null, R.drawable.virtual));
+        wheelsList.add(new ListModel(R.string.wires_name, R.string.wires_price, R.string.wires_demont, R.string.layout_null, R.string.layout_null, R.drawable.wires));
 
         WheelsAdapter adapter = new WheelsAdapter(this, wheelsList);
         recyclerView.setAdapter(adapter);
