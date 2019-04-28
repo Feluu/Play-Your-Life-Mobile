@@ -41,8 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/imageView6"
             android:layout_marginTop="0dp"
-            android:orientation="vertical"
-            android:layout_marginBottom="10dp">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView1"
@@ -63,11 +62,13 @@
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@id/mainLinear"
+            android:layout_centerHorizontal="true"
             android:clipToPadding="false"
-            android:overScrollMode="never"
-            android:layout_centerInParent="true"
             android:foregroundGravity="center"
-            android:layout_below="@id/mainLinear" />
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="-5dp"
+            android:overScrollMode="never" />
 
     </RelativeLayout>
 
