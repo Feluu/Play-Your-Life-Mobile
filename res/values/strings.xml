@@ -85,7 +85,7 @@
     <string name="blade_reset">Brak informacji</string>
     <string name="blista_name">Blista Compact</string>
     <string name="blista_vmax">145km/h</string>
-    <string name="blista_vmaxfmk">194km/h</string>
+    <string name="blista_vmaxfmk">190km/h</string>
     <string name="blista_tax">1.050€</string>
     <string name="blista_reset">Brak informacji</string>
     <string name="bobcat_name">Bobcat</string>
@@ -145,7 +145,7 @@
     <string name="clover_reset">Brak informacji</string>
     <string name="club_name">Club</string>
     <string name="club_vmax">142km/h</string>
-    <string name="club_vmaxfmk">156km/h</string>
+    <string name="club_vmaxfmk">190km/h</string>
     <string name="club_tax">1.274€</string>
     <string name="club_reset">Brak informacji</string>
     <string name="comet_name">Comet</string>
@@ -722,7 +722,7 @@
     <string name="ryb_description">Praca polega na pływaniu po wodach San Andreas i łapaniu ryb. Po zapełnieniu kutra do 50% można oddać załadunek płynąc za strzałką do celu.</string>
     <string name="kurier_title">Kurier</string>
     <string name="kurier_earnings">3.000–4.300€</string>
-    <string name="kurier_locations">Dowolne miejsce</string>
+    <string name="kurier_locations">Los Santos, Red County, Angel Pine, Bayside Marina</string>
     <string name="kurier_description">Praca polega na dostarczaniu uprzednio załadowanych przesyłek do ich odbiorców.</string>
     <string name="nurek_title">N2 – Nurek</string>
     <string name="nurek_earnings">2.500€</string>
@@ -738,4 +738,16 @@
     <string name="taxi4_earnings">4.000–5.500€</string>
     <string name="taxi_locations">Dowolne miejsce</string>
     <string name="taxi_description">Praca polega na przewożeniu klientów z miejsca A do B na mapie. Im wyższy level tym wyższe zarobki. \n\nLV.2 – od 10.000km\nLV.3 – od 20.000km\nLV.4 – od 40.000km</string>
+    <string name="sv_title">Street View</string>
+    <string name="sv_earnings">1.300–1.400€</string>
+    <string name="sv_locations">Las Venturas, San Fierro, Los Santos</string>
+    <string name="sv_description">Praca kierowcy Street View polega na skanowaniu danych o ulicach do systemu komputerowego. Dane o przemierzonych ulicach są rejestrowane, a kierowca otrzymuje wynagrodzenie za zeskanowaną powierzchnię.</string>
+    <string name="bet_title">Kierowca betoniarki</string>
+    <string name="bet_earnings">240€</string>
+    <string name="bet_locations">Bone County</string>
+    <string name="bet_description">Praca polega na przewożeniu cementu na miejsca budowy. Za 100% otrzymujemy 40€.</string>
+    <string name="zlodziej_title">Złodziej</string>
+    <string name="zlodziej_earnings">2.400€</string>
+    <string name="zlodziej_locations">San Fierro, Los Santos, Angel Pine, Dillimore</string>
+    <string name="zlodziej_description">W pracy okradamy domy graczy znajdujące się w okolicy. Do pracy wymagane jest -100 reputacji i może ona być wykonywana jedynie w godzinach 22–6 czasu serwerowego.</string>
 </resources>
