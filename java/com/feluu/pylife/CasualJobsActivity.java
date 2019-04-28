@@ -52,7 +52,10 @@ public class CasualJobsActivity extends AppCompatActivity {
         models.add(new ViewModel(R.drawable.aparat, R.string.photo_title, R.string.photo_earnings, R.string.photo_locations, R.string.photo_description));
         models.add(new ViewModel(R.drawable.kutr, R.string.ryb_title, R.string.ryb_earnings, R.string.ryb_locations, R.string.ryb_description));
         models.add(new ViewModel(R.drawable.kurier, R.string.kurier_title, R.string.kurier_earnings, R.string.kurier_locations, R.string.kurier_description));
-        models.add(new ViewModel(R.drawable.nurek, R.string.hol_title, R.string.hol_earnings, R.string.hol_locations, R.string.hol_description));
+        models.add(new ViewModel(R.drawable.nurek, R.string.nurek_title, R.string.nurek_earnings, R.string.nurek_locations, R.string.nurek_description));
+        models.add(new ViewModel(R.drawable.sv, R.string.sv_title, R.string.sv_earnings, R.string.sv_locations, R.string.sv_description));
+        models.add(new ViewModel(R.drawable.bet, R.string.bet_title, R.string.bet_earnings, R.string.bet_locations, R.string.bet_description));
+        models.add(new ViewModel(R.drawable.zlodziej, R.string.zlodziej_title, R.string.zlodziej_earnings, R.string.zlodziej_locations, R.string.zlodziej_description));
         models.add(new ViewModel(R.drawable.taxi, R.string.taxi1_title, R.string.taxi1_earnings, R.string.taxi_locations, R.string.taxi_description));
         models.add(new ViewModel(R.drawable.taxi, R.string.taxi2_title, R.string.taxi2_earnings, R.string.taxi_locations, R.string.taxi_description));
         models.add(new ViewModel(R.drawable.taxi, R.string.taxi3_title, R.string.taxi3_earnings, R.string.taxi_locations, R.string.taxi_description));
