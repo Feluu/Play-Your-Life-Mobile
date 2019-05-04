@@ -45,15 +45,19 @@ public class MechanicalTuneActivity extends AppCompatActivity {
 
         mechanicalList = new ArrayList<>();
 
-        mechanicalList.add(new ListModel(R.string.mk1_mechanical_name, R.string.mk1_allows, R.string.mk1_price, R.string.mk1_demont, R.string.layout_null, R.drawable.ic_build));
-        mechanicalList.add(new ListModel(R.string.mk2_mechanical_name, R.string.mk2_allows, R.string.mk2_price, R.string.mk2_demont, R.string.layout_null, R.drawable.ic_build));
-        mechanicalList.add(new ListModel(R.string.mk3_mechanical_name, R.string.mk3_allows, R.string.mk3_price, R.string.mk3_demont, R.string.layout_null, R.drawable.ic_build));
-        mechanicalList.add(new ListModel(R.string.rh1_mechanical_name, R.string.rh1_allows, R.string.rh1_price, R.string.rh1_demont, R.string.layout_null, R.drawable.ic_build));
-        mechanicalList.add(new ListModel(R.string.hydra_mechanical_name, R.string.hydra_allows, R.string.hydra_price, R.string.hydra_demont, R.string.layout_null, R.drawable.ic_build));
-        mechanicalList.add(new ListModel(R.string.taxo_mechanical_name, R.string.taxo_allows, R.string.taxo_price, R.string.taxo_demont, R.string.layout_null, R.drawable.ic_build));
-        mechanicalList.add(new ListModel(R.string.logi_mechanical_tune, R.string.logi_allows, R.string.logi_price, R.string.logi_demont, R.string.layout_null, R.drawable.ic_build));
+        mechanicalList.add(new ListModel(intToString(R.string.mk1_mechanical_name), intToString(R.string.mk1_allows), intToString(R.string.mk1_price), intToString(R.string.mk1_demont), intToString(R.string.layout_null), R.drawable.ic_build));
+        mechanicalList.add(new ListModel(intToString(R.string.mk2_mechanical_name), intToString(R.string.mk2_allows), intToString(R.string.mk2_price), intToString(R.string.mk2_demont), intToString(R.string.layout_null), R.drawable.ic_build));
+        mechanicalList.add(new ListModel(intToString(R.string.mk3_mechanical_name), intToString(R.string.mk3_allows), intToString(R.string.mk3_price), intToString(R.string.mk3_demont), intToString(R.string.layout_null), R.drawable.ic_build));
+        mechanicalList.add(new ListModel(intToString(R.string.rh1_mechanical_name), intToString(R.string.rh1_allows), intToString(R.string.rh1_price), intToString(R.string.rh1_demont), intToString(R.string.layout_null), R.drawable.ic_build));
+        mechanicalList.add(new ListModel(intToString(R.string.hydra_mechanical_name), intToString(R.string.hydra_allows), intToString(R.string.hydra_price), intToString(R.string.hydra_demont), intToString(R.string.layout_null), R.drawable.ic_build));
+        mechanicalList.add(new ListModel(intToString(R.string.taxo_mechanical_name), intToString(R.string.taxo_allows), intToString(R.string.taxo_price), intToString(R.string.taxo_demont), intToString(R.string.layout_null), R.drawable.ic_build));
+        mechanicalList.add(new ListModel(intToString(R.string.logi_mechanical_tune), intToString(R.string.logi_allows), intToString(R.string.logi_price), intToString(R.string.logi_demont), intToString(R.string.layout_null), R.drawable.ic_build));
 
         MechanicalAdapter adapter = new MechanicalAdapter(this, mechanicalList);
         recyclerView.setAdapter(adapter);
+    }
+
+    public String intToString(int Res) {
+        return getResources().getString(Res);
     }
 }
