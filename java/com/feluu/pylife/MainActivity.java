@@ -2,6 +2,8 @@ package com.feluu.pylife;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 
@@ -12,10 +14,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -47,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView navigation;
     private TextView title, desc;
     private CardView carsList, mechanicalTune, lightsTune, wheelsTune, casualJobs;
-    private RelativeLayout home, info, used;
+    private RelativeLayout home, info;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -122,7 +126,6 @@ public class MainActivity extends AppCompatActivity {
         menuImg = findViewById(R.id.menuToggle);
         home = findViewById(R.id.home_layout);
         info = findViewById(R.id.info_layout);
-        used = findViewById(R.id.used_layout);
         title = findViewById(R.id.textView1);
         desc = findViewById(R.id.textView2);
         carsList = findViewById(R.id.card_view1);
@@ -137,7 +140,6 @@ public class MainActivity extends AppCompatActivity {
         casualJobs.setVisibility(View.GONE);
         home.setVisibility(View.VISIBLE);
         info.setVisibility(View.GONE);
-        used.setVisibility(View.GONE);
 
         navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -163,7 +165,6 @@ public class MainActivity extends AppCompatActivity {
             result.closeDrawer();
         } else if (home.getVisibility() == View.GONE) {
             info.setVisibility(View.GONE);
-            used.setVisibility(View.GONE);
             home.setVisibility(View.VISIBLE);
             result.setSelection(1);
         } else {
@@ -173,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void prepareDrawer(Bundle savedInstanceState) {
         AccountHeader headerResult;
-        final IProfile profile = new ProfileDrawerItem().withName("Play Your Life").withEmail("Mobile").withIcon(R.drawable.pylife);
+        final IProfile profile = new ProfileDrawerItem().withName("Play Your Life").withEmail("Mobile").withIcon(R.drawable.nav_logo);
 
         headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
@@ -190,19 +191,17 @@ public class MainActivity extends AppCompatActivity {
                         new PrimaryDrawerItem().withName(R.string.string_home).withIcon(FontAwesome.Icon.faw_home).withIdentifier(1),
                         new PrimaryDrawerItem().withName(R.string.string_report_error).withIcon(FontAwesome.Icon.faw_bug).withSelectable(false),
                         new SectionDrawerItem().withName(R.string.string_others),
-                        new SecondaryDrawerItem().withName(R.string.string_info).withIcon(FontAwesome.Icon.faw_info),
-                        new SecondaryDrawerItem().withName(R.string.string_used_libs).withIcon(FontAwesome.Icon.faw_flask).withEnabled(false)
+                        new SecondaryDrawerItem().withName(R.string.string_info).withIcon(FontAwesome.Icon.faw_info)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         ConstraintLayout.LayoutParams noMargin = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                         noMargin.setMargins(0, 0, 0, 0);
-                        int dpToPx= (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, getResources().getDisplayMetrics());
+                        int dpToPx = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 47, getResources().getDisplayMetrics());
                         ConstraintLayout.LayoutParams margin = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                         margin.setMargins(0, 0, 0, dpToPx);
                         if (position == 1) {
-                            used.setVisibility(View.GONE);
                             info.setVisibility(View.GONE);
                             home.setVisibility(View.VISIBLE);
                             navigation.setVisibility(View.VISIBLE);
@@ -222,7 +221,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                         if (position == 4) {
                             home.setVisibility(View.GONE);
-                            used.setVisibility(View.GONE);
                             info.setVisibility(View.VISIBLE);
                             navigation.setVisibility(View.GONE);
                             scroll.setLayoutParams(noMargin);
@@ -230,15 +228,41 @@ public class MainActivity extends AppCompatActivity {
                             backBtn = findViewById(R.id.menuToggleInfo);
 
                             ArrayList<ListModel> infoData = new ArrayList<>();
-                            infoData.add(new ListModel(R.string.info_author, R.string.info_author_name, R.string.layout_null, R.string.layout_null, R.string.layout_null, R.string.layout_null));
-                            infoData.add(new ListModel(R.string.info_app_version, R.string.versionName, R.string.layout_null, R.string.layout_null, R.string.layout_null, R.string.layout_null));
-                            infoData.add(new ListModel(R.string.info_thanks, R.string.info_thanks_to_maszek, R.string.layout_null, R.string.layout_null, R.string.layout_null, R.string.layout_null));
+                            infoData.add(new ListModel(intToString(R.string.info_author), intToString(R.string.info_author_name), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
+                            infoData.add(new ListModel(intToString(R.string.info_app_version), intToString(R.string.versionName), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
+                            infoData.add(new ListModel(intToString(R.string.info_thanks), intToString(R.string.info_thanks_to_maszek), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
+                            infoData.add(new ListModel(intToString(R.string.info_github), intToString(R.string.info_github_link), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
+                            infoData.add(new ListModel(intToString(R.string.info_model), getDeviceName(), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
                             ListView listView;
                             listView = findViewById(R.id.listView);
 
                             InfoAdapter adapter;
                             adapter = new InfoAdapter(infoData ,getApplicationContext());
                             listView.setAdapter(adapter);
+
+                            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    if (position == 0) {
+                                        String url = "https://pylife.pl/profile/31118-feluu/";
+                                        Intent i = new Intent(Intent.ACTION_VIEW);
+                                        i.setData(Uri.parse(url));
+                                        startActivity(i);
+                                    }
+                                    if (position == 2) {
+                                        String url = "https://pylife.pl/profile/15447-sapdmaszek/";
+                                        Intent i = new Intent(Intent.ACTION_VIEW);
+                                        i.setData(Uri.parse(url));
+                                        startActivity(i);
+                                    }
+                                    if (position == 3) {
+                                        String url = "https://github.com/Feluu/Play-Your-Life-Mobile";
+                                        Intent i = new Intent(Intent.ACTION_VIEW);
+                                        i.setData(Uri.parse(url));
+                                        startActivity(i);
+                                    }
+                                }
+                            });
 
                             backBtn.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -247,17 +271,46 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             });
                         }
-                        /** if (position == 5) {
-                         //home.setVisibility(View.GONE);
-                         // info.setVisibility(View.GONE);
-                         //used.setVisibility(View.VISIBLE);
-                         // navigation.setVisibility(View.GONE);
-                         // scroll.setLayoutParams(noMargin);
-                         }*/
                         return false;
                     }
                 })
                 .withSavedInstance(savedInstanceState)
                 .build();
     }
+
+    public String intToString(int Res) {
+        return getResources().getString(Res);
+    }
+
+    public static String getDeviceName() {
+        String manufacturer = Build.MANUFACTURER;
+        String model = Build.MODEL;
+        if (model.startsWith(manufacturer)) {
+            return capitalize(model);
+        }
+        return capitalize(manufacturer) + " " + model;
+    }
+
+    private static String capitalize(String str) {
+        if (TextUtils.isEmpty(str)) {
+            return str;
+        }
+        char[] arr = str.toCharArray();
+        boolean capitalizeNext = true;
+
+        StringBuilder phrase = new StringBuilder();
+        for (char c : arr) {
+            if (capitalizeNext && Character.isLetter(c)) {
+                phrase.append(Character.toUpperCase(c));
+                capitalizeNext = false;
+                continue;
+            } else if (Character.isWhitespace(c)) {
+                capitalizeNext = true;
+            }
+            phrase.append(c);
+        }
+
+        return phrase.toString();
+    }
+
 }
