@@ -26,13 +26,13 @@ public class WheelsTuneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_wheels);
 
+        final TextView availableWheels;
         ImageView leaveActivity;
         TextView activityTitle;
-        final TextView availableWheels;
 
+        availableWheels = findViewById(R.id.available);
         leaveActivity = findViewById(R.id.exitActivity);
         activityTitle = findViewById(R.id.textView1);
-        availableWheels = findViewById(R.id.available);
 
         List<ListModel> wheelsList;
         RecyclerView recyclerView;
@@ -51,33 +51,33 @@ public class WheelsTuneActivity extends AppCompatActivity {
 
         wheelsList = new ArrayList<>();
 
-        wheelsList.add(new ListModel(R.string.ahab_name, R.string.ahab_price, R.string.ahab_demont, R.string.layout_null, R.string.layout_null, R.drawable.ahab));
-        wheelsList.add(new ListModel(R.string.classic_name, R.string.classic_price, R.string.classic_demont, R.string.layout_null, R.string.layout_null, R.drawable.classic));
-        wheelsList.add(new ListModel(R.string.cutter_name, R.string.cutter_price, R.string.cutter_demont, R.string.layout_null, R.string.layout_null, R.drawable.cutter));
-        wheelsList.add(new ListModel(R.string.dollar_name, R.string.dollar_price, R.string.dollar_demont, R.string.layout_null, R.string.layout_null, R.drawable.dollar));
-        wheelsList.add(new ListModel(R.string.grove_name, R.string.grove_price, R.string.grove_demont, R.string.layout_null, R.string.layout_null, R.drawable.grove));
-        wheelsList.add(new ListModel(R.string.import_name, R.string.import_price, R.string.import_demont, R.string.layout_null, R.string.layout_null, R.drawable.importy));
-        wheelsList.add(new ListModel(R.string.mega_name, R.string.mega_price, R.string.mega_demont, R.string.layout_null, R.string.layout_null, R.drawable.mega));
-        wheelsList.add(new ListModel(R.string.mesh_name, R.string.mesh_price, R.string.mesh_demont, R.string.layout_null, R.string.layout_null, R.drawable.mesh));
-        wheelsList.add(new ListModel(R.string.offroad_name, R.string.offroad_price, R.string.offroad_demont, R.string.layout_null, R.string.layout_null, R.drawable.offroad));
-        wheelsList.add(new ListModel(R.string.rimshine_name, R.string.rimshine_price, R.string.rimshine_demont, R.string.layout_null, R.string.layout_null, R.drawable.rimshine));
-        wheelsList.add(new ListModel(R.string.rittle_name, R.string.rittle_price, R.string.rittle_demont, R.string.layout_null, R.string.layout_null, R.drawable.rittle));
-        wheelsList.add(new ListModel(R.string.stalowe_name, R.string.stalowe_price, R.string.stalowe_demont, R.string.layout_null, R.string.layout_null, R.drawable.stalowe));
-        wheelsList.add(new ListModel(R.string.switch_name, R.string.switch_price, R.string.switch_demont, R.string.layout_null, R.string.layout_null, R.drawable.switche));
-        wheelsList.add(new ListModel(R.string.timer_name, R.string.timer_price, R.string.timer_demont, R.string.layout_null, R.string.layout_null, R.drawable.timer));
-        wheelsList.add(new ListModel(R.string.twist_name, R.string.twist_price, R.string.twist_demont, R.string.layout_null, R.string.layout_null, R.drawable.twist));
-        wheelsList.add(new ListModel(R.string.virtual_name, R.string.virtual_price, R.string.virtual_demont, R.string.layout_null, R.string.layout_null, R.drawable.virtual));
-        wheelsList.add(new ListModel(R.string.wires_name, R.string.wires_price, R.string.wires_demont, R.string.layout_null, R.string.layout_null, R.drawable.wires));
+        wheelsList.add(new ListModel(intToString(R.string.ahab_name), intToString(R.string.ahab_price), intToString(R.string.ahab_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.ahab));
+        wheelsList.add(new ListModel(intToString(R.string.classic_name), intToString(R.string.classic_price), intToString(R.string.classic_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.classic));
+        wheelsList.add(new ListModel(intToString(R.string.cutter_name), intToString(R.string.cutter_price), intToString(R.string.cutter_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.cutter));
+        wheelsList.add(new ListModel(intToString(R.string.dollar_name), intToString(R.string.dollar_price), intToString(R.string.dollar_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.dollar));
+        wheelsList.add(new ListModel(intToString(R.string.grove_name), intToString(R.string.grove_price), intToString(R.string.grove_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.grove));
+        wheelsList.add(new ListModel(intToString(R.string.import_name), intToString(R.string.import_price), intToString(R.string.import_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.importy));
+        wheelsList.add(new ListModel(intToString(R.string.mega_name), intToString(R.string.mega_price), intToString(R.string.mega_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.mega));
+        wheelsList.add(new ListModel(intToString(R.string.mesh_name), intToString(R.string.mesh_price), intToString(R.string.mesh_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.mesh));
+        wheelsList.add(new ListModel(intToString(R.string.offroad_name), intToString(R.string.offroad_price), intToString(R.string.offroad_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.offroad));
+        wheelsList.add(new ListModel(intToString(R.string.rimshine_name), intToString(R.string.rimshine_price), intToString(R.string.rimshine_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.rimshine));
+        wheelsList.add(new ListModel(intToString(R.string.rittle_name), intToString(R.string.rittle_price), intToString(R.string.rittle_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.rittle));
+        wheelsList.add(new ListModel(intToString(R.string.stalowe_name), intToString(R.string.stalowe_price), intToString(R.string.stalowe_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.stalowe));
+        wheelsList.add(new ListModel(intToString(R.string.switch_name), intToString(R.string.switch_price), intToString(R.string.switch_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.switche));
+        wheelsList.add(new ListModel(intToString(R.string.timer_name), intToString(R.string.timer_price), intToString(R.string.timer_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.timer));
+        wheelsList.add(new ListModel(intToString(R.string.twist_name), intToString(R.string.twist_price), intToString(R.string.twist_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.twist));
+        wheelsList.add(new ListModel(intToString(R.string.virtual_name), intToString(R.string.virtual_price), intToString(R.string.virtual_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.virtual));
+        wheelsList.add(new ListModel(intToString(R.string.wires_name), intToString(R.string.wires_price), intToString(R.string.wires_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.wires));
 
         WheelsAdapter adapter = new WheelsAdapter(this, wheelsList);
         recyclerView.setAdapter(adapter);
 
-        new Thread(new Runnable(){
+        runOnUiThread(new Runnable(){
             public void run(){
                 final ArrayList<String> urls = new ArrayList<>();
                 try {
                     URL url = new URL("https://feluu.pl/wheels.txt");
-                    HttpURLConnection conn=(HttpURLConnection) url.openConnection();
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setConnectTimeout(60000);
                     BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                     String str;
@@ -88,7 +88,7 @@ public class WheelsTuneActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     availableWheels.setText(R.string.layout_cannot_retrieve_wheels);
                 }
-               WheelsTuneActivity.this.runOnUiThread(new Runnable(){
+                WheelsTuneActivity.this.runOnUiThread(new Runnable(){
                     public void run(){
                         if (urls.size() == 0) {
                             availableWheels.setText(R.string.layout_cannot_retrieve_wheels);
@@ -98,6 +98,10 @@ public class WheelsTuneActivity extends AppCompatActivity {
                     }
                 });
             }
-        }).start();
+        });
+    }
+
+    public String intToString(int Res) {
+        return getResources().getString(Res);
     }
 }
