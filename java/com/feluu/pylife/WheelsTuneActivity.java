@@ -1,9 +1,11 @@
 package com.feluu.pylife;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,8 +15,9 @@ import com.feluu.pylife.adapters.WheelsAdapter;
 import com.feluu.pylife.models.ListModel;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,13 +29,13 @@ public class WheelsTuneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_wheels);
 
-        final TextView availableWheels;
         ImageView leaveActivity;
         TextView activityTitle;
+        TextView wheels;
 
-        availableWheels = findViewById(R.id.available);
         leaveActivity = findViewById(R.id.exitActivity);
         activityTitle = findViewById(R.id.textView1);
+        wheels = findViewById(R.id.available);
 
         List<ListModel> wheelsList;
         RecyclerView recyclerView;
@@ -72,36 +75,39 @@ public class WheelsTuneActivity extends AppCompatActivity {
         WheelsAdapter adapter = new WheelsAdapter(this, wheelsList);
         recyclerView.setAdapter(adapter);
 
-        runOnUiThread(new Runnable(){
-            public void run(){
-                final ArrayList<String> urls = new ArrayList<>();
-                try {
-                    URL url = new URL("https://feluu.pl/wheels.txt");
-                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                    conn.setConnectTimeout(60000);
-                    BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                    String str;
-                    while ((str = in.readLine()) != null) {
-                        urls.add(str);
-                    }
-                    in.close();
-                } catch (Exception e) {
-                    availableWheels.setText(R.string.layout_cannot_retrieve_wheels);
-                }
-                WheelsTuneActivity.this.runOnUiThread(new Runnable(){
-                    public void run(){
-                        if (urls.size() == 0) {
-                            availableWheels.setText(R.string.layout_cannot_retrieve_wheels);
-                        } else {
-                            availableWheels.setText(urls.get(0));
-                        }
-                    }
-                });
-            }
-        });
+        try {
+            URL url = new URL("https://feluu.pl/wheels.txt");
+            new ReadWheelsTask().execute(url);
+        } catch (MalformedURLException e) {
+            wheels.setText(R.string.layout_cannot_retrieve_wheels);
+        }
     }
 
     public String intToString(int Res) {
         return getResources().getString(Res);
+    }
+
+    private class ReadWheelsTask extends AsyncTask<URL, Void, String> {
+
+        String str = null;
+
+        @Override
+        protected String doInBackground(URL... urls) {
+            TextView wheels = findViewById(R.id.available);
+            try {
+                BufferedReader in = new BufferedReader(new InputStreamReader(urls[0].openStream()));
+                str = in.readLine();
+                in.close();
+            } catch (IOException e) {
+                wheels.setText(R.string.layout_cannot_retrieve_wheels);
+            }
+            return str;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            TextView wheels = findViewById(R.id.available);
+            wheels.setText(str);
+        }
     }
 }
