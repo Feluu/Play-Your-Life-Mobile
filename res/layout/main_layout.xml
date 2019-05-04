@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="47dp"
             tools:layout_editor_absoluteY="56dp">
 
             <LinearLayout
@@ -407,65 +407,6 @@
 
                 </RelativeLayout>
 
-                <RelativeLayout
-                    android:id="@+id/used_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/white">
-
-                    <ImageView
-                        android:id="@+id/menuToggleUsed"
-                        android:layout_width="48dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:contentDescription="@string/content_menu"
-                        android:scaleType="fitCenter"
-                        app:srcCompat="@drawable/ic_menu" />
-
-                    <ImageView
-                        android:id="@+id/imageView8"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentEnd="false"
-                        android:layout_alignParentBottom="true"
-                        android:contentDescription="@string/layout_null"
-                        android:scaleType="fitEnd"
-                        app:srcCompat="@drawable/bg_main" />
-
-                    <LinearLayout
-                        android:id="@+id/mainLinearUsed"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textView1Used"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:gravity="center_horizontal|top"
-                            android:text="@string/title_cars"
-                            android:textColor="@android:color/black"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            android:typeface="sans" />
-
-                        <TextView
-                            android:id="@+id/textView2Used"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center|top"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center_horizontal|top"
-                            android:text="@string/desc_cars"
-                            android:textColor="@android:color/black"
-                            android:textSize="13sp"
-                            android:typeface="sans" />
-
-                    </LinearLayout>
-
-                </RelativeLayout>
             </LinearLayout>
         </ScrollView>
 
