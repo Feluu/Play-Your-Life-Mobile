@@ -5,7 +5,6 @@
     <string name="string_others">Pozostałe</string>
     <string name="string_info">Informacje</string>
     <string name="info_desc">Główne informacje dotyczące aplikacji\nPlay Your Life Mobile.</string>
-    <string name="string_used_libs">Użyte zasoby</string>
     <string name="app_report_info">Wybierz aplikację do wysyłania e-mail</string>
     <string name="title_cars">Motoryzacja</string>
     <string name="desc_cars">Poniżej znajdziesz kategorie \nzwiązane z motoryzacją.</string>
@@ -31,7 +30,6 @@
     <string name="layout_1h">1H</string>
     <string name="layout_description">Opis</string>
     <string name="layout_allows">Umożliwia:</string>
-    <string name="layout_available_wheels">dostępne.felgi</string>
     <string name="layout_cannot_retrieve_wheels">Nie można uzyskać listy dostępnych felg…</string>
     <string name="layout_lifetime">ŻYWOTNOŚĆ</string>
     <string name="lights_lifetime">2500km</string>
@@ -41,8 +39,11 @@
     <string name="info_author">Autor</string>
     <string name="info_author_name">Feluu</string>
     <string name="info_app_version">Wersja aplikacji</string>
-    <string name="info_thanks">Podziękowania dla</string>
+    <string name="info_thanks">Autor Symulatora Pylife</string>
     <string name="info_thanks_to_maszek">Maszek</string>
+    <string name="info_github">GitHub</string>
+    <string name="info_github_link">Feluu/Play-Your-Life-Mobile</string>
+    <string name="info_model">Model telefonu</string>
 
 
 
