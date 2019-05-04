@@ -2,14 +2,38 @@ package com.feluu.pylife.models;
 
 public class ListModel {
 
-    private int name;
-    private int first;
-    private int second;
-    private int third;
-    private int fourth;
+    private String name;
+    private String first;
+    private String second;
+    private String third;
+    private String fourth;
     private int image;
 
-    public ListModel(int name, int first, int second, int third, int fourth, int image) {
+    public String getName() {
+        return name;
+    }
+
+    public String getFirst() {
+        return first;
+    }
+
+    public String getSecond() {
+        return second;
+    }
+
+    public String getThird() {
+        return third;
+    }
+
+    public String getFourth() {
+        return fourth;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public ListModel(String name, String first, String second, String third, String fourth, int image) {
         this.name = name;
         this.first = first;
         this.second = second;
@@ -18,27 +42,5 @@ public class ListModel {
         this.image = image;
     }
 
-    public int getName() {
-        return name;
-    }
 
-    public int getFirst() {
-        return first;
-    }
-
-    public int getSecond() {
-        return second;
-    }
-
-    public int getThird() {
-        return third;
-    }
-
-    public int getFourth() {
-        return fourth;
-    }
-
-    public int getImage() {
-        return image;
-    }
 }
