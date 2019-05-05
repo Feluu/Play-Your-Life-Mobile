@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -89,7 +88,7 @@ public class WheelsTuneActivity extends AppCompatActivity {
 
     private class ReadWheelsTask extends AsyncTask<URL, Void, String> {
 
-        String str = null;
+        private String str = null;
 
         @Override
         protected String doInBackground(URL... urls) {
