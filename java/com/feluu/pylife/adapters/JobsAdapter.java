@@ -39,7 +39,10 @@ public class JobsAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, final int position) {
         ImageView imageView;
-        TextView title, description, earnings, locations;
+        TextView title;
+        TextView description;
+        TextView earnings;
+        TextView locations;
         LayoutInflater layoutInflater;
 
         layoutInflater = LayoutInflater.from(context);
