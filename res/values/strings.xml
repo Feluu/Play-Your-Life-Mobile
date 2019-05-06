@@ -30,7 +30,7 @@
     <string name="layout_1h">1H</string>
     <string name="layout_description">Opis</string>
     <string name="layout_allows">Umożliwia:</string>
-    <string name="layout_cannot_retrieve_wheels">Nie można uzyskać listy dostępnych felg…</string>
+    <string name="layout_cannot_retrieve_wheels">Nie udało się uzyskać listy dostępnych felg…</string>
     <string name="layout_lifetime">ŻYWOTNOŚĆ</string>
     <string name="lights_lifetime">2500km</string>
     <string name="layout_null">null</string>
