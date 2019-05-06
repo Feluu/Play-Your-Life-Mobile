@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 
 import com.feluu.pylife.adapters.InfoAdapter;
 import com.feluu.pylife.models.ListModel;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -53,74 +54,11 @@ public class MainActivity extends AppCompatActivity {
     private CardView carsList, mechanicalTune, lightsTune, wheelsTune, casualJobs;
     private RelativeLayout home, info;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                default:
-                    return false;
-                case R.id.navigation_cars:
-                    title.setText(R.string.title_cars);
-                    desc.setText(R.string.desc_cars);
-                    carsList.setVisibility(View.VISIBLE);
-                    mechanicalTune.setVisibility(View.GONE);
-                    lightsTune.setVisibility(View.GONE);
-                    wheelsTune.setVisibility(View.GONE);
-                    casualJobs.setVisibility(View.GONE);
-                    return true;
-                case R.id.navigation_prices:
-                    title.setText(R.string.title_tune);
-                    desc.setText(R.string.desc_tune);
-                    mechanicalTune.setVisibility(View.VISIBLE);
-                    carsList.setVisibility(View.GONE);
-                    lightsTune.setVisibility(View.VISIBLE);
-                    wheelsTune.setVisibility(View.VISIBLE);
-                    casualJobs.setVisibility(View.GONE);
-                    return true;
-                case R.id.navigation_earnings:
-                    title.setText(R.string.title_earnings);
-                    desc.setText(R.string.desc_earnings);
-                    carsList.setVisibility(View.GONE);
-                    mechanicalTune.setVisibility(View.GONE);
-                    lightsTune.setVisibility(View.GONE);
-                    wheelsTune.setVisibility(View.GONE);
-                    casualJobs.setVisibility(View.VISIBLE);
-                    return true;
-            }
-        }
-    };
-
-    public void carsListPage(View v) {
-        Intent intent = new Intent(MainActivity.this, CarsListActivity.class);
-        startActivity(intent);
-    }
-
-    public void mechanicalTunePage(View v) {
-        Intent intent = new Intent(MainActivity.this, MechanicalTuneActivity.class);
-        startActivity(intent);
-    }
-
-    public void lightsTunePage(View v) {
-        Intent intent = new Intent(MainActivity.this, LightsTuneActivity.class);
-        startActivity(intent);
-    }
-
-    public void wheelsTunePage(View v) {
-        Intent intent = new Intent(MainActivity.this, WheelsTuneActivity.class);
-        startActivity(intent);
-    }
-
-    public void casualJobsPage(View v) {
-        Intent intent = new Intent(MainActivity.this, CasualJobsActivity.class);
-        startActivity(intent);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        prepareDrawer(savedInstanceState);
         ImageView menuImg;
         scroll = findViewById(R.id.scroll);
         menuImg = findViewById(R.id.menuToggle);
@@ -144,8 +82,6 @@ public class MainActivity extends AppCompatActivity {
         navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        prepareDrawer(savedInstanceState);
-
         menuImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -157,19 +93,6 @@ public class MainActivity extends AppCompatActivity {
             .setUpdateFrom(UpdateFrom.JSON)
             .setUpdateJSON("https://feluu.pl/update.json")
             .start();
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (result != null && result.isDrawerOpen()) {
-            result.closeDrawer();
-        } else if (home.getVisibility() == View.GONE) {
-            info.setVisibility(View.GONE);
-            home.setVisibility(View.VISIBLE);
-            result.setSelection(1);
-        } else {
-            super.onBackPressed();
-        }
     }
 
     private void prepareDrawer(Bundle savedInstanceState) {
@@ -278,6 +201,58 @@ public class MainActivity extends AppCompatActivity {
                 .build();
     }
 
+    @Override
+    public void onBackPressed() {
+        if (result != null && result.isDrawerOpen()) {
+            result.closeDrawer();
+        } else if (home.getVisibility() == View.GONE) {
+            info.setVisibility(View.GONE);
+            home.setVisibility(View.VISIBLE);
+            result.setSelection(1);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                default:
+                    return false;
+                case R.id.navigation_cars:
+                    title.setText(R.string.title_cars);
+                    desc.setText(R.string.desc_cars);
+                    carsList.setVisibility(View.VISIBLE);
+                    mechanicalTune.setVisibility(View.GONE);
+                    lightsTune.setVisibility(View.GONE);
+                    wheelsTune.setVisibility(View.GONE);
+                    casualJobs.setVisibility(View.GONE);
+                    return true;
+                case R.id.navigation_prices:
+                    title.setText(R.string.title_tune);
+                    desc.setText(R.string.desc_tune);
+                    mechanicalTune.setVisibility(View.VISIBLE);
+                    carsList.setVisibility(View.GONE);
+                    lightsTune.setVisibility(View.VISIBLE);
+                    wheelsTune.setVisibility(View.VISIBLE);
+                    casualJobs.setVisibility(View.GONE);
+                    return true;
+                case R.id.navigation_earnings:
+                    title.setText(R.string.title_earnings);
+                    desc.setText(R.string.desc_earnings);
+                    carsList.setVisibility(View.GONE);
+                    mechanicalTune.setVisibility(View.GONE);
+                    lightsTune.setVisibility(View.GONE);
+                    wheelsTune.setVisibility(View.GONE);
+                    casualJobs.setVisibility(View.VISIBLE);
+                    return true;
+            }
+        }
+    };
+
     public String intToString(int Res) {
         return getResources().getString(Res);
     }
@@ -309,8 +284,32 @@ public class MainActivity extends AppCompatActivity {
             }
             phrase.append(c);
         }
-
         return phrase.toString();
+    }
+
+    public void carsListPage(View v) {
+        Intent intent = new Intent(MainActivity.this, CarsListActivity.class);
+        startActivity(intent);
+    }
+
+    public void mechanicalTunePage(View v) {
+        Intent intent = new Intent(MainActivity.this, MechanicalTuneActivity.class);
+        startActivity(intent);
+    }
+
+    public void lightsTunePage(View v) {
+        Intent intent = new Intent(MainActivity.this, LightsTuneActivity.class);
+        startActivity(intent);
+    }
+
+    public void wheelsTunePage(View v) {
+        Intent intent = new Intent(MainActivity.this, WheelsTuneActivity.class);
+        startActivity(intent);
+    }
+
+    public void casualJobsPage(View v) {
+        Intent intent = new Intent(MainActivity.this, CasualJobsActivity.class);
+        startActivity(intent);
     }
 
 }
