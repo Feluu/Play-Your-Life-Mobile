@@ -106,7 +106,11 @@ public class WheelsTuneActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             TextView wheels = findViewById(R.id.available);
-            wheels.setText(str);
+            if (str == null) {
+                wheels.setText(R.string.layout_cannot_retrieve_wheels);
+            } else {
+                wheels.setText(str);
+            }
         }
     }
 }
