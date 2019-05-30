@@ -13,7 +13,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:configChanges="orientation|screenSize|keyboardHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,19 +22,24 @@
         </activity>
         <activity
             android:name=".CarsListActivity"
-            android:label="@string/cars_list_activity" />
+            android:label="@string/cars_list_activity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
             android:name=".MechanicalTuneActivity"
-            android:label="@string/mechanical_list_activity" />
+            android:label="@string/mechanical_list_activity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
             android:name=".LightsTuneActivity"
-            android:label="@string/lights_list_activity" />
+            android:label="@string/lights_list_activity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
             android:name=".WheelsTuneActivity"
-            android:label="@string/wheels_list_activity" />
+            android:label="@string/wheels_list_activity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
             android:name=".CasualJobsActivity"
-            android:label="@string/casual_jobs_activity" />
+            android:label="@string/casual_jobs_activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"/>
     </application>
 
 </manifest>
