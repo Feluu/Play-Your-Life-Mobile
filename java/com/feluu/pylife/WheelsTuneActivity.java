@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.feluu.pylife.adapters.WheelsAdapter;
 import com.feluu.pylife.models.ListModel;
@@ -30,20 +31,27 @@ public class WheelsTuneActivity extends AppCompatActivity {
 
         ImageView leaveActivity;
         TextView activityTitle;
-        TextView wheels;
 
         leaveActivity = findViewById(R.id.exitActivity);
         activityTitle = findViewById(R.id.textView1);
-        wheels = findViewById(R.id.available);
-
         List<ListModel> wheelsList;
         RecyclerView recyclerView;
+        final SwipeRefreshLayout swipeRefreshLayout;
 
         activityTitle.setText(R.string.wheels_list_activity);
         leaveActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        swipeRefreshLayout = findViewById(R.id.swipeRefresh);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getWheels();
+                swipeRefreshLayout.setRefreshing(false);
             }
         });
 
@@ -74,31 +82,33 @@ public class WheelsTuneActivity extends AppCompatActivity {
         WheelsAdapter adapter = new WheelsAdapter(this, wheelsList);
         recyclerView.setAdapter(adapter);
 
-        try {
-            URL url = new URL("https://feluu.pl/wheels.txt");
-            new ReadWheelsTask().execute(url);
-        } catch (MalformedURLException e) {
-            wheels.setText(R.string.layout_cannot_retrieve_wheels);
-        }
+        getWheels();
     }
 
     public String intToString(int Res) {
         return getResources().getString(Res);
     }
 
+    private void getWheels(){
+        try {
+            URL url = new URL("https://feluu.pl/wheels.txt");
+            new ReadWheelsTask().execute(url);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
     private class ReadWheelsTask extends AsyncTask<URL, Void, String> {
 
         private String str = null;
 
         @Override
         protected String doInBackground(URL... urls) {
-            TextView wheels = findViewById(R.id.available);
             try {
                 BufferedReader in = new BufferedReader(new InputStreamReader(urls[0].openStream()));
                 str = in.readLine();
                 in.close();
             } catch (IOException e) {
-                wheels.setText(R.string.layout_cannot_retrieve_wheels);
+                e.printStackTrace();
             }
             return str;
         }
