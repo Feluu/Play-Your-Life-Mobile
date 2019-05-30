@@ -29,7 +29,9 @@
             android:layout_height="match_parent"
             android:fillViewport="true"
             android:layout_marginBottom="47dp"
-            tools:layout_editor_absoluteY="56dp">
+            tools:layout_editor_absoluteY="56dp"
+            android:overScrollMode="never"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -408,6 +410,7 @@
                 </RelativeLayout>
 
             </LinearLayout>
+
         </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
