@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 .withAccountHeader(headerResult)
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName(R.string.string_home).withIcon(FontAwesome.Icon.faw_home).withIdentifier(1),
-                        new PrimaryDrawerItem().withName(R.string.string_report_error).withIcon(FontAwesome.Icon.faw_bug).withSelectable(false),
+                        new PrimaryDrawerItem().withName(R.string.string_report_error).withIcon(FontAwesome.Icon.faw_comment).withSelectable(false),
                         new SectionDrawerItem().withName(R.string.string_others),
                         new SecondaryDrawerItem().withName(R.string.string_info).withIcon(FontAwesome.Icon.faw_info)
                 )
@@ -135,11 +135,12 @@ public class MainActivity extends AppCompatActivity {
                             Intent intent = new Intent(Intent.ACTION_SEND);
                             intent.setType("message/rfc822");
                             intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"kontakt@feluu.pl"});
-                            intent.putExtra(Intent.EXTRA_SUBJECT, "Zgłoszenie błędu w aplikacji");
+                            intent.putExtra(Intent.EXTRA_SUBJECT, "Zgłoszenie błędu/propozycji w aplikacji Play Your Life Mobile");
                             try {
                                 startActivity(Intent.createChooser(intent, "Wyślij e-mail..."));
                             } catch (ActivityNotFoundException ex) {
-                                Toast.makeText(MainActivity.this, "Nie posiadasz zainstalowanej żadnej aplikacji e-mail.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Nie posiadasz zainstalowanej żadnej aplikacji do wysyłania e-mail.", Toast.LENGTH_SHORT).show();
+                                ex.printStackTrace();
                             }
                         }
                         if (position == 4) {
