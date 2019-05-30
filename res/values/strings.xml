@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Play Your Life Mobile</string>
     <string name="string_home">Dom</string>
-    <string name="string_report_error">Zgłoś błąd</string>
+    <string name="string_report_error">Zgłoś błąd/propozycję</string>
     <string name="string_others">Pozostałe</string>
     <string name="string_info">Informacje</string>
     <string name="info_desc">Główne informacje dotyczące aplikacji\nPlay Your Life Mobile.</string>
-    <string name="app_report_info">Wybierz aplikację do wysyłania e-mail</string>
+    <string name="app_report_info">Wybierz aplikację do wysyłania wiadomości e-mail</string>
     <string name="title_cars">Motoryzacja</string>
     <string name="desc_cars">Poniżej znajdziesz kategorie \nzwiązane z motoryzacją.</string>
     <string name="title_tune">Tuning</string>
