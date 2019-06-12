@@ -37,6 +37,10 @@
             android:label="@string/wheels_list_activity"
             android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
+            android:name=".CountersTuneActivity"
+            android:label="@string/counters_list_activity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
             android:name=".CasualJobsActivity"
             android:label="@string/casual_jobs_activity"
             android:configChanges="orientation|screenSize|keyboardHidden"/>
