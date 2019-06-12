@@ -4,14 +4,10 @@
     <string name="string_report_error">Zgłoś błąd/propozycję</string>
     <string name="string_others">Pozostałe</string>
     <string name="string_info">Informacje</string>
-    <string name="info_desc">Główne informacje dotyczące aplikacji\nPlay Your Life Mobile.</string>
     <string name="app_report_info">Wybierz aplikację do wysyłania wiadomości e-mail</string>
     <string name="title_cars">Motoryzacja</string>
-    <string name="desc_cars">Poniżej znajdziesz kategorie \nzwiązane z motoryzacją.</string>
     <string name="title_tune">Tuning</string>
-    <string name="desc_tune">Poniżej znajdziesz kategorie \nzwiązane z tuningiem.</string>
     <string name="title_earnings">Zarobki</string>
-    <string name="desc_earnings">Poniżej znajdziesz kategorie \nzwiązane z zarobkami.</string>
     <string name="cars_list_activity">Lista Pojazdów</string>
     <string name="cars_list_desc">Lista pojazdów dostępnych na serwerze wraz z danymi na ich temat. Znajdziesz tu między innymi v-max oraz podatek.</string>
     <string name="mechanical_list_activity">Tuning Mechaniczny</string>
@@ -20,6 +16,8 @@
     <string name="lights_list_desc">Światła możliwe do zamontowania w twoim pojeździe. Możesz zobaczyć tutaj wygląd lampek oraz ich cenę.</string>
     <string name="wheels_list_activity">Felgi Samochodowe</string>
     <string name="wheels_list_desc">Felgi, w które możesz wyposażyć swój pojazd. Tutaj możesz sprawdzić cenę montażu/demontażu oraz wygląd.</string>
+    <string name="counters_list_activity">Liczniki</string>
+    <string name="counters_list_desc">Liczniki samochodowe dostępne na serwerze, które możesz zamontować w swoim pojeździe.</string>
     <string name="casual_jobs_activity">Prace Dorywcze</string>
     <string name="casual_jobs_desc">Dane na temat poszczególnych prac dorywczych. Znajdziesz tutaj zarobki, umiejscowienie pracy oraz opis.</string>
     <string name="layout_fmk">FMK</string>
@@ -33,6 +31,7 @@
     <string name="layout_cannot_retrieve_wheels">Nie udało się uzyskać listy dostępnych felg…</string>
     <string name="layout_lifetime">ŻYWOTNOŚĆ</string>
     <string name="lights_lifetime">2500km</string>
+    <string name="layout_range">ZAKRES</string>
     <string name="layout_null">null</string>
     <string name="content_back">Powrót</string>
     <string name="content_menu">Menu</string>
@@ -603,7 +602,36 @@
     <string name="pedobear_price">12.000€</string>
     <string name="light_phoenix_name">Phoenix</string>
     <string name="light_phoenix_price">8.800€</string>
-
+    <string name="lososiowe_name">Łososiowe</string>
+    <string name="lososiowe_price">7.500€</string>
+    <string name="pastelowa_zielen_name">Pastelowa Zieleń</string>
+    <string name="pastelowa_zielen_price">7.500€</string>
+    <string name="pastelowy_fiolet_name">Pastelowy Fiolet</string>
+    <string name="pastelowy_fiolet_price">7.500€</string>
+    <string name="piaskowy_name">Piaskowy</string>
+    <string name="piaskowy_price">7.500€</string>
+    <string name="specter_name">Specter</string>
+    <string name="specter_price">8.200€</string>
+    <string name="szmaragd_name">Szmaragd</string>
+    <string name="szmaragd_price">12.000€</string>
+    <string name="mamba_name">Mamba</string>
+    <string name="mamba_price">8.200€</string>
+    <string name="chrumchrum_name">Chrumchrum</string>
+    <string name="chrumchrum_price">7.500€</string>
+    <string name="laa_laa_name">Laa-Laa</string>
+    <string name="laa_laa_price">10.000€</string>
+    <string name="pkb_name">PKB</string>
+    <string name="pkb_price">10.000€</string>
+    <string name="light_oceanic_name">Oceanic</string>
+    <string name="light_oceanic_price">10.000€</string>
+    <string name="crock_name">Crock</string>
+    <string name="crock_price">10.000€</string>
+    <string name="heaven_name">Heaven</string>
+    <string name="heaven_price">10.000€</string>
+    <string name="zeus_name">Zeus</string>
+    <string name="zeus_price">8.200€</string>
+    <string name="shrek_name">Shrek</string>
+    <string name="shrek_price">12.000€</string>
 
 
     <!-- Felgi -->
@@ -658,6 +686,21 @@
     <string name="wires_name">Wires</string>
     <string name="wires_price">13.560€</string>
     <string name="wires_demont">8.640€</string>
+
+
+    <!-- Liczniki -->
+    <string name="standard_counter_name">Standardowy</string>
+    <string name="standard_counter_range">0-260km/h</string>
+    <string name="standard_counter_price">500€</string>
+    <string name="neo_name">Neo</string>
+    <string name="neo_range">0-220km/h</string>
+    <string name="neo_price">850€</string>
+    <string name="one_name">One</string>
+    <string name="one_range">0-220km/h</string>
+    <string name="one_price">1.250€</string>
+    <string name="style_name">Style</string>
+    <string name="style_range">0-200km/h</string>
+    <string name="style_price">850€</string>
 
 
     <!-- Prace -->
