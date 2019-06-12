@@ -33,7 +33,7 @@
             android:layout_alignParentBottom="true"
             android:contentDescription="@string/layout_null"
             android:scaleType="fitEnd"
-            app:srcCompat="@drawable/bg_main" />
+            app:srcCompat="@drawable/bg_new" />
 
         <LinearLayout
             android:id="@+id/mainLinear"
@@ -71,6 +71,5 @@
             android:overScrollMode="never" />
 
     </RelativeLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
