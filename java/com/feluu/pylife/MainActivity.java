@@ -2,6 +2,7 @@ package com.feluu.pylife;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -50,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ScrollView scroll;
     private BottomNavigationView navigation;
-    private TextView title, desc;
-    private CardView carsList, mechanicalTune, lightsTune, wheelsTune, casualJobs;
+    private TextView title;
+    private CardView carsList, mechanicalTune, lightsTune, wheelsTune, countersTune, casualJobs;
     private RelativeLayout home, info;
 
     @Override
@@ -65,16 +66,17 @@ public class MainActivity extends AppCompatActivity {
         home = findViewById(R.id.home_layout);
         info = findViewById(R.id.info_layout);
         title = findViewById(R.id.textView1);
-        desc = findViewById(R.id.textView2);
         carsList = findViewById(R.id.card_view1);
         mechanicalTune = findViewById(R.id.card_view2);
         lightsTune = findViewById(R.id.card_view3);
         wheelsTune = findViewById(R.id.card_view4);
+        countersTune = findViewById(R.id.card_view6);
         casualJobs = findViewById(R.id.card_view5);
         carsList.setVisibility(View.VISIBLE);
         mechanicalTune.setVisibility(View.GONE);
         lightsTune.setVisibility(View.GONE);
         wheelsTune.setVisibility(View.GONE);
+        countersTune.setVisibility(View.GONE);
         casualJobs.setVisibility(View.GONE);
         home.setVisibility(View.VISIBLE);
         info.setVisibility(View.GONE);
@@ -164,14 +166,20 @@ public class MainActivity extends AppCompatActivity {
                             adapter = new InfoAdapter(infoData ,getApplicationContext());
                             listView.setAdapter(adapter);
 
-                            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                                 @Override
-                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                                     if (position == 0) {
                                         String url = "https://pylife.pl/profile/31118-feluu/";
                                         Intent i = new Intent(Intent.ACTION_VIEW);
                                         i.setData(Uri.parse(url));
                                         startActivity(i);
+                                    }
+                                    if (position == 1) {
+                                        new AppUpdater(MainActivity.this)
+                                                .setUpdateFrom(UpdateFrom.JSON)
+                                                .setUpdateJSON("https://feluu.pl/update.json")
+                                                .start();
                                     }
                                     if (position == 2) {
                                         String url = "https://pylife.pl/profile/15447-sapdmaszek/";
@@ -185,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
                                         i.setData(Uri.parse(url));
                                         startActivity(i);
                                     }
+                                    return true;
                                 }
                             });
 
@@ -225,29 +234,29 @@ public class MainActivity extends AppCompatActivity {
                     return false;
                 case R.id.navigation_cars:
                     title.setText(R.string.title_cars);
-                    desc.setText(R.string.desc_cars);
                     carsList.setVisibility(View.VISIBLE);
                     mechanicalTune.setVisibility(View.GONE);
                     lightsTune.setVisibility(View.GONE);
                     wheelsTune.setVisibility(View.GONE);
+                    countersTune.setVisibility(View.GONE);
                     casualJobs.setVisibility(View.GONE);
                     return true;
                 case R.id.navigation_prices:
                     title.setText(R.string.title_tune);
-                    desc.setText(R.string.desc_tune);
                     mechanicalTune.setVisibility(View.VISIBLE);
                     carsList.setVisibility(View.GONE);
                     lightsTune.setVisibility(View.VISIBLE);
                     wheelsTune.setVisibility(View.VISIBLE);
+                    countersTune.setVisibility(View.VISIBLE);
                     casualJobs.setVisibility(View.GONE);
                     return true;
                 case R.id.navigation_earnings:
                     title.setText(R.string.title_earnings);
-                    desc.setText(R.string.desc_earnings);
                     carsList.setVisibility(View.GONE);
                     mechanicalTune.setVisibility(View.GONE);
                     lightsTune.setVisibility(View.GONE);
                     wheelsTune.setVisibility(View.GONE);
+                    countersTune.setVisibility(View.GONE);
                     casualJobs.setVisibility(View.VISIBLE);
                     return true;
             }
@@ -305,6 +314,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void wheelsTunePage(View v) {
         Intent intent = new Intent(MainActivity.this, WheelsTuneActivity.class);
+        startActivity(intent);
+    }
+
+    public void countersTunePage(View v) {
+        Intent intent = new Intent(MainActivity.this, CountersTuneActivity.class);
         startActivity(intent);
     }
 
