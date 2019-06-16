@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.feluu.pylife.R;
 import com.feluu.pylife.models.ListModel;
+import com.feluu.pylife.utils.SharedPref;
 
 import java.util.ArrayList;
 
@@ -30,6 +31,7 @@ public class InfoAdapter extends ArrayAdapter<ListModel> {
 
    @Override
    public View getView(int position, View convertView, ViewGroup parent) {
+       SharedPref sharedPref = new SharedPref(mContext);
        ListModel adapter = getItem(position);
        ViewHolder viewHolder;
        if (convertView == null) {
@@ -44,6 +46,10 @@ public class InfoAdapter extends ArrayAdapter<ListModel> {
        }
        viewHolder.firstText.setText(adapter.getName());
        viewHolder.secondText.setText(adapter.getFirst());
+       if (sharedPref.loadNightModeState()) {
+           viewHolder.firstText.setTextColor(mContext.getResources().getColor(R.color.colorInfo));
+           viewHolder.secondText.setTextColor(mContext.getResources().getColor(R.color.colorInfoT));
+       }
        return convertView;
    }
 }
