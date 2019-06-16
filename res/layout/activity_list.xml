@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:animateLayoutChanges="false"
-        android:background="@android:color/white"
+        android:background="?attr/backgroundColor"
         app:layout_constrainedHeight="false"
         app:layout_constrainedWidth="false">
 
@@ -23,10 +23,11 @@
             android:layout_marginTop="10dp"
             android:contentDescription="@string/content_back"
             android:scaleType="fitCenter"
+            android:tint="?attr/textDark"
             app:srcCompat="@drawable/ic_left" />
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/bgmain"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="false"
@@ -39,7 +40,7 @@
             android:id="@+id/mainLinear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/imageView6"
+            android:layout_alignTop="@+id/bgmain"
             android:layout_marginTop="0dp"
             android:orientation="vertical">
 
@@ -51,7 +52,7 @@
                 android:layout_marginBottom="10dp"
                 android:gravity="center_horizontal|top"
                 android:text="@string/cars_list_activity"
-                android:textColor="@android:color/black"
+                android:textColor="?attr/textDark"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:typeface="sans" />
