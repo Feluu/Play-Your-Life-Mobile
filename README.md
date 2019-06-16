@@ -4,12 +4,13 @@
 ## Informacje
 -   Autor: Feluu
 -   Minimalna wersja androida: Android Lollipop (5.0)
--   Testowane na androidzie: 5.0, 7.0, 8.0
+-   Testowane na androidzie: 6.0, 8.0
 ## Funkcje
 -   Lista pojazdów
 -   Tuning mechaniczny
 -   Kolorowe światła
 -   Felgi samochodowe
+-   Liczniki pojazdów
 -   Prace dorywcze
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/built-for-android.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com)
