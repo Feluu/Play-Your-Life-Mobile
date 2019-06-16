@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ds" >
+        <attr name="backgroundColor" format="color" />
+        <attr name="cardBackgroundColor" format="color" />
+        <attr name="textDark" format="color" />
+        <attr name="textLight" format="color" />
+        <attr name="menuColor" format="color"/>
+        <attr name="menuCheckedColor" format="color" />
+    </declare-styleable>
+</resources>
