@@ -2,6 +2,7 @@ package com.feluu.pylife;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.feluu.pylife.adapters.JobsAdapter;
 import com.feluu.pylife.models.ViewModel;
+import com.feluu.pylife.utils.SharedPref;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,16 +19,23 @@ public class CasualJobsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPref sharedPref = new SharedPref(this);
+        if (sharedPref.loadNightModeState()) {
+            setTheme(R.style.AppThemeDark);
+        } else {
+            setTheme(R.style.AppTheme);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_casual_jobs);
 
-        ImageView leaveActivity;
+        ImageView leaveActivity, bgMain;
         ViewPager viewPager;
         JobsAdapter adapter;
         List<ViewModel> models;
 
-        viewPager = findViewById(R.id.viewPager);
         leaveActivity = findViewById(R.id.exitActivity);
+        bgMain = findViewById(R.id.bgmain);
+        viewPager = findViewById(R.id.viewPager);
 
         leaveActivity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +43,12 @@ public class CasualJobsActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        if (sharedPref.loadNightModeState()) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.statusColor));
+            bgMain.setImageResource(R.drawable.bg_dark);
+        }
 
         models = new ArrayList<>();
         models.add(new ViewModel(R.drawable.pizzaboy, intToString(R.string.pizza_title), intToString(R.string.pizza_earnings), intToString(R.string.pizza_locations), intToString(R.string.pizza_description)));
