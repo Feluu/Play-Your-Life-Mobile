@@ -8,7 +8,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@android:color/white"
+        app:cardBackgroundColor="?attr/cardBackgroundColor"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
         app:cardUseCompatPadding="true"
@@ -33,7 +33,7 @@
                 android:layout_below="@+id/image"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
-                android:textColor="@android:color/black"
+                android:textColor="?attr/textDark"
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
@@ -44,6 +44,7 @@
                 android:layout_below="@id/title"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
+                android:tint="?attr/textDark"
                 app:srcCompat="@drawable/ic_earnings_24dp" />
 
             <TextView
@@ -55,7 +56,7 @@
                 android:layout_marginTop="14dp"
                 android:layout_toEndOf="@id/imageView3"
                 android:text="@string/layout_1h"
-                android:textColor="@android:color/black"
+                android:textColor="?attr/textDark"
                 android:textSize="10sp" />
 
             <TextView
@@ -66,6 +67,7 @@
                 android:layout_marginStart="3dp"
                 android:layout_marginTop="7dp"
                 android:layout_toEndOf="@id/textView12"
+                android:textColor="?attr/textLight"
                 android:textSize="16sp" />
 
             <ImageView
@@ -75,6 +77,7 @@
                 android:layout_below="@id/imageView3"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
+                android:tint="?attr/textDark"
                 app:srcCompat="@drawable/ic_map_location" />
 
             <TextView
@@ -85,6 +88,7 @@
                 android:layout_marginStart="3dp"
                 android:layout_marginTop="7dp"
                 android:layout_toEndOf="@id/imageView4"
+                android:textColor="?attr/textLight"
                 android:textSize="16sp" />
 
             <TextView
@@ -95,7 +99,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/layout_description"
-                android:textColor="@android:color/black"
+                android:textColor="?attr/textDark"
                 android:textStyle="bold" />
 
             <TextView
@@ -104,8 +108,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textView14"
                 android:layout_marginStart="16dp"
+                android:textColor="?attr/textLight"
                 android:layout_marginTop="4dp" />
+
         </RelativeLayout>
+
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>
