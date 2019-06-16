@@ -30,7 +30,8 @@ public class MechanicalTuneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        ImageView leaveActivity, bgMain;
+        ImageView leaveActivity;
+        ImageView bgMain;
         TextView activityTitle;
 
         leaveActivity = findViewById(R.id.exitActivity);
