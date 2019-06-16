@@ -28,7 +28,8 @@ public class CasualJobsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_casual_jobs);
 
-        ImageView leaveActivity, bgMain;
+        ImageView leaveActivity;
+        ImageView bgMain;
         ViewPager viewPager;
         JobsAdapter adapter;
         List<ViewModel> models;
