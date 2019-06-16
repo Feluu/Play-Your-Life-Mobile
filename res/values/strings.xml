@@ -3,7 +3,7 @@
     <string name="string_home">Dom</string>
     <string name="string_report_error">Zgłoś błąd/propozycję</string>
     <string name="string_others">Pozostałe</string>
-    <string name="string_info">Informacje</string>
+    <string name="string_info">Informacje/Opcje</string>
     <string name="app_report_info">Wybierz aplikację do wysyłania wiadomości e-mail</string>
     <string name="title_cars">Motoryzacja</string>
     <string name="title_tune">Tuning</string>
@@ -38,11 +38,13 @@
     <string name="info_author">Autor</string>
     <string name="info_author_name">Feluu</string>
     <string name="info_app_version">Wersja aplikacji</string>
-    <string name="info_thanks">Autor Symulatora Pylife</string>
+    <string name="info_thanks">Podziękowania dla</string>
     <string name="info_thanks_to_maszek">Maszek</string>
     <string name="info_github">GitHub</string>
     <string name="info_github_link">Feluu/Play-Your-Life-Mobile</string>
     <string name="info_model">Model telefonu</string>
+    <string name="options">Opcje</string>
+    <string name="options_dark_theme">Tryb Ciemny</string>
 
 
 
