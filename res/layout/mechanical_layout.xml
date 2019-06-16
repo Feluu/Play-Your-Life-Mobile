@@ -16,7 +16,7 @@
         android:clipChildren="false"
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground"
-        app:cardBackgroundColor="@android:color/white"
+        app:cardBackgroundColor="?attr/cardBackgroundColor"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
         app:cardUseCompatPadding="true">
@@ -33,10 +33,10 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerHorizontal="false"
                 android:layout_centerVertical="true"
-                android:layout_marginTop="5dp"
                 android:contentDescription="@string/layout_null"
-                android:rotation="80"
-                android:scaleType="fitEnd"
+                android:rotation="70"
+                android:scaleType="fitCenter"
+                android:tint="?attr/textDark"
                 android:src="@drawable/ic_build" />
 
             <TextView
@@ -47,7 +47,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
                 android:text="@string/mk1_mechanical_name"
-                android:textColor="#000000"
+                android:textColor="?attr/textDark"
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
@@ -60,6 +60,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
                 android:text="@string/layout_allows"
+                android:textColor="?attr/textLight"
                 android:textSize="16sp" />
 
             <TextView
@@ -69,6 +70,7 @@
                 android:layout_below="@id/textViewAllows"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="20dp"
+                android:textColor="?attr/textLight"
                 android:text="@string/mk1_allows" />
 
             <ImageView
@@ -81,6 +83,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:contentDescription="@string/layout_price_l"
+                android:tint="?attr/textDark"
                 app:srcCompat="@drawable/ic_earnings_24dp" />
 
             <TextView
@@ -92,7 +95,7 @@
                 android:layout_marginStart="43dp"
                 android:layout_marginTop="19dp"
                 android:text="@string/layout_price_l"
-                android:textColor="@android:color/black"
+                android:textColor="?attr/textDark"
                 android:textSize="10sp" />
 
             <TextView
@@ -105,6 +108,7 @@
                 android:layout_marginTop="13dp"
                 android:layout_marginBottom="5dp"
                 android:text="@string/mk1_price"
+                android:textColor="?attr/textLight"
                 android:textSize="15sp" />
 
             <ImageView
@@ -118,6 +122,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:contentDescription="@string/layout_dem"
+                android:tint="?attr/textDark"
                 app:srcCompat="@drawable/ic_earnings_24dp" />
 
             <TextView
@@ -130,7 +135,7 @@
                 android:layout_marginStart="43dp"
                 android:layout_marginTop="14dp"
                 android:text="@string/layout_dem"
-                android:textColor="@android:color/black"
+                android:textColor="?attr/textDark"
                 android:textSize="10sp" />
 
             <TextView
@@ -144,6 +149,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="5dp"
                 android:text="@string/mk1_demont"
+                android:textColor="?attr/textLight"
                 android:textSize="15sp" />
 
         </RelativeLayout>
