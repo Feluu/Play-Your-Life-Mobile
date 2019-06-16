@@ -2,7 +2,6 @@ package com.feluu.pylife;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -10,9 +9,11 @@ import androidx.annotation.NonNull;
 
 import com.feluu.pylife.adapters.InfoAdapter;
 import com.feluu.pylife.models.ListModel;
+import com.feluu.pylife.utils.SharedPref;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -21,7 +22,9 @@ import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -54,15 +57,26 @@ public class MainActivity extends AppCompatActivity {
     private TextView title;
     private CardView carsList, mechanicalTune, lightsTune, wheelsTune, countersTune, casualJobs;
     private RelativeLayout home, info;
+    private SwitchCompat themeSwitch;
+    private SharedPref sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        sharedPref = new SharedPref(this);
+        if (sharedPref.loadNightModeState()) {
+            setTheme(R.style.AppThemeDark);
+        } else {
+            setTheme(R.style.AppTheme);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         prepareDrawer(savedInstanceState);
-        ImageView menuImg;
+        ImageView menuImg, bgMain, bgInfo;
         scroll = findViewById(R.id.scroll);
         menuImg = findViewById(R.id.menuToggle);
+        bgMain = findViewById(R.id.bgmain);
+        bgInfo = findViewById(R.id.bginfo);
+        themeSwitch = findViewById(R.id.themeSwitch);
         home = findViewById(R.id.home_layout);
         info = findViewById(R.id.info_layout);
         title = findViewById(R.id.textView1);
@@ -91,10 +105,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        if (sharedPref.loadNightModeState()) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.statusColor));
+            bgMain.setImageResource(R.drawable.bg_dark);
+            bgInfo.setImageResource(R.drawable.bg_dark);
+            themeSwitch.setChecked(true);
+        }
         new AppUpdater(this)
             .setUpdateFrom(UpdateFrom.JSON)
             .setUpdateJSON("https://feluu.pl/update.json")
             .start();
+
+        themeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    sharedPref.setNightModeState(true);
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(i);
+                    finish();
+                } else {
+                    sharedPref.setNightModeState(false);
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+            }
+        });
     }
 
     private void prepareDrawer(Bundle savedInstanceState) {
