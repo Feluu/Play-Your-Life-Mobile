@@ -1,6 +1,5 @@
 package com.feluu.pylife;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -38,7 +37,8 @@ public class WheelsTuneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_wheels);
 
-        ImageView leaveActivity, bgMain;
+        ImageView leaveActivity;
+        ImageView bgMain;
         TextView activityTitle;
 
         leaveActivity = findViewById(R.id.exitActivity);
