@@ -26,7 +26,7 @@
                 android:id="@+id/home_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white">
+                android:background="?attr/backgroundColor">
 
                 <ImageView
                     android:id="@+id/menuToggle"
@@ -35,9 +35,11 @@
                     android:layout_marginTop="15dp"
                     android:contentDescription="@string/content_menu"
                     android:scaleType="fitCenter"
+                    android:tint="?attr/textDark"
                     app:srcCompat="@drawable/ic_menu" />
 
                 <ImageView
+                    android:id="@+id/bgmain"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
@@ -58,7 +60,7 @@
                         android:layout_marginTop="10dp"
                         android:gravity="center_horizontal|top"
                         android:text="@string/title_cars"
-                        android:textColor="@android:color/black"
+                        android:textColor="?attr/textDark"
                         android:textSize="24sp"
                         android:textStyle="bold"
                         android:typeface="sans"/>
@@ -75,7 +77,7 @@
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:onClick="carsListPage"
-                        app:cardBackgroundColor="@android:color/white"
+                        app:cardBackgroundColor="?attr/cardBackgroundColor"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="10dp"
                         app:cardUseCompatPadding="true">
@@ -93,7 +95,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:gravity="center_horizontal"
                                 android:text="@string/cars_list_activity"
-                                android:textColor="@android:color/black"
+                                android:textColor="?attr/textDark"
                                 android:textSize="17sp"
                                 android:textStyle="bold"
                                 android:typeface="sans" />
@@ -106,7 +108,7 @@
                                 android:layout_marginRight="20dp"
                                 android:layout_marginBottom="20dp"
                                 android:text="@string/cars_list_desc"
-                                android:textColor="@android:color/black" />
+                                android:textColor="?attr/textDark" />
 
                         </LinearLayout>
 
@@ -124,7 +126,7 @@
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:onClick="mechanicalTunePage"
-                        app:cardBackgroundColor="@android:color/white"
+                        app:cardBackgroundColor="?attr/cardBackgroundColor"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="10dp"
                         app:cardUseCompatPadding="true">
@@ -142,7 +144,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:gravity="center_horizontal"
                                 android:text="@string/mechanical_list_activity"
-                                android:textColor="@android:color/black"
+                                android:textColor="?attr/textDark"
                                 android:textSize="17sp"
                                 android:textStyle="bold"
                                 android:typeface="sans" />
@@ -155,7 +157,7 @@
                                 android:layout_marginRight="20dp"
                                 android:layout_marginBottom="20dp"
                                 android:text="@string/mechanical_list_desc"
-                                android:textColor="@android:color/black" />
+                                android:textColor="?attr/textDark" />
 
                         </LinearLayout>
 
@@ -173,7 +175,7 @@
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:onClick="lightsTunePage"
-                        app:cardBackgroundColor="@android:color/white"
+                        app:cardBackgroundColor="?attr/cardBackgroundColor"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="10dp"
                         app:cardUseCompatPadding="true">
@@ -191,7 +193,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:gravity="center_horizontal"
                                 android:text="@string/lights_list_activity"
-                                android:textColor="@android:color/black"
+                                android:textColor="?attr/textDark"
                                 android:textSize="17sp"
                                 android:textStyle="bold"
                                 android:typeface="sans" />
@@ -204,7 +206,7 @@
                                 android:layout_marginRight="20dp"
                                 android:layout_marginBottom="20dp"
                                 android:text="@string/lights_list_desc"
-                                android:textColor="@android:color/black" />
+                                android:textColor="?attr/textDark" />
 
                         </LinearLayout>
 
@@ -223,7 +225,7 @@
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:onClick="wheelsTunePage"
-                        app:cardBackgroundColor="@android:color/white"
+                        app:cardBackgroundColor="?attr/cardBackgroundColor"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="10dp"
                         app:cardUseCompatPadding="true">
@@ -241,7 +243,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:gravity="center_horizontal"
                                 android:text="@string/wheels_list_activity"
-                                android:textColor="@android:color/black"
+                                android:textColor="?attr/textDark"
                                 android:textSize="17sp"
                                 android:textStyle="bold"
                                 android:typeface="sans" />
@@ -254,7 +256,7 @@
                                 android:layout_marginRight="20dp"
                                 android:layout_marginBottom="20dp"
                                 android:text="@string/wheels_list_desc"
-                                android:textColor="@android:color/black" />
+                                android:textColor="?attr/textDark" />
 
                         </LinearLayout>
 
@@ -273,7 +275,7 @@
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:onClick="countersTunePage"
-                        app:cardBackgroundColor="@android:color/white"
+                        app:cardBackgroundColor="?attr/cardBackgroundColor"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="10dp"
                         app:cardUseCompatPadding="true">
@@ -291,7 +293,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:gravity="center_horizontal"
                                 android:text="@string/counters_list_activity"
-                                android:textColor="@android:color/black"
+                                android:textColor="?attr/textDark"
                                 android:textSize="17sp"
                                 android:textStyle="bold"
                                 android:typeface="sans" />
@@ -304,7 +306,7 @@
                                 android:layout_marginRight="20dp"
                                 android:layout_marginBottom="20dp"
                                 android:text="@string/counters_list_desc"
-                                android:textColor="@android:color/black" />
+                                android:textColor="?attr/textDark" />
 
                         </LinearLayout>
 
@@ -322,7 +324,7 @@
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:onClick="casualJobsPage"
-                        app:cardBackgroundColor="@android:color/white"
+                        app:cardBackgroundColor="?attr/cardBackgroundColor"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="10dp"
                         app:cardUseCompatPadding="true">
@@ -340,7 +342,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:gravity="center_horizontal"
                                 android:text="@string/casual_jobs_activity"
-                                android:textColor="@android:color/black"
+                                android:textColor="?attr/textDark"
                                 android:textSize="17sp"
                                 android:textStyle="bold"
                                 android:typeface="sans" />
@@ -353,7 +355,7 @@
                                 android:layout_marginRight="20dp"
                                 android:layout_marginBottom="20dp"
                                 android:text="@string/casual_jobs_desc"
-                                android:textColor="@android:color/black" />
+                                android:textColor="?attr/textDark" />
 
                         </LinearLayout>
 
@@ -367,7 +369,7 @@
                 android:id="@+id/info_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white">
+                android:background="?attr/backgroundColor">
 
                 <ImageView
                     android:id="@+id/menuToggleInfo"
@@ -376,10 +378,11 @@
                     android:layout_marginTop="15dp"
                     android:contentDescription="@string/content_menu"
                     android:scaleType="fitCenter"
+                    android:tint="?attr/textDark"
                     app:srcCompat="@drawable/ic_menu" />
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/bginfo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="false"
@@ -401,7 +404,7 @@
                         android:layout_marginTop="10dp"
                         android:gravity="center_horizontal|top"
                         android:text="@string/string_info"
-                        android:textColor="@android:color/black"
+                        android:textColor="?attr/textDark"
                         android:textSize="24sp"
                         android:textStyle="bold"
                         android:typeface="sans" />
@@ -409,7 +412,42 @@
                     <ListView
                         android:id="@+id/listView"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent">
+
+                    </ListView>
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/options"
+                        android:textColor="?attr/textDark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/themeSwitch"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:theme="@style/SCBSwitch"
+                            android:text="@string/options_dark_theme"
+                            android:textColor="?attr/textDark"
+                            android:textSize="16sp" />
+                        
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -423,7 +461,7 @@
         android:id="@+id/navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
+        android:background="?attr/backgroundColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
