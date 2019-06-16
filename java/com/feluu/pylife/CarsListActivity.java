@@ -2,11 +2,13 @@ package com.feluu.pylife;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.feluu.pylife.adapters.CarsAdapter;
 import com.feluu.pylife.models.ListModel;
+import com.feluu.pylife.utils.SharedPref;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,12 +23,19 @@ public class CarsListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPref sharedPref = new SharedPref(this);
+        if (sharedPref.loadNightModeState()) {
+            setTheme(R.style.AppThemeDark);
+        } else {
+            setTheme(R.style.AppTheme);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        ImageView leaveActivity;
+        ImageView leaveActivity, bgMain;
         TextView activityTitle;
 
         leaveActivity = findViewById(R.id.exitActivity);
+        bgMain = findViewById(R.id.bgmain);
         activityTitle = findViewById(R.id.textView1);
         recyclerView = findViewById(R.id.recyclerView);
         activityTitle.setText(R.string.cars_list_activity);
@@ -40,6 +49,12 @@ public class CarsListActivity extends AppCompatActivity {
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        if (sharedPref.loadNightModeState()) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.statusColor));
+            bgMain.setImageResource(R.drawable.bg_dark);
+        }
 
         addCarsToRecycler();
     }
