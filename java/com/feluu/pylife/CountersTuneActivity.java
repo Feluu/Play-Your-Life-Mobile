@@ -2,6 +2,7 @@ package com.feluu.pylife;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.feluu.pylife.adapters.CountersAdapter;
 import com.feluu.pylife.models.ListModel;
+import com.feluu.pylife.utils.SharedPref;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,13 +21,20 @@ public class CountersTuneActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPref sharedPref = new SharedPref(this);
+        if (sharedPref.loadNightModeState()) {
+            setTheme(R.style.AppThemeDark);
+        } else {
+            setTheme(R.style.AppTheme);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        ImageView leaveActivity;
+        ImageView leaveActivity, bgMain;
         TextView activityTitle;
 
         leaveActivity = findViewById(R.id.exitActivity);
+        bgMain = findViewById(R.id.bgmain);
         activityTitle = findViewById(R.id.textView1);
 
         List<ListModel> countersList;
@@ -42,6 +51,12 @@ public class CountersTuneActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        if (sharedPref.loadNightModeState()) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.statusColor));
+            bgMain.setImageResource(R.drawable.bg_dark);
+        }
 
         countersList = new ArrayList<>();
 
