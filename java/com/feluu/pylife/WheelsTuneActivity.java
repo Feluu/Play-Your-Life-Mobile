@@ -1,8 +1,10 @@
 package com.feluu.pylife;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,6 +15,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.feluu.pylife.adapters.WheelsAdapter;
 import com.feluu.pylife.models.ListModel;
+import com.feluu.pylife.utils.SharedPref;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -26,13 +29,20 @@ public class WheelsTuneActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPref sharedPref = new SharedPref(this);
+        if (sharedPref.loadNightModeState()) {
+            setTheme(R.style.AppThemeDark);
+        } else {
+            setTheme(R.style.AppTheme);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_wheels);
 
-        ImageView leaveActivity;
+        ImageView leaveActivity, bgMain;
         TextView activityTitle;
 
         leaveActivity = findViewById(R.id.exitActivity);
+        bgMain = findViewById(R.id.bgmain);
         activityTitle = findViewById(R.id.textView1);
         List<ListModel> wheelsList;
         RecyclerView recyclerView;
@@ -58,6 +68,12 @@ public class WheelsTuneActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        if (sharedPref.loadNightModeState()) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.statusColor));
+            bgMain.setImageResource(R.drawable.bg_dark);
+        }
 
         wheelsList = new ArrayList<>();
 
@@ -115,10 +131,15 @@ public class WheelsTuneActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
+            SharedPref sharedPref = new SharedPref(getApplicationContext());
             TextView wheels = findViewById(R.id.available);
-            if (str == null) {
+            String av = sharedPref.loadAvailableWheels();
+            if (str == null && av == null) {
                 wheels.setText(R.string.layout_cannot_retrieve_wheels);
+            } else if (str == null && av != null) {
+                wheels.setText(av);
             } else {
+                sharedPref.setAvailableWheels(str);
                 wheels.setText(str);
             }
         }
