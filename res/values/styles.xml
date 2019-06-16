@@ -1,10 +1,42 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="MaterialDrawerTheme.Light">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@android:color/white</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">#2281DF</item>
+        <item name="backgroundColor">#FFFFFF</item>
+        <item name="cardBackgroundColor">#FFFFFF</item>
+        <item name="textDark">#000000</item>
+        <item name="textLight">#808080</item>
+        <item name="menuColor">@android:color/darker_gray</item>
+        <item name="menuCheckedColor">@android:color/black</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimations</item>
+    </style>
+
+    <style name="AppThemeDark" parent="MaterialDrawerTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">#2281DF</item>
+        <item name="backgroundColor">#282C2F</item>
+        <item name="cardBackgroundColor">#323639</item>
+        <item name="textDark">#E4F0FC</item>
+        <item name="textLight">#E6E6E6</item>
+        <item name="menuColor">#707070</item>
+        <item name="menuCheckedColor">#E4F0FC</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimations</item>
+    </style>
+
+    <style name="SCBSwitch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">#2281DF</item>
+        <item name="colorSwitchThumbNormal">#F1F1F1</item>
+        <item name="android:colorForeground">#42221F1F</item>
+    </style>
+
+    <style name="WindowAnimations">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
 
 </resources>
