@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     private ScrollView scroll;
     private BottomNavigationView navigation;
     private TextView title;
-    private CardView carsList, mechanicalTune, lightsTune, wheelsTune, countersTune, casualJobs;
+    private CardView carsList, mechanicalTune, lightsTune, wheelsTune, countersTune, casualJobs, lvJobs, sfJobs, fcJobs, lsJobs;
     private RelativeLayout home, info;
     private SwitchCompat themeSwitch;
     private SharedPref sharedPref;
@@ -71,7 +71,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         prepareDrawer(savedInstanceState);
-        ImageView menuImg, bgMain, bgInfo;
+        ImageView menuImg;
+        ImageView bgMain;
+        ImageView bgInfo;
         scroll = findViewById(R.id.scroll);
         menuImg = findViewById(R.id.menuToggle);
         bgMain = findViewById(R.id.bgmain);
@@ -86,12 +88,20 @@ public class MainActivity extends AppCompatActivity {
         wheelsTune = findViewById(R.id.card_view4);
         countersTune = findViewById(R.id.card_view6);
         casualJobs = findViewById(R.id.card_view5);
+        lvJobs = findViewById(R.id.card_view7);
+        sfJobs = findViewById(R.id.card_view8);
+        fcJobs = findViewById(R.id.card_view9);
+        lsJobs = findViewById(R.id.card_view10);
         carsList.setVisibility(View.VISIBLE);
         mechanicalTune.setVisibility(View.GONE);
         lightsTune.setVisibility(View.GONE);
         wheelsTune.setVisibility(View.GONE);
         countersTune.setVisibility(View.GONE);
         casualJobs.setVisibility(View.GONE);
+        lvJobs.setVisibility(View.GONE);
+        sfJobs.setVisibility(View.GONE);
+        fcJobs.setVisibility(View.GONE);
+        lsJobs.setVisibility(View.GONE);
         home.setVisibility(View.VISIBLE);
         info.setVisibility(View.GONE);
 
@@ -278,6 +288,10 @@ public class MainActivity extends AppCompatActivity {
                     wheelsTune.setVisibility(View.GONE);
                     countersTune.setVisibility(View.GONE);
                     casualJobs.setVisibility(View.GONE);
+                    lvJobs.setVisibility(View.GONE);
+                    sfJobs.setVisibility(View.GONE);
+                    fcJobs.setVisibility(View.GONE);
+                    lsJobs.setVisibility(View.GONE);
                     return true;
                 case R.id.navigation_prices:
                     title.setText(R.string.title_tune);
@@ -287,6 +301,10 @@ public class MainActivity extends AppCompatActivity {
                     wheelsTune.setVisibility(View.VISIBLE);
                     countersTune.setVisibility(View.VISIBLE);
                     casualJobs.setVisibility(View.GONE);
+                    lvJobs.setVisibility(View.GONE);
+                    sfJobs.setVisibility(View.GONE);
+                    fcJobs.setVisibility(View.GONE);
+                    lsJobs.setVisibility(View.GONE);
                     return true;
                 case R.id.navigation_earnings:
                     title.setText(R.string.title_earnings);
@@ -296,6 +314,10 @@ public class MainActivity extends AppCompatActivity {
                     wheelsTune.setVisibility(View.GONE);
                     countersTune.setVisibility(View.GONE);
                     casualJobs.setVisibility(View.VISIBLE);
+                    lvJobs.setVisibility(View.VISIBLE);
+                    sfJobs.setVisibility(View.VISIBLE);
+                    fcJobs.setVisibility(View.VISIBLE);
+                    lsJobs.setVisibility(View.VISIBLE);
                     return true;
             }
         }
@@ -362,6 +384,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void casualJobsPage(View v) {
         Intent intent = new Intent(MainActivity.this, CasualJobsActivity.class);
+        startActivity(intent);
+    }
+
+    public void LVJobsPage(View v) {
+        Intent intent = new Intent(MainActivity.this, LVJobsActivity.class);
+        startActivity(intent);
+    }
+
+    public void SFJobsPage(View v) {
+        Intent intent = new Intent(MainActivity.this, SFJobsActivity.class);
+        startActivity(intent);
+    }
+
+    public void FCJobsPage(View v) {
+        Intent intent = new Intent(MainActivity.this, FCJobsActivity.class);
+        startActivity(intent);
+    }
+
+    public void LSJobsPage(View v) {
+        Intent intent = new Intent(MainActivity.this, LSJobsActivity.class);
         startActivity(intent);
     }
 
