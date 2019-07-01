@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -26,17 +27,21 @@ public class CasualJobsActivity extends AppCompatActivity {
             setTheme(R.style.AppTheme);
         }
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_casual_jobs);
+        setContentView(R.layout.activity_jobs);
 
         ImageView leaveActivity;
         ImageView bgMain;
+        TextView title;
         ViewPager viewPager;
         JobsAdapter adapter;
         List<ViewModel> models;
 
         leaveActivity = findViewById(R.id.exitActivity);
         bgMain = findViewById(R.id.bgmain);
+        title = findViewById(R.id.textView1);
         viewPager = findViewById(R.id.viewPager);
+
+        title.setText(R.string.casual_jobs_activity);
 
         leaveActivity.setOnClickListener(new View.OnClickListener() {
             @Override
