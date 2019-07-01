@@ -51,7 +51,6 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:gravity="center_horizontal|top"
-                android:text="@string/casual_jobs_activity"
                 android:textColor="?attr/textDark"
                 android:textSize="24sp"
                 android:textStyle="bold"
