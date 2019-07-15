@@ -42,6 +42,11 @@
             android:screenOrientation="portrait"
             android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
+            android:name=".SpoilersTuneActivity"
+            android:label="@string/spoilers_list_activity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
             android:name=".CountersTuneActivity"
             android:label="@string/counters_list_activity"
             android:screenOrientation="portrait"
