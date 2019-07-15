@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     private ScrollView scroll;
     private BottomNavigationView navigation;
     private TextView title;
-    private CardView carsList, mechanicalTune, lightsTune, wheelsTune, countersTune, casualJobs, lvJobs, sfJobs, fcJobs, lsJobs;
+    private CardView carsList, mechanicalTune, lightsTune, wheelsTune, spoilersTune, countersTune, casualJobs, lvJobs, sfJobs, fcJobs, lsJobs;
     private RelativeLayout home, info;
     private SwitchCompat themeSwitch;
     private SharedPref sharedPref;
@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         mechanicalTune = findViewById(R.id.card_view2);
         lightsTune = findViewById(R.id.card_view3);
         wheelsTune = findViewById(R.id.card_view4);
+        spoilersTune = findViewById(R.id.card_view11);
         countersTune = findViewById(R.id.card_view6);
         casualJobs = findViewById(R.id.card_view5);
         lvJobs = findViewById(R.id.card_view7);
@@ -96,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         mechanicalTune.setVisibility(View.GONE);
         lightsTune.setVisibility(View.GONE);
         wheelsTune.setVisibility(View.GONE);
+        spoilersTune.setVisibility(View.GONE);
         countersTune.setVisibility(View.GONE);
         casualJobs.setVisibility(View.GONE);
         lvJobs.setVisibility(View.GONE);
@@ -204,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
                             ArrayList<ListModel> infoData = new ArrayList<>();
                             infoData.add(new ListModel(intToString(R.string.info_author), intToString(R.string.info_author_name), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
                             infoData.add(new ListModel(intToString(R.string.info_app_version), intToString(R.string.versionName), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
-                            infoData.add(new ListModel(intToString(R.string.info_thanks), intToString(R.string.info_thanks_to_maszek), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
+                            infoData.add(new ListModel(intToString(R.string.info_used), intToString(R.string.info_used_2), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
                             infoData.add(new ListModel(intToString(R.string.info_github), intToString(R.string.info_github_link), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
                             infoData.add(new ListModel(intToString(R.string.info_model), getDeviceName(), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
                             ListView listView;
@@ -230,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
                                                 .start();
                                     }
                                     if (position == 2) {
-                                        String url = "https://pylife.pl/profile/15447-sapdmaszek/";
+                                        String url = "https://feluu.pl/zasoby.html";
                                         Intent i = new Intent(Intent.ACTION_VIEW);
                                         i.setData(Uri.parse(url));
                                         startActivity(i);
@@ -286,6 +288,7 @@ public class MainActivity extends AppCompatActivity {
                     mechanicalTune.setVisibility(View.GONE);
                     lightsTune.setVisibility(View.GONE);
                     wheelsTune.setVisibility(View.GONE);
+                    spoilersTune.setVisibility(View.GONE);
                     countersTune.setVisibility(View.GONE);
                     casualJobs.setVisibility(View.GONE);
                     lvJobs.setVisibility(View.GONE);
@@ -299,6 +302,7 @@ public class MainActivity extends AppCompatActivity {
                     carsList.setVisibility(View.GONE);
                     lightsTune.setVisibility(View.VISIBLE);
                     wheelsTune.setVisibility(View.VISIBLE);
+                    spoilersTune.setVisibility(View.VISIBLE);
                     countersTune.setVisibility(View.VISIBLE);
                     casualJobs.setVisibility(View.GONE);
                     lvJobs.setVisibility(View.GONE);
@@ -312,6 +316,7 @@ public class MainActivity extends AppCompatActivity {
                     mechanicalTune.setVisibility(View.GONE);
                     lightsTune.setVisibility(View.GONE);
                     wheelsTune.setVisibility(View.GONE);
+                    spoilersTune.setVisibility(View.GONE);
                     countersTune.setVisibility(View.GONE);
                     casualJobs.setVisibility(View.VISIBLE);
                     lvJobs.setVisibility(View.VISIBLE);
@@ -374,6 +379,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void wheelsTunePage(View v) {
         Intent intent = new Intent(MainActivity.this, WheelsTuneActivity.class);
+        startActivity(intent);
+    }
+
+    public void spoilersTunePage(View v) {
+        Intent intent = new Intent(MainActivity.this, SpoilersTuneActivity.class);
         startActivity(intent);
     }
 
