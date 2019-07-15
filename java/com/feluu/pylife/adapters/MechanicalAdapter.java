@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.feluu.pylife.R;
 import com.feluu.pylife.models.ListModel;
 
@@ -44,6 +45,7 @@ public class MechanicalAdapter extends RecyclerView.Adapter<MechanicalAdapter.Me
                 .load(mCtx.getResources().getDrawable(mechanical.getImage()))
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_error)
+                .apply(RequestOptions.circleCropTransform())
                 .into(holder.imageView2);
     }
 
