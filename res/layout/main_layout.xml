@@ -263,6 +263,56 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/card_view11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:clickable="true"
+                        android:clipChildren="false"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="spoilersTunePage"
+                        app:cardBackgroundColor="?attr/cardBackgroundColor"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView23"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center_horizontal"
+                                android:text="@string/spoilers_list_activity"
+                                android:textColor="?attr/textDark"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                android:typeface="sans" />
+
+                            <TextView
+                                android:id="@+id/textView24"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginBottom="20dp"
+                                android:text="@string/spoilers_list_desc"
+                                android:textColor="?attr/textDark" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/card_view6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
