@@ -36,7 +36,6 @@
                 android:contentDescription="@string/layout_null"
                 android:rotation="70"
                 android:scaleType="fitCenter"
-                android:tint="?attr/textDark"
                 android:src="@drawable/ic_build" />
 
             <TextView
