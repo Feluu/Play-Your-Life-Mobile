@@ -28,7 +28,7 @@ public class MechanicalTuneActivity extends AppCompatActivity {
             setTheme(R.style.AppTheme);
         }
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_list_search);
 
         ImageView leaveActivity;
         ImageView bgMain;
@@ -42,12 +42,7 @@ public class MechanicalTuneActivity extends AppCompatActivity {
         RecyclerView recyclerView;
 
         activityTitle.setText(R.string.mechanical_list_activity);
-        leaveActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        leaveActivity.setOnClickListener((View v) -> finish());
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
