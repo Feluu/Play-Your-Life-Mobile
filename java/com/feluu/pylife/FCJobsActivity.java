@@ -43,12 +43,7 @@ public class FCJobsActivity extends AppCompatActivity {
 
         title.setText(R.string.fc_jobs_activity);
 
-        leaveActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        leaveActivity.setOnClickListener((View v) -> finish());
 
         models = new ArrayList<>();
 
