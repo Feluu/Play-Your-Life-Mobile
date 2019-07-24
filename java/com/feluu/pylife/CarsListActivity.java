@@ -30,7 +30,7 @@ public class CarsListActivity extends AppCompatActivity {
             setTheme(R.style.AppTheme);
         }
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_list_search);
         ImageView leaveActivity;
         ImageView bgMain;
         TextView activityTitle;
@@ -41,12 +41,7 @@ public class CarsListActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         activityTitle.setText(R.string.cars_list_activity);
 
-        leaveActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        leaveActivity.setOnClickListener((View v) -> finish());
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
