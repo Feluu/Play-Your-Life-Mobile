@@ -41,12 +41,7 @@ public class CountersTuneActivity extends AppCompatActivity {
         RecyclerView recyclerView;
 
         activityTitle.setText(R.string.counters_list_activity);
-        leaveActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        leaveActivity.setOnClickListener((View v) -> finish());
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
