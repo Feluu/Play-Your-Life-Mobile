@@ -43,12 +43,7 @@ public class SFJobsActivity extends AppCompatActivity {
 
         title.setText(R.string.sf_jobs_activity);
 
-        leaveActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        leaveActivity.setOnClickListener((View v) -> finish());
 
         models = new ArrayList<>();
 
