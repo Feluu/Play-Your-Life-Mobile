@@ -25,16 +25,19 @@
             android:name=".CarsListActivity"
             android:label="@string/cars_list_activity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
             android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
             android:name=".MechanicalTuneActivity"
             android:label="@string/mechanical_list_activity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
             android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
             android:name=".LightsTuneActivity"
             android:label="@string/lights_list_activity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
             android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
             android:name=".WheelsTuneActivity"
@@ -45,6 +48,7 @@
             android:name=".SpoilersTuneActivity"
             android:label="@string/spoilers_list_activity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
             android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
             android:name=".CountersTuneActivity"
