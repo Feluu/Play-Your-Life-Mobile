@@ -1,6 +1,8 @@
 package com.feluu.pylife.adapters;
 
 import android.content.Context;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,15 +27,16 @@ public class WheelsAdapter extends RecyclerView.Adapter<WheelsAdapter.WheelsView
         this.wheelsList = wheelsList;
     }
 
+    @NonNull
     @Override
-    public WheelsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public WheelsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.wheels_layout, null);
+        View view = inflater.inflate(R.layout.wheels_layout, parent, false);
         return new WheelsViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(WheelsViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull WheelsViewHolder holder, int position) {
         ListModel wheels = wheelsList.get(position);
 
         holder.textViewName.setText(wheels.getName());
@@ -58,7 +61,7 @@ public class WheelsAdapter extends RecyclerView.Adapter<WheelsAdapter.WheelsView
         private TextView textViewName, textViewPrice, textViewDemont;
         private ImageView imageView2;
 
-        public WheelsViewHolder(View itemView) {
+        WheelsViewHolder(View itemView) {
             super(itemView);
 
             textViewName = itemView.findViewById(R.id.wheelsName);
