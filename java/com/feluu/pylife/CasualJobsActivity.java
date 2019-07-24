@@ -43,12 +43,7 @@ public class CasualJobsActivity extends AppCompatActivity {
 
         title.setText(R.string.casual_jobs_activity);
 
-        leaveActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        leaveActivity.setOnClickListener((View v) -> finish());
 
         if (sharedPref.loadNightModeState()) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
