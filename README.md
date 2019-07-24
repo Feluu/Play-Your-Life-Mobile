@@ -10,6 +10,7 @@
 -   Tuning mechaniczny
 -   Kolorowe światła
 -   Felgi samochodowe
+-   Spojlery samochodów
 -   Liczniki pojazdów
 -   Prace dorywcze
 -   Prace urzędowe SF, LV, FC, LS
