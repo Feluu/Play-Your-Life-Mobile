@@ -28,7 +28,7 @@ public class LightsTuneActivity extends AppCompatActivity {
             setTheme(R.style.AppTheme);
         }
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_list_search);
 
         ImageView leaveActivity, bgMain;
         TextView activityTitle;
@@ -41,12 +41,7 @@ public class LightsTuneActivity extends AppCompatActivity {
         RecyclerView recyclerView;
 
         activityTitle.setText(R.string.lights_list_activity);
-        leaveActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        leaveActivity.setOnClickListener((View v) -> finish());
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
