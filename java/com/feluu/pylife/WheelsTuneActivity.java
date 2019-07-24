@@ -49,20 +49,12 @@ public class WheelsTuneActivity extends AppCompatActivity {
         final SwipeRefreshLayout swipeRefreshLayout;
 
         activityTitle.setText(R.string.wheels_list_activity);
-        leaveActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        leaveActivity.setOnClickListener((View v) -> finish());
 
         swipeRefreshLayout = findViewById(R.id.swipeRefresh);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                getWheels();
-                swipeRefreshLayout.setRefreshing(false);
-            }
+        swipeRefreshLayout.setOnRefreshListener(() -> {
+            getWheels();
+            swipeRefreshLayout.setRefreshing(false);
         });
 
         recyclerView = findViewById(R.id.recyclerView);
