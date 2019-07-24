@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="false"
+        android:background="?attr/backgroundColor"
+        app:layout_constrainedHeight="false"
+        app:layout_constrainedWidth="false">
+
+        <ImageView
+            android:id="@+id/exitActivity"
+            android:layout_width="48dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/content_back"
+            android:scaleType="fitCenter"
+            android:tint="?attr/textDark"
+            app:srcCompat="@drawable/ic_left" />
+
+        <ImageView
+            android:id="@+id/bgmain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentBottom="true"
+            android:contentDescription="@string/layout_null"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/bg_new" />
+
+        <LinearLayout
+            android:id="@+id/mainLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/bgmain"
+            android:layout_marginTop="0dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal|top"
+                android:text="@string/cars_list_activity"
+                android:textColor="?attr/textDark"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:typeface="sans" />
+
+        </LinearLayout>
+
+        <com.nicolettilu.hiddensearchwithrecyclerview.HiddenSearchWithRecyclerView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/mainLinear"
+            app:scrollToBottomBeforeHide="true"
+            app:scrollToTopBeforeShow="true"
+            app:visibleAtInit="true">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never" />
+
+        </com.nicolettilu.hiddensearchwithrecyclerview.HiddenSearchWithRecyclerView>
+
+    </RelativeLayout>
+
+</RelativeLayout>
