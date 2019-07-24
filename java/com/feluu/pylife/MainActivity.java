@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView title;
     private CardView carsList, mechanicalTune, lightsTune, wheelsTune, spoilersTune, countersTune, casualJobs, lvJobs, sfJobs, fcJobs, lsJobs;
     private RelativeLayout home, info;
-    private SwitchCompat themeSwitch;
     private SharedPref sharedPref;
 
     @Override
@@ -74,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView menuImg;
         ImageView bgMain;
         ImageView bgInfo;
+        SwitchCompat themeSwitch;
         scroll = findViewById(R.id.scroll);
         menuImg = findViewById(R.id.menuToggle);
         bgMain = findViewById(R.id.bgmain);
@@ -110,12 +110,7 @@ public class MainActivity extends AppCompatActivity {
         navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        menuImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                result.openDrawer();
-            }
-        });
+        menuImg.setOnClickListener((View v) -> result.openDrawer());
 
         if (sharedPref.loadNightModeState()) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -129,20 +124,17 @@ public class MainActivity extends AppCompatActivity {
             .setUpdateJSON("https://feluu.pl/update.json")
             .start();
 
-        themeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    sharedPref.setNightModeState(true);
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(i);
-                    finish();
-                } else {
-                    sharedPref.setNightModeState(false);
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(i);
-                    finish();
-                }
+        themeSwitch.setOnCheckedChangeListener((CompoundButton buttonView, boolean isChecked) -> {
+            if (isChecked) {
+                sharedPref.setNightModeState(true);
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
+                finish();
+            } else {
+                sharedPref.setNightModeState(false);
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
+                finish();
             }
         });
     }
@@ -168,94 +160,83 @@ public class MainActivity extends AppCompatActivity {
                         new SectionDrawerItem().withName(R.string.string_others),
                         new SecondaryDrawerItem().withName(R.string.string_info).withIcon(FontAwesome.Icon.faw_info)
                 )
-                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-                    @Override
-                    public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                        ConstraintLayout.LayoutParams noMargin = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-                        noMargin.setMargins(0, 0, 0, 0);
-                        int dpToPx = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 47, getResources().getDisplayMetrics());
-                        ConstraintLayout.LayoutParams margin = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-                        margin.setMargins(0, 0, 0, dpToPx);
-                        if (position == 1) {
-                            info.setVisibility(View.GONE);
-                            home.setVisibility(View.VISIBLE);
-                            navigation.setVisibility(View.VISIBLE);
-                            scroll.setLayoutParams(margin);
-                        }
-                        if (position == 2) {
-                            Toast.makeText(MainActivity.this, R.string.app_report_info, Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(Intent.ACTION_SEND);
-                            intent.setType("message/rfc822");
-                            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"kontakt@feluu.pl"});
-                            intent.putExtra(Intent.EXTRA_SUBJECT, "Zgłoszenie błędu/propozycji w aplikacji Play Your Life Mobile");
-                            try {
-                                startActivity(Intent.createChooser(intent, "Wyślij e-mail..."));
-                            } catch (ActivityNotFoundException ex) {
-                                Toast.makeText(MainActivity.this, "Nie posiadasz zainstalowanej żadnej aplikacji do wysyłania e-mail.", Toast.LENGTH_SHORT).show();
-                                ex.printStackTrace();
-                            }
-                        }
-                        if (position == 4) {
-                            home.setVisibility(View.GONE);
-                            info.setVisibility(View.VISIBLE);
-                            navigation.setVisibility(View.GONE);
-                            scroll.setLayoutParams(noMargin);
-                            ImageView backBtn;
-                            backBtn = findViewById(R.id.menuToggleInfo);
-
-                            ArrayList<ListModel> infoData = new ArrayList<>();
-                            infoData.add(new ListModel(intToString(R.string.info_author), intToString(R.string.info_author_name), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
-                            infoData.add(new ListModel(intToString(R.string.info_app_version), intToString(R.string.versionName), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
-                            infoData.add(new ListModel(intToString(R.string.info_used), intToString(R.string.info_used_2), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
-                            infoData.add(new ListModel(intToString(R.string.info_github), intToString(R.string.info_github_link), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
-                            infoData.add(new ListModel(intToString(R.string.info_model), getDeviceName(), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
-                            ListView listView;
-                            listView = findViewById(R.id.listView);
-
-                            InfoAdapter adapter;
-                            adapter = new InfoAdapter(infoData ,getApplicationContext());
-                            listView.setAdapter(adapter);
-
-                            listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-                                @Override
-                                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                                    if (position == 0) {
-                                        String url = "https://pylife.pl/profile/31118-feluu/";
-                                        Intent i = new Intent(Intent.ACTION_VIEW);
-                                        i.setData(Uri.parse(url));
-                                        startActivity(i);
-                                    }
-                                    if (position == 1) {
-                                        new AppUpdater(MainActivity.this)
-                                                .setUpdateFrom(UpdateFrom.JSON)
-                                                .setUpdateJSON("https://feluu.pl/update.json")
-                                                .start();
-                                    }
-                                    if (position == 2) {
-                                        String url = "https://feluu.pl/zasoby.html";
-                                        Intent i = new Intent(Intent.ACTION_VIEW);
-                                        i.setData(Uri.parse(url));
-                                        startActivity(i);
-                                    }
-                                    if (position == 3) {
-                                        String url = "https://github.com/Feluu/Play-Your-Life-Mobile";
-                                        Intent i = new Intent(Intent.ACTION_VIEW);
-                                        i.setData(Uri.parse(url));
-                                        startActivity(i);
-                                    }
-                                    return true;
-                                }
-                            });
-
-                            backBtn.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    result.openDrawer();
-                                }
-                            });
-                        }
-                        return false;
+                .withOnDrawerItemClickListener((View view, int position, IDrawerItem drawerItem) -> {
+                    ConstraintLayout.LayoutParams noMargin = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                    noMargin.setMargins(0, 0, 0, 0);
+                    int dpToPx = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 47, getResources().getDisplayMetrics());
+                    ConstraintLayout.LayoutParams margin = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                    margin.setMargins(0, 0, 0, dpToPx);
+                    if (position == 1) {
+                        info.setVisibility(View.GONE);
+                        home.setVisibility(View.VISIBLE);
+                        navigation.setVisibility(View.VISIBLE);
+                        scroll.setLayoutParams(margin);
                     }
+                    if (position == 2) {
+                        Toast.makeText(MainActivity.this, R.string.app_report_info, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.setType("message/rfc822");
+                        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"kontakt@feluu.pl"});
+                        intent.putExtra(Intent.EXTRA_SUBJECT, "Zgłoszenie błędu/propozycji w aplikacji Play Your Life Mobile");
+                        try {
+                            startActivity(Intent.createChooser(intent, "Wyślij e-mail..."));
+                        } catch (ActivityNotFoundException ex) {
+                            Toast.makeText(MainActivity.this, "Nie posiadasz zainstalowanej żadnej aplikacji do wysyłania e-mail.", Toast.LENGTH_SHORT).show();
+                            ex.printStackTrace();
+                        }
+                    }
+                    if (position == 4) {
+                        home.setVisibility(View.GONE);
+                        info.setVisibility(View.VISIBLE);
+                        navigation.setVisibility(View.GONE);
+                        scroll.setLayoutParams(noMargin);
+                        ImageView backBtn;
+                        backBtn = findViewById(R.id.menuToggleInfo);
+
+                        ArrayList<ListModel> infoData = new ArrayList<>();
+                        infoData.add(new ListModel(intToString(R.string.info_author), intToString(R.string.info_author_name), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
+                        infoData.add(new ListModel(intToString(R.string.info_app_version), intToString(R.string.versionName), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
+                        infoData.add(new ListModel(intToString(R.string.info_used), intToString(R.string.info_used_2), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
+                        infoData.add(new ListModel(intToString(R.string.info_github), intToString(R.string.info_github_link), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
+                        infoData.add(new ListModel(intToString(R.string.info_model), getDeviceName(), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
+                        ListView listView;
+                        listView = findViewById(R.id.listView);
+
+                        InfoAdapter adapter;
+                        adapter = new InfoAdapter(infoData ,getApplicationContext());
+                        listView.setAdapter(adapter);
+
+                        listView.setOnItemLongClickListener((AdapterView<?> parent, View view_, int position_, long id) -> {
+                            if (position_ == 0) {
+                                String url = "https://pylife.pl/profile/31118-feluu/";
+                                Intent i = new Intent(Intent.ACTION_VIEW);
+                                i.setData(Uri.parse(url));
+                                startActivity(i);
+                            }
+                            if (position_ == 1) {
+                                new AppUpdater(MainActivity.this)
+                                    .setUpdateFrom(UpdateFrom.JSON)
+                                    .setUpdateJSON("https://feluu.pl/update.json")
+                                    .start();
+                            }
+                            if (position_ == 2) {
+                                String url = "https://feluu.pl/zasoby.html";
+                                Intent i = new Intent(Intent.ACTION_VIEW);
+                                i.setData(Uri.parse(url));
+                                startActivity(i);
+                            }
+                            if (position_ == 3) {
+                                String url = "https://github.com/Feluu/Play-Your-Life-Mobile";
+                                Intent i = new Intent(Intent.ACTION_VIEW);
+                                i.setData(Uri.parse(url));
+                                startActivity(i);
+                            }
+                            return true;
+                        });
+
+                        backBtn.setOnClickListener((View v) -> result.openDrawer());
+                    }
+                    return false;
                 })
                 .withSavedInstance(savedInstanceState)
                 .build();
@@ -295,6 +276,7 @@ public class MainActivity extends AppCompatActivity {
                     sfJobs.setVisibility(View.GONE);
                     fcJobs.setVisibility(View.GONE);
                     lsJobs.setVisibility(View.GONE);
+                    scroll.fullScroll(ScrollView.FOCUS_UP);
                     return true;
                 case R.id.navigation_prices:
                     title.setText(R.string.title_tune);
@@ -309,6 +291,7 @@ public class MainActivity extends AppCompatActivity {
                     sfJobs.setVisibility(View.GONE);
                     fcJobs.setVisibility(View.GONE);
                     lsJobs.setVisibility(View.GONE);
+                    scroll.fullScroll(ScrollView.FOCUS_UP);
                     return true;
                 case R.id.navigation_earnings:
                     title.setText(R.string.title_earnings);
@@ -323,6 +306,7 @@ public class MainActivity extends AppCompatActivity {
                     sfJobs.setVisibility(View.VISIBLE);
                     fcJobs.setVisibility(View.VISIBLE);
                     lsJobs.setVisibility(View.VISIBLE);
+                    scroll.fullScroll(ScrollView.FOCUS_UP);
                     return true;
             }
         }
