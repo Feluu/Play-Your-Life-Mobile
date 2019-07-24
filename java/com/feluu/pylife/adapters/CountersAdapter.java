@@ -1,6 +1,8 @@
 package com.feluu.pylife.adapters;
 
 import android.content.Context;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,15 +27,16 @@ public class CountersAdapter extends RecyclerView.Adapter<CountersAdapter.Counte
         this.countersList = countersList;
     }
 
+    @NonNull
     @Override
-    public CountersViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public CountersViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.counters_layout, null);
+        View view = inflater.inflate(R.layout.counters_layout, parent,false);
         return new CountersViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(CountersViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CountersViewHolder holder, int position) {
         ListModel counters = countersList.get(position);
 
         holder.textViewName.setText(counters.getName());
@@ -58,7 +61,7 @@ public class CountersAdapter extends RecyclerView.Adapter<CountersAdapter.Counte
         private TextView textViewName, textViewPrice, textViewRange;
         private ImageView imageView2;
 
-        public CountersViewHolder(View itemView) {
+        CountersViewHolder(View itemView) {
             super(itemView);
 
             textViewName = itemView.findViewById(R.id.wheelsName);
