@@ -1,39 +1,47 @@
 package com.feluu.pylife.adapters;
 
 import android.content.Context;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Filter;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.feluu.pylife.R;
 import com.feluu.pylife.models.ListModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder> {
+public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder> implements Filterable {
 
     private Context mCtx;
     private List<ListModel> carsList;
+    private List<ListModel> carsListFull;
 
     public CarsAdapter(Context mCtx, List<ListModel> carsList) {
         this.mCtx = mCtx;
         this.carsList = carsList;
+        carsListFull = new ArrayList<>(carsList);
     }
 
+    @NonNull
     @Override
-    public CarsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public CarsViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.list_layout, null);
+        View view = inflater.inflate(R.layout.list_layout, parent, false);
         return new CarsViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(CarsViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CarsViewHolder holder, int position) {
         ListModel cars = carsList.get(position);
 
         holder.textViewName.setText(cars.getName());
@@ -55,12 +63,44 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
         return carsList.size();
     }
 
+    @Override
+    public Filter getFilter() {
+        return carsFilter;
+    }
+
+    private Filter carsFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<ListModel> filteredList = new ArrayList<>();
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(carsListFull);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+                for (ListModel model : carsListFull) {
+                    if (model.getName().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(model);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            carsList.clear();
+            carsList.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
+
     class CarsViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textViewName, textViewVMax, textViewVMaxFMK, textViewTax, textViewReset;
         private ImageView imageView2;
 
-        public CarsViewHolder(View itemView) {
+        CarsViewHolder(View itemView) {
             super(itemView);
 
             textViewName = itemView.findViewById(R.id.wheelsName);
