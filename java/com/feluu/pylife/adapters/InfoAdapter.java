@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.feluu.pylife.R;
 import com.feluu.pylife.models.ListModel;
 import com.feluu.pylife.utils.SharedPref;
@@ -29,8 +31,9 @@ public class InfoAdapter extends ArrayAdapter<ListModel> {
 
     }
 
+   @NonNull
    @Override
-   public View getView(int position, View convertView, ViewGroup parent) {
+   public View getView(int position, View convertView, @NonNull ViewGroup parent) {
        SharedPref sharedPref = new SharedPref(mContext);
        ListModel adapter = getItem(position);
        ViewHolder viewHolder;
