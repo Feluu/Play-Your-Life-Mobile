@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class SharedPref {
-    
+
     private SharedPreferences mySharedPref;
 
     public SharedPref(Context context) {
@@ -14,22 +14,20 @@ public class SharedPref {
     public void setNightModeState(Boolean state) {
         SharedPreferences.Editor editor = mySharedPref.edit();
         editor.putBoolean("NightMode", state);
-        editor.commit();
+        editor.apply();
     }
 
     public void setAvailableWheels(String wheels) {
         SharedPreferences.Editor editor = mySharedPref.edit();
         editor.putString("Wheels", wheels);
-        editor.commit();
+        editor.apply();
     }
 
     public Boolean loadNightModeState() {
-        Boolean state = mySharedPref.getBoolean("NightMode", false);
-        return state;
+        return mySharedPref.getBoolean("NightMode", false);
     }
 
     public String loadAvailableWheels() {
-        String wheels = mySharedPref.getString("Wheels", null);
-        return wheels;
+        return mySharedPref.getString("Wheels", null);
     }
 }
