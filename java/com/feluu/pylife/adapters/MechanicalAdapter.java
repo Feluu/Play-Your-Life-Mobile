@@ -3,10 +3,12 @@ package com.feluu.pylife.adapters;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -43,6 +45,8 @@ public class MechanicalAdapter extends RecyclerView.Adapter<MechanicalAdapter.Me
     @Override
     public void onBindViewHolder(@NonNull MechanicalViewHolder holder, int position) {
         ListModel mechanical = mechanicalList.get(position);
+
+        holder.cardContainer.setAnimation(AnimationUtils.loadAnimation(mCtx, R.anim.fade_scale));
 
         holder.textViewName.setText(mechanical.getName());
         holder.textViewAllows.setText(mechanical.getFirst());
@@ -98,10 +102,12 @@ public class MechanicalAdapter extends RecyclerView.Adapter<MechanicalAdapter.Me
 
         private TextView textViewName, textViewAllows, textViewPrice, textViewReturn;
         private ImageView imageView2;
+        private CardView cardContainer;
 
         MechanicalViewHolder(View itemView) {
             super(itemView);
 
+            cardContainer = itemView.findViewById(R.id.card_view2);
             textViewName = itemView.findViewById(R.id.wheelsName);
             textViewAllows = itemView.findViewById(R.id.allows);
             textViewPrice = itemView.findViewById(R.id.price);
