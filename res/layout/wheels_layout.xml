@@ -12,10 +12,8 @@
         android:layout_gravity="center"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:clickable="true"
         android:clipChildren="false"
         android:focusable="true"
-        android:foreground="?android:attr/selectableItemBackground"
         app:cardBackgroundColor="?attr/cardBackgroundColor"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
@@ -63,7 +61,6 @@
                 app:srcCompat="@drawable/ic_earnings_24dp" />
 
             <TextView
-                android:id="@+id/textViewPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/wheelsName"
@@ -87,7 +84,6 @@
                 android:textSize="15sp" />
 
             <ImageView
-                android:id="@+id/imageViewDemont"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_below="@+id/imageViewPrice"
@@ -100,7 +96,6 @@
                 app:srcCompat="@drawable/ic_earnings_24dp" />
 
             <TextView
-                android:id="@+id/textViewDemont"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imageViewPrice"
