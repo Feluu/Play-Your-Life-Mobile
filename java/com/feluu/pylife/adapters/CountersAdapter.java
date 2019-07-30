@@ -3,10 +3,12 @@ package com.feluu.pylife.adapters;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,6 +41,8 @@ public class CountersAdapter extends RecyclerView.Adapter<CountersAdapter.Counte
     public void onBindViewHolder(@NonNull CountersViewHolder holder, int position) {
         ListModel counters = countersList.get(position);
 
+        holder.cardContainer.setAnimation(AnimationUtils.loadAnimation(mCtx, R.anim.fade_scale));
+
         holder.textViewName.setText(counters.getName());
         holder.textViewPrice.setText(counters.getFirst());
         holder.textViewRange.setText(counters.getSecond());
@@ -60,10 +64,12 @@ public class CountersAdapter extends RecyclerView.Adapter<CountersAdapter.Counte
 
         private TextView textViewName, textViewPrice, textViewRange;
         private ImageView imageView2;
+        private CardView cardContainer;
 
         CountersViewHolder(View itemView) {
             super(itemView);
 
+            cardContainer = itemView.findViewById(R.id.card_view2);
             textViewName = itemView.findViewById(R.id.wheelsName);
             textViewRange = itemView.findViewById(R.id.demont);
             textViewPrice = itemView.findViewById(R.id.price);
