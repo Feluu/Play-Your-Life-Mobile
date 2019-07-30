@@ -12,10 +12,8 @@
         android:layout_gravity="center"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:clickable="true"
         android:clipChildren="false"
         android:focusable="true"
-        android:foreground="?android:attr/selectableItemBackground"
         app:cardBackgroundColor="?attr/cardBackgroundColor"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
@@ -91,7 +89,6 @@
                 android:src="@drawable/ic_speed" />
 
             <TextView
-                android:id="@+id/textViewFMK"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageViewVMax"
@@ -127,7 +124,6 @@
                 app:srcCompat="@drawable/ic_earnings_24dp" />
 
             <TextView
-                android:id="@+id/textViewTax"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageViewVMaxFMK"
@@ -151,7 +147,6 @@
                 android:textSize="15sp" />
 
             <ImageView
-                android:id="@+id/imageViewReset"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_below="@+id/imageViewPrice"
@@ -164,7 +159,6 @@
                 app:srcCompat="@drawable/ic_earnings_24dp" />
 
             <TextView
-                android:id="@+id/textViewReset"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imageViewPrice"
