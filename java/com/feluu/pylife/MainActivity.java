@@ -23,9 +23,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView navigation;
     private TextView title;
     private CardView carsList, mechanicalTune, lightsTune, wheelsTune, spoilersTune, countersTune, casualJobs, lvJobs, sfJobs, fcJobs, lsJobs;
+    private LinearLayout moto, tune, jobs;
     private RelativeLayout home, info;
     private SharedPref sharedPref;
 
@@ -73,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView menuImg;
         ImageView bgMain;
         ImageView bgInfo;
+        LinearLayout line;
         SwitchCompat themeSwitch;
         scroll = findViewById(R.id.scroll);
         menuImg = findViewById(R.id.menuToggle);
@@ -82,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
         home = findViewById(R.id.home_layout);
         info = findViewById(R.id.info_layout);
         title = findViewById(R.id.textView1);
+        moto = findViewById(R.id.moto);
+        tune = findViewById(R.id.tune);
+        jobs = findViewById(R.id.jobs);
+        line = findViewById(R.id.line);
         carsList = findViewById(R.id.card_view1);
         mechanicalTune = findViewById(R.id.card_view2);
         lightsTune = findViewById(R.id.card_view3);
@@ -93,17 +101,9 @@ public class MainActivity extends AppCompatActivity {
         sfJobs = findViewById(R.id.card_view8);
         fcJobs = findViewById(R.id.card_view9);
         lsJobs = findViewById(R.id.card_view10);
-        carsList.setVisibility(View.VISIBLE);
-        mechanicalTune.setVisibility(View.GONE);
-        lightsTune.setVisibility(View.GONE);
-        wheelsTune.setVisibility(View.GONE);
-        spoilersTune.setVisibility(View.GONE);
-        countersTune.setVisibility(View.GONE);
-        casualJobs.setVisibility(View.GONE);
-        lvJobs.setVisibility(View.GONE);
-        sfJobs.setVisibility(View.GONE);
-        fcJobs.setVisibility(View.GONE);
-        lsJobs.setVisibility(View.GONE);
+        moto.setVisibility(View.VISIBLE);
+        tune.setVisibility(View.GONE);
+        jobs.setVisibility(View.GONE);
         home.setVisibility(View.VISIBLE);
         info.setVisibility(View.GONE);
 
@@ -117,8 +117,10 @@ public class MainActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(getResources().getColor(R.color.statusColor));
             bgMain.setImageResource(R.drawable.bg_dark);
             bgInfo.setImageResource(R.drawable.bg_dark);
+            line.setBackgroundColor(getResources().getColor(R.color.lineColorDark));
             themeSwitch.setChecked(true);
         }
+
         new AppUpdater(this)
             .setUpdateFrom(UpdateFrom.JSON)
             .setUpdateJSON("https://feluu.pl/update.json")
@@ -137,6 +139,18 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (moto.getVisibility() == View.VISIBLE) {
+            carsList.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_left));
+        } else if (tune.getVisibility() == View.VISIBLE) {
+            tuneAnim();
+        } else if (jobs.getVisibility() == View.VISIBLE) {
+            jobsAnim();
+        }
     }
 
     private void prepareDrawer(Bundle savedInstanceState) {
@@ -265,47 +279,26 @@ public class MainActivity extends AppCompatActivity {
                     return false;
                 case R.id.navigation_cars:
                     title.setText(R.string.title_cars);
-                    carsList.setVisibility(View.VISIBLE);
-                    mechanicalTune.setVisibility(View.GONE);
-                    lightsTune.setVisibility(View.GONE);
-                    wheelsTune.setVisibility(View.GONE);
-                    spoilersTune.setVisibility(View.GONE);
-                    countersTune.setVisibility(View.GONE);
-                    casualJobs.setVisibility(View.GONE);
-                    lvJobs.setVisibility(View.GONE);
-                    sfJobs.setVisibility(View.GONE);
-                    fcJobs.setVisibility(View.GONE);
-                    lsJobs.setVisibility(View.GONE);
+                    carsList.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_left));
+                    tune.setVisibility(View.GONE);
+                    jobs.setVisibility(View.GONE);
+                    moto.setVisibility(View.VISIBLE);
                     scroll.fullScroll(ScrollView.FOCUS_UP);
                     return true;
                 case R.id.navigation_prices:
                     title.setText(R.string.title_tune);
-                    mechanicalTune.setVisibility(View.VISIBLE);
-                    carsList.setVisibility(View.GONE);
-                    lightsTune.setVisibility(View.VISIBLE);
-                    wheelsTune.setVisibility(View.VISIBLE);
-                    spoilersTune.setVisibility(View.VISIBLE);
-                    countersTune.setVisibility(View.VISIBLE);
-                    casualJobs.setVisibility(View.GONE);
-                    lvJobs.setVisibility(View.GONE);
-                    sfJobs.setVisibility(View.GONE);
-                    fcJobs.setVisibility(View.GONE);
-                    lsJobs.setVisibility(View.GONE);
+                    tuneAnim();
+                    moto.setVisibility(View.GONE);
+                    jobs.setVisibility(View.GONE);
+                    tune.setVisibility(View.VISIBLE);
                     scroll.fullScroll(ScrollView.FOCUS_UP);
                     return true;
                 case R.id.navigation_earnings:
                     title.setText(R.string.title_earnings);
-                    carsList.setVisibility(View.GONE);
-                    mechanicalTune.setVisibility(View.GONE);
-                    lightsTune.setVisibility(View.GONE);
-                    wheelsTune.setVisibility(View.GONE);
-                    spoilersTune.setVisibility(View.GONE);
-                    countersTune.setVisibility(View.GONE);
-                    casualJobs.setVisibility(View.VISIBLE);
-                    lvJobs.setVisibility(View.VISIBLE);
-                    sfJobs.setVisibility(View.VISIBLE);
-                    fcJobs.setVisibility(View.VISIBLE);
-                    lsJobs.setVisibility(View.VISIBLE);
+                    jobsAnim();
+                    moto.setVisibility(View.GONE);
+                    tune.setVisibility(View.GONE);
+                    jobs.setVisibility(View.VISIBLE);
                     scroll.fullScroll(ScrollView.FOCUS_UP);
                     return true;
             }
@@ -344,6 +337,22 @@ public class MainActivity extends AppCompatActivity {
             phrase.append(c);
         }
         return phrase.toString();
+    }
+
+    private void tuneAnim() {
+        mechanicalTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_up));
+        lightsTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_up));
+        wheelsTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_up));
+        spoilersTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_up));
+        countersTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_up));
+    }
+
+    private void jobsAnim() {
+        casualJobs.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_right));
+        lvJobs.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_right));
+        sfJobs.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_right));
+        fcJobs.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_right));
+        lsJobs.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_right));
     }
 
     public void carsListPage(View v) {
