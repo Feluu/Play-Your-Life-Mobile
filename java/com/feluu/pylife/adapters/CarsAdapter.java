@@ -3,10 +3,12 @@ package com.feluu.pylife.adapters;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -43,6 +45,8 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
     @Override
     public void onBindViewHolder(@NonNull CarsViewHolder holder, int position) {
         ListModel cars = carsList.get(position);
+
+        holder.cardContainer.setAnimation(AnimationUtils.loadAnimation(mCtx, R.anim.fade_scale));
 
         holder.textViewName.setText(cars.getName());
         holder.textViewVMax.setText(cars.getFirst());
@@ -99,10 +103,12 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
 
         private TextView textViewName, textViewVMax, textViewVMaxFMK, textViewTax, textViewReset;
         private ImageView imageView2;
+        private CardView cardContainer;
 
         CarsViewHolder(View itemView) {
             super(itemView);
 
+            cardContainer = itemView.findViewById(R.id.card_view2);
             textViewName = itemView.findViewById(R.id.wheelsName);
             textViewVMax = itemView.findViewById(R.id.vMax);
             textViewVMaxFMK = itemView.findViewById(R.id.vMaxFMK);
