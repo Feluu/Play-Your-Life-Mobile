@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout moto, tune, jobs;
     private RelativeLayout home, info;
     private SharedPref sharedPref;
+    private boolean isClicked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,6 +152,12 @@ public class MainActivity extends AppCompatActivity {
         } else if (jobs.getVisibility() == View.VISIBLE) {
             jobsAnim();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        isClicked = false;
     }
 
     private void prepareDrawer(Bundle savedInstanceState) {
@@ -305,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    public String intToString(int Res) {
+    private String intToString(int Res) {
         return getResources().getString(Res);
     }
 
@@ -356,58 +363,91 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void carsListPage(View v) {
-        Intent intent = new Intent(MainActivity.this, CarsListActivity.class);
-        startActivity(intent);
+        if (!isClicked) {
+            isClicked = true;
+            Intent intent = new Intent(MainActivity.this, CarsListActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void mechanicalTunePage(View v) {
-        Intent intent = new Intent(MainActivity.this, MechanicalTuneActivity.class);
-        startActivity(intent);
+        if (!isClicked) {
+            isClicked = true;
+            Intent intent = new Intent(MainActivity.this, MechanicalTuneActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void lightsTunePage(View v) {
-        Intent intent = new Intent(MainActivity.this, LightsTuneActivity.class);
-        startActivity(intent);
+        if (!isClicked) {
+            isClicked = true;
+            Intent intent = new Intent(MainActivity.this, LightsTuneActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void wheelsTunePage(View v) {
-        Intent intent = new Intent(MainActivity.this, WheelsTuneActivity.class);
-        startActivity(intent);
+        if (!isClicked) {
+            isClicked = true;
+            Intent intent = new Intent(MainActivity.this, WheelsTuneActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void spoilersTunePage(View v) {
-        Intent intent = new Intent(MainActivity.this, SpoilersTuneActivity.class);
-        startActivity(intent);
+        if (!isClicked) {
+            isClicked = true;
+            Intent intent = new Intent(MainActivity.this, SpoilersTuneActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void countersTunePage(View v) {
-        Intent intent = new Intent(MainActivity.this, CountersTuneActivity.class);
-        startActivity(intent);
+        if (!isClicked) {
+            isClicked = true;
+            Intent intent = new Intent(MainActivity.this, CountersTuneActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void casualJobsPage(View v) {
-        Intent intent = new Intent(MainActivity.this, CasualJobsActivity.class);
-        startActivity(intent);
+        if (!isClicked) {
+            isClicked = true;
+            Intent intent = new Intent(MainActivity.this, CasualJobsActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void LVJobsPage(View v) {
-        Intent intent = new Intent(MainActivity.this, LVJobsActivity.class);
-        startActivity(intent);
+        if (!isClicked) {
+            isClicked = true;
+            Intent intent = new Intent(MainActivity.this, LVJobsActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void SFJobsPage(View v) {
-        Intent intent = new Intent(MainActivity.this, SFJobsActivity.class);
-        startActivity(intent);
+        if (!isClicked) {
+            isClicked = true;
+            Intent intent = new Intent(MainActivity.this, SFJobsActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void FCJobsPage(View v) {
-        Intent intent = new Intent(MainActivity.this, FCJobsActivity.class);
-        startActivity(intent);
+        if (!isClicked) {
+            isClicked = true;
+            Intent intent = new Intent(MainActivity.this, FCJobsActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void LSJobsPage(View v) {
-        Intent intent = new Intent(MainActivity.this, LSJobsActivity.class);
-        startActivity(intent);
+        if (!isClicked) {
+            isClicked = true;
+            Intent intent = new Intent(MainActivity.this, LSJobsActivity.class);
+            startActivity(intent);
+        }
     }
 
 }
