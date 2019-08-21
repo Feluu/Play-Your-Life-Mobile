@@ -21,7 +21,7 @@
             <ImageView
                 android:id="@+id/image"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="195dp"
                 android:scaleType="centerCrop" />
 
             <TextView
@@ -106,8 +106,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textView14"
                 android:layout_marginStart="16dp"
-                android:textColor="?attr/textLight"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                android:textColor="?attr/textLight" />
 
         </RelativeLayout>
 
