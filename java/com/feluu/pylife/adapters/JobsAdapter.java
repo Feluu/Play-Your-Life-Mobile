@@ -3,10 +3,13 @@ package com.feluu.pylife.adapters;
 import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
+
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -64,6 +67,16 @@ public class JobsAdapter extends PagerAdapter {
         earnings.setText(models.get(position).getEarnings());
         locations.setText(models.get(position).getLocations());
         description.setText(models.get(position).getDescription());
+
+        int width = context.getResources().getDisplayMetrics().widthPixels;
+        int height = context.getResources().getDisplayMetrics().heightPixels;
+        int DPtoPX = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 170, context.getResources().getDisplayMetrics());
+        if (width * height <= 1024000) {
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, DPtoPX);
+            imageView.setLayoutParams(params);
+            earnings.setTextSize(14);
+            locations.setTextSize(14);
+        }
 
         container.addView(view, 0);
         return view;
