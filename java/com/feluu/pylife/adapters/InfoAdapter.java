@@ -47,8 +47,8 @@ public class InfoAdapter extends ArrayAdapter<ListModel> {
        } else {
            viewHolder = (ViewHolder) convertView.getTag();
        }
-       viewHolder.firstText.setText(adapter.getName());
-       viewHolder.secondText.setText(adapter.getFirst());
+       viewHolder.firstText.setText(adapter.getFirst());
+       viewHolder.secondText.setText(adapter.getSecond());
        if (sharedPref.loadNightModeState()) {
            viewHolder.firstText.setTextColor(mContext.getResources().getColor(R.color.colorInfo));
            viewHolder.secondText.setTextColor(mContext.getResources().getColor(R.color.colorInfoT));
