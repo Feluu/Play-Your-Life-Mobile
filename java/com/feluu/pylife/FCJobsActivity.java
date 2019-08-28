@@ -16,6 +16,8 @@ import com.feluu.pylife.utils.SharedPref;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.relex.circleindicator.CircleIndicator;
+
 public class FCJobsActivity extends AppCompatActivity {
 
     @Override
@@ -34,12 +36,14 @@ public class FCJobsActivity extends AppCompatActivity {
         TextView title;
         ViewPager viewPager;
         JobsAdapter adapter;
+        CircleIndicator indicator;
         List<ViewModel> models;
 
         leaveActivity = findViewById(R.id.exitActivity);
         bgMain = findViewById(R.id.bgmain);
-        title = findViewById(R.id.textView1);
+        title = findViewById(R.id.top_title);
         viewPager = findViewById(R.id.viewPager);
+        indicator = findViewById(R.id.indicator);
 
         title.setText(R.string.fc_jobs_activity);
 
@@ -61,7 +65,7 @@ public class FCJobsActivity extends AppCompatActivity {
         adapter = new JobsAdapter(models, this);
 
         viewPager.setAdapter(adapter);
-        viewPager.setPadding(130, 0, 130, 0);
+        indicator.setViewPager(viewPager);
     }
 
     public String intToString(int Res) {
