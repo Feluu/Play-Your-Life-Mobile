@@ -75,5 +75,5 @@ public class WheelsAdapter extends RecyclerView.Adapter<WheelsAdapter.WheelsView
             textViewDemont = itemView.findViewById(R.id.demont);
             imageView2 = itemView.findViewById(R.id.imageView2);
         }
-    
+    }
 }
