@@ -2,37 +2,37 @@ package com.feluu.pylife.models;
 
 public class ViewModel {
 
-    private int Image;
-    private String Title;
-    private String Earnings;
-    private String Locations;
-    private String Description;
+    private int image;
+    private String first;
+    private String second;
+    private String third;
+    private String fourth;
 
     public int getImage() {
-        return Image;
+        return image;
     }
 
-    public String getTitle() {
-        return Title;
+    public String getFirst() {
+        return first;
     }
 
-    public String getEarnings() {
-        return Earnings;
+    public String getSecond() {
+        return second;
     }
 
-    public String getLocations() {
-        return Locations;
+    public String getThird() {
+        return third;
     }
 
-    public String getDescription() {
-        return Description;
+    public String getFourth() {
+        return fourth;
     }
 
-    public ViewModel(int Image, String Title, String Earnings, String Locations, String Description) {
-        this.Image = Image;
-        this.Title = Title;
-        this.Earnings = Earnings;
-        this.Locations = Locations;
-        this.Description = Description;
+    public ViewModel(int image, String first, String second, String third, String fourth) {
+        this.image = image;
+        this.first = first;
+        this.second = second;
+        this.third = third;
+        this.fourth = fourth;
     }
 }
