@@ -10,36 +10,38 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/exitActivity"
-        android:layout_width="48dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="10dp"
-        android:contentDescription="@string/content_back"
-        android:scaleType="fitCenter"
-        android:tint="?attr/textDark"
-        app:srcCompat="@drawable/ic_left" />
-
-    <ImageView
         android:id="@+id/bgmain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentEnd="false"
         android:layout_alignParentBottom="true"
-        android:contentDescription="@string/layout_null"
         android:scaleType="fitEnd"
         app:srcCompat="@drawable/bg_new" />
 
-    <LinearLayout
-        android:id="@+id/mainLinear"
+    <RelativeLayout
+        android:id="@+id/menu_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:animateLayoutChanges="false"
+        app:layout_constrainedHeight="false"
+        app:layout_constrainedWidth="false">
+
+        <ImageView
+            android:id="@+id/exitActivity"
+            android:layout_width="48dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/content_back"
+            android:scaleType="fitCenter"
+            android:tint="?attr/textDark"
+            app:srcCompat="@drawable/ic_left" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/top_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center_horizontal|top"
             android:text="@string/wheels_list_activity"
             android:textColor="?attr/textDark"
@@ -47,35 +49,43 @@
             android:textStyle="bold"
             android:typeface="sans" />
 
-        <TextView
-            android:id="@+id/available"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|top"
-            android:layout_marginTop="7dp"
-            android:layout_marginBottom="15dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:gravity="center_horizontal|top"
-            android:text="@string/layout_cannot_retrieve_wheels"
-            android:textColor="?attr/textDark"
-            android:textSize="13sp"
-            android:typeface="sans" />
+    </RelativeLayout>
 
-    </LinearLayout>
-
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefresh"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/mainLinear">
+        android:layout_below="@id/menu_top"
+        android:fillViewport="true"
+        android:overScrollMode="never">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:overScrollMode="never"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="top"
+                android:clipToPadding="false"
+                android:overScrollMode="never" />
+
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/indicator"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="2dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>
