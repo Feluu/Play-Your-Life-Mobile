@@ -48,9 +48,9 @@ public class SpoilersAdapter extends RecyclerView.Adapter<SpoilersAdapter.Spoile
 
         holder.cardContainer.setAnimation(AnimationUtils.loadAnimation(mCtx, R.anim.fade_scale));
 
-        holder.textViewName.setText(spoilers.getName());
-        holder.textViewPrice.setText(spoilers.getFirst());
-        holder.textViewDemont.setText(spoilers.getSecond());
+        holder.textViewName.setText(spoilers.getFirst());
+        holder.textViewPrice.setText(spoilers.getSecond());
+        holder.textViewDemont.setText(spoilers.getThird());
         Glide
                 .with(mCtx)
                 .load(mCtx.getResources().getDrawable(spoilers.getImage()))
@@ -79,7 +79,7 @@ public class SpoilersAdapter extends RecyclerView.Adapter<SpoilersAdapter.Spoile
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (ListModel model : spoilersListFull) {
-                    if (model.getName().toLowerCase().contains(filterPattern)) {
+                    if (model.getFirst().toLowerCase().contains(filterPattern)) {
                         filteredList.add(model);
                     }
                 }
