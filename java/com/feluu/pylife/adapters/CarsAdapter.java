@@ -48,11 +48,11 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
 
         holder.cardContainer.setAnimation(AnimationUtils.loadAnimation(mCtx, R.anim.fade_scale));
 
-        holder.textViewName.setText(cars.getName());
-        holder.textViewVMax.setText(cars.getFirst());
-        holder.textViewVMaxFMK.setText(cars.getSecond());
-        holder.textViewTax.setText(cars.getThird());
-        holder.textViewReset.setText(cars.getFourth());
+        holder.textViewName.setText(cars.getFirst());
+        holder.textViewVMax.setText(cars.getSecond());
+        holder.textViewVMaxFMK.setText(cars.getThird());
+        holder.textViewTax.setText(cars.getFourth());
+        holder.textViewReset.setText(cars.getFifth());
         Glide
                 .with(mCtx)
                 .load(mCtx.getResources().getDrawable(cars.getImage()))
@@ -81,7 +81,7 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (ListModel model : carsListFull) {
-                    if (model.getName().toLowerCase().contains(filterPattern)) {
+                    if (model.getFirst().toLowerCase().contains(filterPattern)) {
                         filteredList.add(model);
                     }
                 }
