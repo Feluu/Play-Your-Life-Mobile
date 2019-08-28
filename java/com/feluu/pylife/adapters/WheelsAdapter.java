@@ -43,9 +43,9 @@ public class WheelsAdapter extends RecyclerView.Adapter<WheelsAdapter.WheelsView
 
         holder.cardContainer.setAnimation(AnimationUtils.loadAnimation(mCtx, R.anim.fade_scale));
 
-        holder.textViewName.setText(wheels.getName());
-        holder.textViewPrice.setText(wheels.getFirst());
-        holder.textViewDemont.setText(wheels.getSecond());
+        holder.textViewName.setText(wheels.getFirst());
+        holder.textViewPrice.setText(wheels.getSecond());
+        holder.textViewDemont.setText(wheels.getThird());
         Glide
                 .with(mCtx)
                 .load(mCtx.getResources().getDrawable(wheels.getImage()))
