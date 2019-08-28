@@ -29,6 +29,7 @@
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
                 android:layout_marginTop="5dp"
                 android:contentDescription="@string/standard_counter_name"
                 android:padding="4dp"
