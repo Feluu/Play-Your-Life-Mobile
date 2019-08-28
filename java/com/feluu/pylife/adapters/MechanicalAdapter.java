@@ -48,10 +48,10 @@ public class MechanicalAdapter extends RecyclerView.Adapter<MechanicalAdapter.Me
 
         holder.cardContainer.setAnimation(AnimationUtils.loadAnimation(mCtx, R.anim.fade_scale));
 
-        holder.textViewName.setText(mechanical.getName());
-        holder.textViewAllows.setText(mechanical.getFirst());
-        holder.textViewPrice.setText(mechanical.getSecond());
-        holder.textViewReturn.setText(mechanical.getThird());
+        holder.textViewName.setText(mechanical.getFirst());
+        holder.textViewAllows.setText(mechanical.getSecond());
+        holder.textViewPrice.setText(mechanical.getThird());
+        holder.textViewReturn.setText(mechanical.getFourth());
         Glide
                 .with(mCtx)
                 .load(mCtx.getResources().getDrawable(mechanical.getImage()))
@@ -80,7 +80,7 @@ public class MechanicalAdapter extends RecyclerView.Adapter<MechanicalAdapter.Me
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (ListModel model : mechanicalListFull) {
-                    if (model.getName().toLowerCase().contains(filterPattern)) {
+                    if (model.getFirst().toLowerCase().contains(filterPattern)) {
                         filteredList.add(model);
                     }
                 }
