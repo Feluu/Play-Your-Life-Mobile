@@ -36,7 +36,7 @@ public class SpoilersTuneActivity extends AppCompatActivity {
 
         leaveActivity = findViewById(R.id.exitActivity);
         bgMain = findViewById(R.id.bgmain);
-        activityTitle = findViewById(R.id.textView1);
+        activityTitle = findViewById(R.id.top_title);
         List<ListModel> spoilersList;
         RecyclerView recyclerView;
 
@@ -55,23 +55,23 @@ public class SpoilersTuneActivity extends AppCompatActivity {
 
         spoilersList = new ArrayList<>();
 
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_pro_name), intToString(R.string.spoiler_pro_price), intToString(R.string.spoiler_pro_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_pro));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_win_name), intToString(R.string.spoiler_win_price), intToString(R.string.spoiler_win_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_win));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_race_name), intToString(R.string.spoiler_race_price), intToString(R.string.spoiler_race_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_race));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_worx_name), intToString(R.string.spoiler_worx_price), intToString(R.string.spoiler_worx_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_worx));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_fury_name), intToString(R.string.spoiler_fury_price), intToString(R.string.spoiler_fury_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_fury));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_alien_name), intToString(R.string.spoiler_alien_price), intToString(R.string.spoiler_alien_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_alien));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_xflow_name), intToString(R.string.spoiler_xflow_price), intToString(R.string.spoiler_xflow_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_x_flow));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_rijeka_name), intToString(R.string.spoiler_rijeka_price), intToString(R.string.spoiler_rijeka_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_rijeka));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_daytona_name), intToString(R.string.spoiler_daytona_price), intToString(R.string.spoiler_daytona_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_daytona));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_husar_name), intToString(R.string.spoiler_husar_price), intToString(R.string.spoiler_husar_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_husar));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_wingxl_name), intToString(R.string.spoiler_wingxl_price), intToString(R.string.spoiler_wingxl_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_wing_xl));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_gtwing_name), intToString(R.string.spoiler_gtwing_price), intToString(R.string.spoiler_gtwing_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_gt_wing));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_duo_name), intToString(R.string.spoiler_duo_price), intToString(R.string.spoiler_duo_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_duo));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_jdm_name), intToString(R.string.spoiler_jdm_price), intToString(R.string.spoiler_jdm_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_jdm));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_prelude_name), intToString(R.string.spoiler_prelude_price), intToString(R.string.spoiler_prelude_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_prelude));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_carbon_name), intToString(R.string.spoiler_carbon_price), intToString(R.string.spoiler_carbon_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_carbon));
-        spoilersList.add(new ListModel(intToString(R.string.spoiler_alienvi_name), intToString(R.string.spoiler_alienvi_price), intToString(R.string.spoiler_alienvi_demont), intToString(R.string.layout_null), intToString(R.string.layout_null), R.drawable.spoiler_alien_vi));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_pro_name), intToString(R.string.spoiler_pro_price), intToString(R.string.spoiler_pro_demont), null, null, R.drawable.spoiler_pro));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_win_name), intToString(R.string.spoiler_win_price), intToString(R.string.spoiler_win_demont), null, null, R.drawable.spoiler_win));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_race_name), intToString(R.string.spoiler_race_price), intToString(R.string.spoiler_race_demont), null, null, R.drawable.spoiler_race));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_worx_name), intToString(R.string.spoiler_worx_price), intToString(R.string.spoiler_worx_demont), null, null, R.drawable.spoiler_worx));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_fury_name), intToString(R.string.spoiler_fury_price), intToString(R.string.spoiler_fury_demont), null, null, R.drawable.spoiler_fury));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_alien_name), intToString(R.string.spoiler_alien_price), intToString(R.string.spoiler_alien_demont), null, null, R.drawable.spoiler_alien));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_xflow_name), intToString(R.string.spoiler_xflow_price), intToString(R.string.spoiler_xflow_demont), null, null, R.drawable.spoiler_x_flow));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_rijeka_name), intToString(R.string.spoiler_rijeka_price), intToString(R.string.spoiler_rijeka_demont), null, null, R.drawable.spoiler_rijeka));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_daytona_name), intToString(R.string.spoiler_daytona_price), intToString(R.string.spoiler_daytona_demont), null, null, R.drawable.spoiler_daytona));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_husar_name), intToString(R.string.spoiler_husar_price), intToString(R.string.spoiler_husar_demont), null, null, R.drawable.spoiler_husar));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_wingxl_name), intToString(R.string.spoiler_wingxl_price), intToString(R.string.spoiler_wingxl_demont), null, null, R.drawable.spoiler_wing_xl));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_gtwing_name), intToString(R.string.spoiler_gtwing_price), intToString(R.string.spoiler_gtwing_demont), null, null, R.drawable.spoiler_gt_wing));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_duo_name), intToString(R.string.spoiler_duo_price), intToString(R.string.spoiler_duo_demont), null, null, R.drawable.spoiler_duo));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_jdm_name), intToString(R.string.spoiler_jdm_price), intToString(R.string.spoiler_jdm_demont), null, null, R.drawable.spoiler_jdm));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_prelude_name), intToString(R.string.spoiler_prelude_price), intToString(R.string.spoiler_prelude_demont), null, null, R.drawable.spoiler_prelude));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_carbon_name), intToString(R.string.spoiler_carbon_price), intToString(R.string.spoiler_carbon_demont), null, null, R.drawable.spoiler_carbon));
+        spoilersList.add(new ListModel(intToString(R.string.spoiler_alienvi_name), intToString(R.string.spoiler_alienvi_price), intToString(R.string.spoiler_alienvi_demont), null, null, R.drawable.spoiler_alien_vi));
 
         SpoilersAdapter adapter = new SpoilersAdapter(this, spoilersList);
         recyclerView.setAdapter(adapter);
