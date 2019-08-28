@@ -49,7 +49,7 @@ public class JobsAdapter extends PagerAdapter {
         LayoutInflater layoutInflater;
 
         layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.casual_item, container, false);
+        View view = layoutInflater.inflate(R.layout.job_item, container, false);
 
         imageView = view.findViewById(R.id.image);
         title = view.findViewById(R.id.title);
@@ -63,10 +63,10 @@ public class JobsAdapter extends PagerAdapter {
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_error)
                 .into(imageView);
-        title.setText(models.get(position).getTitle());
-        earnings.setText(models.get(position).getEarnings());
-        locations.setText(models.get(position).getLocations());
-        description.setText(models.get(position).getDescription());
+        title.setText(models.get(position).getFirst());
+        earnings.setText(models.get(position).getSecond());
+        locations.setText(models.get(position).getThird());
+        description.setText(models.get(position).getFourth());
 
         int width = context.getResources().getDisplayMetrics().widthPixels;
         int height = context.getResources().getDisplayMetrics().heightPixels;
