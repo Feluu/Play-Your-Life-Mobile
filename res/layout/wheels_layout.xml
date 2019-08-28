@@ -61,6 +61,7 @@
                 app:srcCompat="@drawable/ic_earnings_24dp" />
 
             <TextView
+                android:id="@+id/priceT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/wheelsName"
@@ -96,6 +97,7 @@
                 app:srcCompat="@drawable/ic_earnings_24dp" />
 
             <TextView
+                android:id="@+id/demontT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imageViewPrice"
