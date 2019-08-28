@@ -885,7 +885,7 @@
     <string name="sm_lv_title">Straż Miejska LV</string>
     <string name="sm_lv_earnings">Zależne od złapanych osób</string>
     <string name="sm_lv_locations">Tyły urzędu miejskiego Las Venturas</string>
-    <string name="sm_lv_description">Wymagana reputacja to 25. W pracy wykonujemy pomiary prędkości jadących pojazdów. W zależności od ilości zarejestrowanych pojazdów otrzymujemy stosowne wynagrodzenie. Do podjęcia pracy wymagane jest zdanie egzaminu w  urzędzie.</string>
+    <string name="sm_lv_description">Wymagana reputacja to 25. W pracy wykonujemy pomiary prędkości jadących pojazdów. W zależności od ilości zarejestrowanych pojazdów otrzymujemy stosowne wynagrodzenie.</string>
 
     <string name="mech_doherty_title">Mechanik Samochodowy Doherty</string>
     <string name="mech_doherty_earnings">Zależne od prowizji</string>
@@ -906,7 +906,7 @@
     <string name="sm_sf_title">Straż Miejska SF</string>
     <string name="sm_sf_earnings">Zależne od złapanych osób</string>
     <string name="sm_sf_locations">Dawny budynek policji San Fierro</string>
-    <string name="sm_sf_description">Wymagana reputacja to 50. W pracy wykonujemy pomiary prędkości jadących pojazdów. W zależności od ilości zarejestrowanych pojazdów otrzymujemy stosowne wynagrodzenie. Do podjęcia pracy wymagane jest zdanie egzaminu w  urzędzie.</string>
+    <string name="sm_sf_description">Wymagana reputacja to 50. W pracy wykonujemy pomiary prędkości jadących pojazdów. W zależności od ilości zarejestrowanych pojazdów otrzymujemy stosowne wynagrodzenie.</string>
     
     <string name="mech_fc_title">Mechanik Samochodowy Fort Carson</string>
     <string name="mech_fc_earnings">Zależne od prowizji</string>
@@ -928,5 +928,5 @@
     <string name="sm_ls_title">Straż Miejska LS</string>
     <string name="sm_ls_earnings">Zależne od złapanych osób</string>
     <string name="sm_ls_locations">Dawny budynek policji Los Santos</string>
-    <string name="sm_ls_description">Wymagana reputacja to 25. W pracy wykonujemy pomiary prędkości jadących pojazdów. W zależności od ilości zarejestrowanych pojazdów otrzymujemy stosowne wynagrodzenie. Do podjęcia pracy wymagane jest zdanie egzaminu w  urzędzie.</string>
+    <string name="sm_ls_description">Wymagana reputacja to 25. W pracy wykonujemy pomiary prędkości jadących pojazdów. W zależności od ilości zarejestrowanych pojazdów otrzymujemy stosowne wynagrodzenie.</string>
 </resources>
