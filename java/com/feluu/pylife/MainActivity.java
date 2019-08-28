@@ -3,6 +3,7 @@ package com.feluu.pylife;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -15,13 +16,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.text.TextUtils;
-import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
@@ -48,6 +46,11 @@ import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -74,19 +77,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         prepareDrawer(savedInstanceState);
-        ImageView menuImg;
-        ImageView bgMain;
-        ImageView bgInfo;
+        ImageView menuImg, bgMain, bgInfo;
         LinearLayout line;
         SwitchCompat themeSwitch;
-        scroll = findViewById(R.id.scroll);
+        scroll = findViewById(R.id.scrollView);
         menuImg = findViewById(R.id.menuToggle);
-        bgMain = findViewById(R.id.bgmain);
-        bgInfo = findViewById(R.id.bginfo);
+        bgMain = findViewById(R.id.bg_home);
+        bgInfo = findViewById(R.id.bg_info);
         themeSwitch = findViewById(R.id.themeSwitch);
-        home = findViewById(R.id.home_layout);
-        info = findViewById(R.id.info_layout);
-        title = findViewById(R.id.textView1);
+        home = findViewById(R.id.mainScreen);
+        info = findViewById(R.id.infoScreen);
+        title = findViewById(R.id.top_title);
         moto = findViewById(R.id.moto);
         tune = findViewById(R.id.tune);
         jobs = findViewById(R.id.jobs);
@@ -140,6 +141,15 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        if (sharedPref.loadAvailableWheels() == null) {
+            try {
+                URL url = new URL("https://feluu.pl/wheels.txt");
+                new ReadWheelsTask().execute(url);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
@@ -182,16 +192,10 @@ public class MainActivity extends AppCompatActivity {
                         new SecondaryDrawerItem().withName(R.string.string_info).withIcon(FontAwesome.Icon.faw_info)
                 )
                 .withOnDrawerItemClickListener((View view, int position, IDrawerItem drawerItem) -> {
-                    ConstraintLayout.LayoutParams noMargin = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-                    noMargin.setMargins(0, 0, 0, 0);
-                    int dpToPx = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 47, getResources().getDisplayMetrics());
-                    ConstraintLayout.LayoutParams margin = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-                    margin.setMargins(0, 0, 0, dpToPx);
                     if (position == 1) {
                         info.setVisibility(View.GONE);
                         home.setVisibility(View.VISIBLE);
                         navigation.setVisibility(View.VISIBLE);
-                        scroll.setLayoutParams(margin);
                     }
                     if (position == 2) {
                         Toast.makeText(MainActivity.this, R.string.app_report_info, Toast.LENGTH_SHORT).show();
@@ -210,16 +214,15 @@ public class MainActivity extends AppCompatActivity {
                         home.setVisibility(View.GONE);
                         info.setVisibility(View.VISIBLE);
                         navigation.setVisibility(View.GONE);
-                        scroll.setLayoutParams(noMargin);
                         ImageView backBtn;
-                        backBtn = findViewById(R.id.menuToggleInfo);
+                        backBtn = findViewById(R.id.menuToggle);
 
                         ArrayList<ListModel> infoData = new ArrayList<>();
-                        infoData.add(new ListModel(intToString(R.string.info_author), intToString(R.string.info_author_name), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
-                        infoData.add(new ListModel(intToString(R.string.info_app_version), intToString(R.string.versionName), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
-                        infoData.add(new ListModel(intToString(R.string.info_used), intToString(R.string.info_used_2), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
-                        infoData.add(new ListModel(intToString(R.string.info_github), intToString(R.string.info_github_link), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
-                        infoData.add(new ListModel(intToString(R.string.info_model), getDeviceName(), intToString(R.string.layout_null), intToString(R.string.layout_null), intToString(R.string.layout_null), R.string.layout_null));
+                        infoData.add(new ListModel(intToString(R.string.info_author), intToString(R.string.info_author_name), null, null, null, 0));
+                        infoData.add(new ListModel(intToString(R.string.info_app_version), intToString(R.string.versionName), null, null, null, 0));
+                        infoData.add(new ListModel(intToString(R.string.info_used), intToString(R.string.info_used_2), null, null, null, 0));
+                        infoData.add(new ListModel(intToString(R.string.info_github), intToString(R.string.info_github_link), null, null, null, 0));
+                        infoData.add(new ListModel(intToString(R.string.info_model), getDeviceName(), null, null, null, 0));
                         ListView listView;
                         listView = findViewById(R.id.listView);
 
@@ -290,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
                     tune.setVisibility(View.GONE);
                     jobs.setVisibility(View.GONE);
                     moto.setVisibility(View.VISIBLE);
-                    scroll.fullScroll(ScrollView.FOCUS_UP);
+                    scroll.scrollTo(0, 0);
                     return true;
                 case R.id.navigation_prices:
                     title.setText(R.string.title_tune);
@@ -298,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
                     moto.setVisibility(View.GONE);
                     jobs.setVisibility(View.GONE);
                     tune.setVisibility(View.VISIBLE);
-                    scroll.fullScroll(ScrollView.FOCUS_UP);
+                    scroll.scrollTo(0, 0);
                     return true;
                 case R.id.navigation_earnings:
                     title.setText(R.string.title_earnings);
@@ -306,7 +309,7 @@ public class MainActivity extends AppCompatActivity {
                     moto.setVisibility(View.GONE);
                     tune.setVisibility(View.GONE);
                     jobs.setVisibility(View.VISIBLE);
-                    scroll.fullScroll(ScrollView.FOCUS_UP);
+                    scroll.scrollTo(0, 0);
                     return true;
             }
         }
@@ -389,8 +392,12 @@ public class MainActivity extends AppCompatActivity {
     public void wheelsTunePage(View v) {
         if (!isClicked) {
             isClicked = true;
-            Intent intent = new Intent(MainActivity.this, WheelsTuneActivity.class);
-            startActivity(intent);
+            try {
+                URL url = new URL("https://feluu.pl/wheels.txt");
+                new ReadWheelsTask().execute(url);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -450,4 +457,40 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private class ReadWheelsTask extends AsyncTask<URL, Void, String> {
+
+        private String avWheels = null;
+        private String str = null;
+
+        @Override
+        protected String doInBackground(URL... urls) {
+            try {
+                BufferedReader in = new BufferedReader(new InputStreamReader(urls[0].openStream()));
+                str = in.readLine();
+                in.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            SharedPref sharedPref = new SharedPref(getApplicationContext());
+            String av = sharedPref.loadAvailableWheels();
+            if (str == null && av != null) {
+                avWheels = av;
+            } else if (str != null) {
+                sharedPref.setAvailableWheels(str);
+                avWheels = str;
+            } else {
+                avWheels = "error";
+            }
+            if (isClicked) {
+                Intent intent = new Intent(MainActivity.this, WheelsTuneActivity.class);
+                intent.putExtra("avWheels", avWheels);
+                startActivity(intent);
+            }
+        }
+    }
 }
