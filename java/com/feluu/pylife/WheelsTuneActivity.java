@@ -157,7 +157,6 @@ public class WheelsTuneActivity extends AppCompatActivity {
             }
             AvWheelsAdapter adapter = new AvWheelsAdapter(models, this);
             viewPager.setAdapter(adapter);
-            viewPager.setPadding(130, 0, 130, 0);
             nestedScrollView.getParent().requestChildFocus(nestedScrollView, nestedScrollView);
             indicator.setViewPager(viewPager);
         }
