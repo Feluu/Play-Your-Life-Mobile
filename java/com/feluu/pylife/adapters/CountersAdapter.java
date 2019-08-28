@@ -43,9 +43,9 @@ public class CountersAdapter extends RecyclerView.Adapter<CountersAdapter.Counte
 
         holder.cardContainer.setAnimation(AnimationUtils.loadAnimation(mCtx, R.anim.fade_scale));
 
-        holder.textViewName.setText(counters.getName());
-        holder.textViewPrice.setText(counters.getFirst());
-        holder.textViewRange.setText(counters.getSecond());
+        holder.textViewName.setText(counters.getFirst());
+        holder.textViewPrice.setText(counters.getSecond());
+        holder.textViewRange.setText(counters.getThird());
         Glide
                 .with(mCtx)
                 .load(mCtx.getResources().getDrawable(counters.getImage()))
