@@ -48,8 +48,8 @@ public class LightsAdapter extends RecyclerView.Adapter<LightsAdapter.LightsView
 
         holder.cardContainer.setAnimation(AnimationUtils.loadAnimation(mCtx, R.anim.fade_scale));
 
-        holder.textViewName.setText(lights.getName());
-        holder.textViewPrice.setText(lights.getFirst());
+        holder.textViewName.setText(lights.getFirst());
+        holder.textViewPrice.setText(lights.getSecond());
         Glide
                 .with(mCtx)
                 .load(mCtx.getResources().getDrawable(lights.getImage()))
@@ -78,7 +78,7 @@ public class LightsAdapter extends RecyclerView.Adapter<LightsAdapter.LightsView
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (ListModel model : lightsListFull) {
-                    if (model.getName().toLowerCase().contains(filterPattern)) {
+                    if (model.getFirst().toLowerCase().contains(filterPattern)) {
                         filteredList.add(model);
                     }
                 }
