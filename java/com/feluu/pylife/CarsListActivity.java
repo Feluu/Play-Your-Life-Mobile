@@ -37,7 +37,7 @@ public class CarsListActivity extends AppCompatActivity {
 
         leaveActivity = findViewById(R.id.exitActivity);
         bgMain = findViewById(R.id.bgmain);
-        activityTitle = findViewById(R.id.textView1);
+        activityTitle = findViewById(R.id.top_title);
         recyclerView = findViewById(R.id.recyclerView);
         activityTitle.setText(R.string.cars_list_activity);
 
