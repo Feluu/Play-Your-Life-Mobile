@@ -52,7 +52,8 @@
         android:layout_height="10dp"
         android:layout_below="@id/menu_top"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="2dp" />
+        android:layout_marginBottom="2dp"
+        app:ci_drawable="@drawable/indicator" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
@@ -64,7 +65,7 @@
         android:clipToPadding="false"
         android:foregroundGravity="center"
         android:overScrollMode="never"
-        android:paddingLeft="120px"
-        android:paddingRight="120px" />
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp" />
 
 </RelativeLayout>
