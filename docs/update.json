@@ -1,8 +1,11 @@
 {
-  "latestVersion": "1.1.1",
-  "latestVersionCode": 11100,
-  "url": "https://feluu.pl/dl/pylife.apk",
+  "latestVersion": "1.1.0",
+  "latestVersionCode": 11000,
+  "url": "https://github.com/Feluu/Play-Your-Life-Mobile/releases/download/v1.1.0/pylife.apk",
   "releaseNotes": [
-    "- Usprawnienia"
+    "- Poprawiony interfejs & kod,",
+	"- Adaptacyjna ikonka w launcherze,",
+	"- Poprawione podwójne otwieranie się aktywności(czasami),",
+	"- Od teraz dostępne felgi ukazywane są w innej postaci."
   ]
 }
