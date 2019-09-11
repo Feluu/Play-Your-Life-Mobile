@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.cardview.widget.CardView;
 
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
@@ -125,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
         new AppUpdater(this)
             .setUpdateFrom(UpdateFrom.JSON)
-            .setUpdateJSON("https://feluu.pl/update.json")
+            .setUpdateJSON("https://feluu.github.io/Play-Your-Life-Mobile/update.json")
             .start();
 
         themeSwitch.setOnCheckedChangeListener((CompoundButton buttonView, boolean isChecked) -> {
@@ -144,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (sharedPref.loadAvailableWheels() == null) {
             try {
-                URL url = new URL("https://feluu.pl/wheels.txt");
+                URL url = new URL("https://feluu.github.io/Play-Your-Life-Mobile/wheels.txt");
                 new ReadWheelsTask().execute(url);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
@@ -202,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(Intent.ACTION_SEND);
                         intent.setType("message/rfc822");
                         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"kontakt@feluu.pl"});
-                        intent.putExtra(Intent.EXTRA_SUBJECT, "Zgłoszenie błędu/propozycji w aplikacji Play Your Life Mobile");
+                        intent.putExtra(Intent.EXTRA_SUBJECT, "Zgłoszenie błędu w aplikacji Play Your Life Mobile");
                         try {
                             startActivity(Intent.createChooser(intent, "Wyślij e-mail..."));
                         } catch (ActivityNotFoundException ex) {
@@ -240,11 +241,11 @@ public class MainActivity extends AppCompatActivity {
                             if (position_ == 1) {
                                 new AppUpdater(MainActivity.this)
                                     .setUpdateFrom(UpdateFrom.JSON)
-                                    .setUpdateJSON("https://feluu.pl/update.json")
+                                    .setUpdateJSON("https://feluu.github.io/Play-Your-Life-Mobile/update.json")
                                     .start();
                             }
                             if (position_ == 2) {
-                                String url = "https://feluu.pl/zasoby.html";
+                                String url = "https://feluu.github.io/Play-Your-Life-Mobile/zasoby.html";
                                 Intent i = new Intent(Intent.ACTION_VIEW);
                                 i.setData(Uri.parse(url));
                                 startActivity(i);
@@ -393,7 +394,7 @@ public class MainActivity extends AppCompatActivity {
         if (!isClicked) {
             isClicked = true;
             try {
-                URL url = new URL("https://feluu.pl/wheels.txt");
+                URL url = new URL("https://feluu.github.io/Play-Your-Life-Mobile/wheels.txt");
                 new ReadWheelsTask().execute(url);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
