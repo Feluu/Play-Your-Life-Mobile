@@ -17,7 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.cardview.widget.CardView;
 
-import android.os.Handler;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
