@@ -29,7 +29,8 @@
                 android:id="@+id/moto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="visible">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_view1"
@@ -83,7 +84,8 @@
                 android:id="@+id/tune"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_view2"
@@ -330,7 +332,8 @@
                 android:id="@+id/jobs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_view5"
@@ -575,7 +578,7 @@
             </LinearLayout>
 
         </RelativeLayout>
-        
+
     </ScrollView>
 
 </RelativeLayout>
