@@ -16,8 +16,6 @@ import com.feluu.pylife.utils.SharedPref;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.relex.circleindicator.CircleIndicator;
-
 public class CasualJobsActivity extends AppCompatActivity {
 
     @Override
