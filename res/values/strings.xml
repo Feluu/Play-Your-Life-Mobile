@@ -54,6 +54,7 @@
     <string name="options">Ustawienia</string>
     <string name="infos">Informacje</string>
     <string name="options_dark_theme">Tryb Ciemny</string>
+    <string name="error">Coś poszło nie tak...</string>
 
 
     <!-- Pojazdy -->
