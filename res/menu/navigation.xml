@@ -3,17 +3,17 @@
 
     <item
         android:id="@+id/navigation_cars"
-        android:icon="@drawable/ic_cars_24dp"
+        android:icon="@drawable/ic_car"
         android:title="@string/title_cars" />
 
     <item
         android:id="@+id/navigation_prices"
-        android:icon="@drawable/ic_prices_24dp"
+        android:icon="@drawable/ic_gauge"
         android:title="@string/title_tune" />
 
     <item
         android:id="@+id/navigation_earnings"
-        android:icon="@drawable/ic_earnings_24dp"
+        android:icon="@drawable/ic_dollar"
         android:title="@string/title_earnings" />
 
 </menu>
