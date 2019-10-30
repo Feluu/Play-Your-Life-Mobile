@@ -2,6 +2,7 @@ package com.feluu.pylife.adapters;
 
 import android.content.Context;
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.PagerAdapter;
 
 import android.util.TypedValue;
@@ -13,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.feluu.pylife.R;
 import com.feluu.pylife.models.ViewModel;
 
@@ -21,11 +23,11 @@ import java.util.List;
 public class JobsAdapter extends PagerAdapter {
 
     private List<ViewModel> models;
-    private Context context;
+    private Context mCtx;
 
-    public JobsAdapter(List<ViewModel> models, Context context) {
+    public JobsAdapter(List<ViewModel> models, Context mCtx) {
         this.models = models;
-        this.context = context;
+        this.mCtx = mCtx;
     }
 
     @Override
@@ -48,7 +50,7 @@ public class JobsAdapter extends PagerAdapter {
         TextView locations;
         LayoutInflater layoutInflater;
 
-        layoutInflater = LayoutInflater.from(context);
+        layoutInflater = LayoutInflater.from(mCtx);
         View view = layoutInflater.inflate(R.layout.job_item, container, false);
 
         imageView = view.findViewById(R.id.image);
@@ -58,8 +60,9 @@ public class JobsAdapter extends PagerAdapter {
         description = view.findViewById(R.id.description);
 
         Glide
-                .with(context)
-                .load(context.getResources().getDrawable(models.get(position).getImage()))
+                .with(mCtx)
+                .load(ContextCompat.getDrawable(mCtx, models.get(position).getImage()))
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_error)
                 .into(imageView);
@@ -68,14 +71,12 @@ public class JobsAdapter extends PagerAdapter {
         locations.setText(models.get(position).getThird());
         description.setText(models.get(position).getFourth());
 
-        int width = context.getResources().getDisplayMetrics().widthPixels;
-        int height = context.getResources().getDisplayMetrics().heightPixels;
-        int DPtoPX = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 170, context.getResources().getDisplayMetrics());
+        int width = mCtx.getResources().getDisplayMetrics().widthPixels;
+        int height = mCtx.getResources().getDisplayMetrics().heightPixels;
+        int DPtoPX = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 170, mCtx.getResources().getDisplayMetrics());
         if (width * height <= 1024000) {
             RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, DPtoPX);
             imageView.setLayoutParams(params);
-            earnings.setTextSize(14);
-            locations.setTextSize(14);
         }
 
         container.addView(view, 0);
