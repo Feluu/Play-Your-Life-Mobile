@@ -2,6 +2,7 @@ package com.feluu.pylife.adapters;
 
 import android.content.Context;
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.PagerAdapter;
 
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.feluu.pylife.R;
 import com.feluu.pylife.models.ViewModel;
@@ -59,7 +61,8 @@ public class AvWheelsAdapter extends PagerAdapter {
         demont.setText(models.get(position).getThird());
         Glide
                 .with(context)
-                .load(context.getResources().getDrawable(models.get(position).getImage()))
+                .load(ContextCompat.getDrawable(context, models.get(position).getImage()))
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_error)
                 .apply(RequestOptions.circleCropTransform())
