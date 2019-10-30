@@ -49,6 +49,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.ref.WeakReference;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout moto, tune, jobs;
     private RelativeLayout home, info;
     private SharedPref sharedPref;
+    private int selectedItem;
     private boolean isClicked;
 
     @Override
@@ -103,16 +105,18 @@ public class MainActivity extends AppCompatActivity {
         sfJobs = findViewById(R.id.card_view8);
         fcJobs = findViewById(R.id.card_view9);
         lsJobs = findViewById(R.id.card_view10);
-        moto.setVisibility(View.VISIBLE);
-        tune.setVisibility(View.GONE);
-        jobs.setVisibility(View.GONE);
-        home.setVisibility(View.VISIBLE);
-        info.setVisibility(View.GONE);
 
         navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         menuImg.setOnClickListener((View v) -> result.openDrawer());
+
+        try {
+            URL url = new URL("https://feluu.github.io/Play-Your-Life-Mobile/wheels.txt");
+            new ReadWheelsTask(this).execute(url);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
 
         if (sharedPref.loadNightModeState()) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -145,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
         if (sharedPref.loadAvailableWheels() == null) {
             try {
                 URL url = new URL("https://feluu.github.io/Play-Your-Life-Mobile/wheels.txt");
-                new ReadWheelsTask().execute(url);
+                new ReadWheelsTask(this).execute(url);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
@@ -196,6 +200,13 @@ public class MainActivity extends AppCompatActivity {
                         info.setVisibility(View.GONE);
                         home.setVisibility(View.VISIBLE);
                         navigation.setVisibility(View.VISIBLE);
+                        if (selectedItem == 0) {
+                            title.setText(R.string.title_cars);
+                        } else if (selectedItem == 1) {
+                            title.setText(R.string.title_tune);
+                        } else if (selectedItem == 2) {
+                            title.setText(R.string.title_earnings);
+                        }
                     }
                     if (position == 2) {
                         Toast.makeText(MainActivity.this, R.string.app_report_info, Toast.LENGTH_SHORT).show();
@@ -216,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
                         navigation.setVisibility(View.GONE);
                         ImageView backBtn;
                         backBtn = findViewById(R.id.menuToggle);
-
+                        title.setText(R.string.string_info);
                         ArrayList<ListModel> infoData = new ArrayList<>();
                         infoData.add(new ListModel(intToString(R.string.info_author), intToString(R.string.info_author_name), null, null, null, 0));
                         infoData.add(new ListModel(intToString(R.string.info_app_version), intToString(R.string.versionName), null, null, null, 0));
@@ -294,6 +305,7 @@ public class MainActivity extends AppCompatActivity {
                     jobs.setVisibility(View.GONE);
                     moto.setVisibility(View.VISIBLE);
                     scroll.scrollTo(0, 0);
+                    selectedItem = 0;
                     return true;
                 case R.id.navigation_prices:
                     title.setText(R.string.title_tune);
@@ -302,6 +314,7 @@ public class MainActivity extends AppCompatActivity {
                     jobs.setVisibility(View.GONE);
                     tune.setVisibility(View.VISIBLE);
                     scroll.scrollTo(0, 0);
+                    selectedItem = 1;
                     return true;
                 case R.id.navigation_earnings:
                     title.setText(R.string.title_earnings);
@@ -310,6 +323,7 @@ public class MainActivity extends AppCompatActivity {
                     tune.setVisibility(View.GONE);
                     jobs.setVisibility(View.VISIBLE);
                     scroll.scrollTo(0, 0);
+                    selectedItem = 2;
                     return true;
             }
         }
@@ -392,12 +406,9 @@ public class MainActivity extends AppCompatActivity {
     public void wheelsTunePage(View v) {
         if (!isClicked) {
             isClicked = true;
-            try {
-                URL url = new URL("https://feluu.github.io/Play-Your-Life-Mobile/wheels.txt");
-                new ReadWheelsTask().execute(url);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
+            Intent intent = new Intent(MainActivity.this, WheelsTuneActivity.class);
+            intent.putExtra("avWheels", sharedPref.loadAvailableWheels());
+            startActivity(intent);
         }
     }
 
@@ -457,10 +468,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private class ReadWheelsTask extends AsyncTask<URL, Void, String> {
+    private static class ReadWheelsTask extends AsyncTask<URL, Void, String> {
 
-        private String avWheels = null;
+        private WeakReference<MainActivity> activityWeakReference;
         private String str = null;
+
+        ReadWheelsTask(MainActivity context) {
+            activityWeakReference = new WeakReference<>(context);
+        }
 
         @Override
         protected String doInBackground(URL... urls) {
@@ -476,20 +491,14 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            SharedPref sharedPref = new SharedPref(getApplicationContext());
+            MainActivity activity = activityWeakReference.get();
+            SharedPref sharedPref = new SharedPref(activity.getApplicationContext());
             String av = sharedPref.loadAvailableWheels();
             if (str == null && av != null) {
-                avWheels = av;
             } else if (str != null) {
                 sharedPref.setAvailableWheels(str);
-                avWheels = str;
             } else {
-                avWheels = "error";
-            }
-            if (isClicked) {
-                Intent intent = new Intent(MainActivity.this, WheelsTuneActivity.class);
-                intent.putExtra("avWheels", avWheels);
-                startActivity(intent);
+                sharedPref.setAvailableWheels(null);
             }
         }
     }
