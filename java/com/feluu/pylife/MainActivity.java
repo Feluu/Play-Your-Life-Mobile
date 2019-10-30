@@ -145,15 +145,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-        if (sharedPref.loadAvailableWheels() == null) {
-            try {
-                URL url = new URL("https://feluu.github.io/Play-Your-Life-Mobile/wheels.txt");
-                new ReadWheelsTask(this).execute(url);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     @Override
