@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -18,23 +19,23 @@ import java.util.ArrayList;
 public class InfoAdapter extends ArrayAdapter<ListModel> {
 
     private ArrayList<ListModel> dataSet;
-    private Context mContext;
+    private Context mCtx;
 
     private static class ViewHolder {
         private TextView firstText, secondText;
     }
 
-    public InfoAdapter(ArrayList<ListModel> data, Context context) {
-        super(context, R.layout.info_layout, data);
+    public InfoAdapter(ArrayList<ListModel> data, Context mCtx) {
+        super(mCtx, R.layout.info_layout, data);
         this.dataSet = data;
-        this.mContext = context;
+        this.mCtx = mCtx;
 
     }
 
    @NonNull
    @Override
    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
-       SharedPref sharedPref = new SharedPref(mContext);
+       SharedPref sharedPref = new SharedPref(mCtx);
        ListModel adapter = getItem(position);
        ViewHolder viewHolder;
        if (convertView == null) {
@@ -47,11 +48,15 @@ public class InfoAdapter extends ArrayAdapter<ListModel> {
        } else {
            viewHolder = (ViewHolder) convertView.getTag();
        }
-       viewHolder.firstText.setText(adapter.getFirst());
-       viewHolder.secondText.setText(adapter.getSecond());
+       if (adapter != null) {
+           viewHolder.firstText.setText(adapter.getFirst());
+           viewHolder.secondText.setText(adapter.getSecond());
+       } else {
+           Toast.makeText(mCtx, R.string.error, Toast.LENGTH_SHORT).show();
+       }
        if (sharedPref.loadNightModeState()) {
-           viewHolder.firstText.setTextColor(mContext.getResources().getColor(R.color.colorInfo));
-           viewHolder.secondText.setTextColor(mContext.getResources().getColor(R.color.colorInfoT));
+           viewHolder.firstText.setTextColor(mCtx.getResources().getColor(R.color.colorInfo));
+           viewHolder.secondText.setTextColor(mCtx.getResources().getColor(R.color.colorInfoT));
        }
        return convertView;
    }
