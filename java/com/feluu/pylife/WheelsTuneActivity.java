@@ -89,18 +89,22 @@ public class WheelsTuneActivity extends AppCompatActivity {
 
     private void setAvailableWheels(){
         Bundle extras = getIntent().getExtras();
-        String avWheels = extras.getString("avWheels").toLowerCase();
         NestedScrollView nestedScrollView;
         ViewPager viewPager;
         CircleIndicator indicator;
+        String avWheels = null;
         nestedScrollView = findViewById(R.id.nestedScrollView);
         viewPager = findViewById(R.id.viewPager);
         indicator = findViewById(R.id.indicator);
-
-        if (avWheels.equalsIgnoreCase("error")) {
-            viewPager.setVisibility(View.GONE);
-            indicator.setVisibility(View.GONE);
+        try {
+            if (extras != null) {
+                avWheels = extras.getString("avWheels").toLowerCase();
+            }
+        } catch (Exception e) {
             nestedScrollView.getParent().requestChildFocus(nestedScrollView, nestedScrollView);
+        }
+
+        if (avWheels == null) {
         } else {
             List<ViewModel> models;
             models = new ArrayList<>();
@@ -157,8 +161,10 @@ public class WheelsTuneActivity extends AppCompatActivity {
             }
             AvWheelsAdapter adapter = new AvWheelsAdapter(models, this);
             viewPager.setAdapter(adapter);
+            viewPager.setVisibility(View.VISIBLE);
             nestedScrollView.getParent().requestChildFocus(nestedScrollView, nestedScrollView);
             indicator.setViewPager(viewPager);
+            indicator.setVisibility(View.VISIBLE);
         }
     }
 
