@@ -1,9 +1,8 @@
 {
-  "latestVersion": "1.1.1",
-  "latestVersionCode": 11100,
-  "url": "https://github.com/Feluu/Play-Your-Life-Mobile/releases/download/v1.1.1/pylife.apk",
+  "latestVersion": "1.1.2",
+  "latestVersionCode": 11200,
+  "url": "https://github.com/Feluu/Play-Your-Life-Mobile/releases/download/v1.1.2/pylife.apk",
   "releaseNotes": [
-    "- Integracja z GitHubem,",
-    "- Poprawki."
+    "- Poprawki"
   ]
 }
