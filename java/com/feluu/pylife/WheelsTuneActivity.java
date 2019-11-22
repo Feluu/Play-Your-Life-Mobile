@@ -87,7 +87,7 @@ public class WheelsTuneActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
-    private void setAvailableWheels(){
+    private void setAvailableWheels() {
         Bundle extras = getIntent().getExtras();
         NestedScrollView nestedScrollView;
         ViewPager viewPager;
@@ -104,8 +104,7 @@ public class WheelsTuneActivity extends AppCompatActivity {
             nestedScrollView.getParent().requestChildFocus(nestedScrollView, nestedScrollView);
         }
 
-        if (avWheels == null) {
-        } else {
+        if (!(avWheels == null)) {
             List<ViewModel> models;
             models = new ArrayList<>();
             if (avWheels.contains("ahab")) {
