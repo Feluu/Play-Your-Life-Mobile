@@ -4,7 +4,6 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 
@@ -17,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.cardview.widget.CardView;
 
-import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -224,7 +222,6 @@ public class MainActivity extends AppCompatActivity {
                         infoData.add(new ListModel(intToString(R.string.info_app_version), intToString(R.string.versionName), null, null, null, 0));
                         infoData.add(new ListModel(intToString(R.string.info_used), intToString(R.string.info_used_2), null, null, null, 0));
                         infoData.add(new ListModel(intToString(R.string.info_github), intToString(R.string.info_github_link), null, null, null, 0));
-                        infoData.add(new ListModel(intToString(R.string.info_model), getDeviceName(), null, null, null, 0));
                         ListView listView;
                         listView = findViewById(R.id.listView);
 
@@ -322,36 +319,6 @@ public class MainActivity extends AppCompatActivity {
 
     private String intToString(int Res) {
         return getResources().getString(Res);
-    }
-
-    public static String getDeviceName() {
-        String manufacturer = Build.MANUFACTURER;
-        String model = Build.MODEL;
-        if (model.startsWith(manufacturer)) {
-            return capitalize(model);
-        }
-        return capitalize(manufacturer) + " " + model;
-    }
-
-    private static String capitalize(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return str;
-        }
-        char[] arr = str.toCharArray();
-        boolean capitalizeNext = true;
-
-        StringBuilder phrase = new StringBuilder();
-        for (char c : arr) {
-            if (capitalizeNext && Character.isLetter(c)) {
-                phrase.append(Character.toUpperCase(c));
-                capitalizeNext = false;
-                continue;
-            } else if (Character.isWhitespace(c)) {
-                capitalizeNext = true;
-            }
-            phrase.append(c);
-        }
-        return phrase.toString();
     }
 
     private void tuneAnim() {
