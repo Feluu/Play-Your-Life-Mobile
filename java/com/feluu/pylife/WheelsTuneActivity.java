@@ -104,7 +104,7 @@ public class WheelsTuneActivity extends AppCompatActivity {
             nestedScrollView.getParent().requestChildFocus(nestedScrollView, nestedScrollView);
         }
 
-        if (!(avWheels == null)) {
+        if (avWheels != null) {
             List<ViewModel> models;
             models = new ArrayList<>();
             if (avWheels.contains("ahab")) {
