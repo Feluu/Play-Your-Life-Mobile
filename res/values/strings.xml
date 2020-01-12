@@ -606,6 +606,14 @@
     <string name="drastic_red_price">8.800€</string>
     <string name="george_pink_name">George Pink</string>
     <string name="george_pink_price">7.800€</string>
+    <string name="prosiaczek_name">Prosiaczek</string>
+    <string name="prosiaczek_price">8.000€</string>
+    <string name="rechotka_name">Rechotka</string>
+    <string name="rechotka_price">8.000€</string>
+    <string name="delfinek_name">Delfinek</string>
+    <string name="delfinek_price">8.000€</string>
+    <string name="flamingi_name">Flamingi</string>
+    <string name="flamingi_price">8.000€</string>
     <string name="bagina_name">Bagina</string>
     <string name="bagina_price">7.500€</string>
     <string name="lodowe_name">Lodowe</string>
@@ -626,6 +634,18 @@
     <string name="light_phoenix_price">8.800€</string>
     <string name="lososiowe_name">Łososiowe</string>
     <string name="lososiowe_price">7.500€</string>
+    <string name="citrus_mix_name">Citrus Mix</string>
+    <string name="citrus_mix_price">7.800€</string>
+    <string name="ziemiste_name">Ziemiste</string>
+    <string name="ziemiste_price">7.500€</string>
+    <string name="gold_dream_name">Gold Dream</string>
+    <string name="gold_dream_price">9.000€</string>
+    <string name="po_name">Po.</string>
+    <string name="po_price">10.000€</string>
+    <string name="nosek_rudolfa_name">Nosek Rudolfa</string>
+    <string name="nosek_rudolfa_price">7.500€</string>
+    <string name="choineczka_name">Choineczka</string>
+    <string name="choineczka_price">9.000€</string>
     <string name="pastelowa_zielen_name">Pastelowa Zieleń</string>
     <string name="pastelowa_zielen_price">7.500€</string>
     <string name="pastelowy_fiolet_name">Pastelowy Fiolet</string>
@@ -777,6 +797,9 @@
     <string name="style_name">Style</string>
     <string name="style_range">0-200km/h</string>
     <string name="style_price">850€</string>
+    <string name="smart_name">Smart</string>
+    <string name="smart_range">0-120km/h</string>
+    <string name="smart_price">1.000€</string>
 
 
     <!-- Prace -->
