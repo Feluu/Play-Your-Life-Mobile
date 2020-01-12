@@ -1,6 +1,5 @@
 package com.feluu.pylife;
 
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -28,7 +27,6 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.javiersantos.appupdater.AppUpdater;
 import com.github.javiersantos.appupdater.enums.UpdateFrom;
@@ -126,8 +124,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         new AppUpdater(this)
-            .setUpdateFrom(UpdateFrom.JSON)
-            .setUpdateJSON("https://feluu.github.io/Play-Your-Life-Mobile/update.json")
+            .setUpdateFrom(UpdateFrom.GITHUB)
+            .setGitHubUserAndRepo("Feluu", "Play-Your-Life-Mobile")
             .start();
 
         themeSwitch.setOnCheckedChangeListener((CompoundButton buttonView, boolean isChecked) -> {
@@ -198,17 +196,10 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                     if (position == 2) {
-                        Toast.makeText(MainActivity.this, R.string.app_report_info, Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(Intent.ACTION_SEND);
-                        intent.setType("message/rfc822");
-                        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"kontakt@feluu.pl"});
-                        intent.putExtra(Intent.EXTRA_SUBJECT, "Zgłoszenie błędu w aplikacji Play Your Life Mobile");
-                        try {
-                            startActivity(Intent.createChooser(intent, "Wyślij e-mail..."));
-                        } catch (ActivityNotFoundException ex) {
-                            Toast.makeText(MainActivity.this, "Nie posiadasz zainstalowanej żadnej aplikacji do wysyłania e-mail.", Toast.LENGTH_SHORT).show();
-                            ex.printStackTrace();
-                        }
+                        String url = "https://pylife.pl/profile/31118-feluu/";
+                        Intent i = new Intent(Intent.ACTION_VIEW);
+                        i.setData(Uri.parse(url));
+                        startActivity(i);
                     }
                     if (position == 4) {
                         home.setVisibility(View.GONE);
@@ -235,12 +226,6 @@ public class MainActivity extends AppCompatActivity {
                                 Intent i = new Intent(Intent.ACTION_VIEW);
                                 i.setData(Uri.parse(url));
                                 startActivity(i);
-                            }
-                            if (position_ == 1) {
-                                new AppUpdater(MainActivity.this)
-                                    .setUpdateFrom(UpdateFrom.JSON)
-                                    .setUpdateJSON("https://feluu.github.io/Play-Your-Life-Mobile/update.json")
-                                    .start();
                             }
                             if (position_ == 2) {
                                 String url = "https://feluu.github.io/Play-Your-Life-Mobile/zasoby.html";
@@ -453,7 +438,7 @@ public class MainActivity extends AppCompatActivity {
             SharedPref sharedPref = new SharedPref(activity.getApplicationContext());
             String av = sharedPref.loadAvailableWheels();
             if (str == null && av != null) {
-            } else if (str != null) {
+            } else if (str != null && !(str.contains("brak"))) {
                 sharedPref.setAvailableWheels(str);
             } else {
                 sharedPref.setAvailableWheels(null);
