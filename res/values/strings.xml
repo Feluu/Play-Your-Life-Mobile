@@ -50,11 +50,11 @@
     <string name="info_used_2">Przytrzymaj, aby zobaczyć</string>
     <string name="info_github">GitHub</string>
     <string name="info_github_link">Feluu/Play-Your-Life-Mobile</string>
-    <string name="info_model">Model telefonu</string>
     <string name="options">Ustawienia</string>
     <string name="infos">Informacje</string>
     <string name="options_dark_theme">Tryb Ciemny</string>
     <string name="error">Coś poszło nie tak...</string>
+    <string name="avail_wheels">Dostępne felgi</string>
 
 
     <!-- Pojazdy -->
@@ -126,7 +126,7 @@
     <string name="bullet_name">Bullet</string>
     <string name="bullet_vmax">181km/h</string>
     <string name="bullet_vmaxfmk">235km/h</string>
-    <string name="bullet_tax">5.400€</string>
+    <string name="bullet_tax">7.800€</string>
     <string name="bullet_reset">N/A</string>
     <string name="burrito_name">Burrito</string>
     <string name="burrito_vmax">140km/h</string>
@@ -146,7 +146,7 @@
     <string name="cheetah_name">Cheetah</string>
     <string name="cheetah_vmax">172km/h</string>
     <string name="cheetah_vmaxfmk">229km/h</string>
-    <string name="cheetah_tax">8.400€</string>
+    <string name="cheetah_tax">10.500€</string>
     <string name="cheetah_reset">N/A</string>
     <string name="clover_name">Clover</string>
     <string name="clover_vmax">147km/h</string>
@@ -163,6 +163,11 @@
     <string name="comet_vmaxfmk">204km/h</string>
     <string name="comet_tax">1.950€</string>
     <string name="comet_reset">N/A</string>
+    <string name="comet_2_name">Comet II</string>
+    <string name="comet_2_vmax">194km/h</string>
+    <string name="comet_2_vmaxfmk">204km/h</string>
+    <string name="comet_2_tax">1.950€</string>
+    <string name="comet_2_reset">N/A</string>
     <string name="elegant_name">Elegant</string>
     <string name="elegant_vmax">149km/h</string>
     <string name="elegant_vmaxfmk">184km/h</string>
@@ -171,7 +176,7 @@
     <string name="elegy_name">Elegy</string>
     <string name="elegy_vmax">160km/h</string>
     <string name="elegy_vmaxfmk">204km/h</string>
-    <string name="elegy_tax">3.300€</string>
+    <string name="elegy_tax">7.950€</string>
     <string name="elegy_reset">N/A</string>
     <string name="emperor_name">Emperor</string>
     <string name="emperor_vmax">136km/h</string>
@@ -186,7 +191,7 @@
     <string name="euros_name">Euros</string>
     <string name="euros_vmax">147km/h</string>
     <string name="euros_vmaxfmk">197km/h</string>
-    <string name="euros_tax">3.150€</string>
+    <string name="euros_tax">3.450€</string>
     <string name="euros_reset">N/A</string>
     <string name="faggio_name">Faggio</string>
     <string name="faggio_vmax">160km/h</string>
@@ -316,7 +321,7 @@
     <string name="patriot_name">Patriot</string>
     <string name="patriot_vmax">140km/h</string>
     <string name="patriot_vmaxfmk">174km/h</string>
-    <string name="patriot_tax">1.200€</string>
+    <string name="patriot_tax">15.000€</string>
     <string name="patriot_reset">N/A</string>
     <string name="pcj600_name">PCJ-600</string>
     <string name="pcj600_vmax">181km/h</string>
@@ -366,7 +371,7 @@
     <string name="rancher_name">Rancher</string>
     <string name="rancher_vmax">121km/h</string>
     <string name="rancher_vmaxfmk">153km/h</string>
-    <string name="rancher_tax">1.200€</string>
+    <string name="rancher_tax">6.000€</string>
     <string name="rancher_reset">N/A</string>
     <string name="regina_name">Regina</string>
     <string name="regina_vmax">125km/h</string>
@@ -441,7 +446,7 @@
     <string name="sultan_name">Sultan</string>
     <string name="sultan_vmax">151km/h</string>
     <string name="sultan_vmaxfmk">200km/h</string>
-    <string name="sultan_tax">3.150€</string>
+    <string name="sultan_tax">7.200€</string>
     <string name="sultan_reset">N/A</string>
     <string name="sunrise_name">Sunrise</string>
     <string name="sunrise_vmax">130km/h</string>
