@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -92,10 +93,12 @@ public class WheelsTuneActivity extends AppCompatActivity {
         NestedScrollView nestedScrollView;
         ViewPager viewPager;
         CircleIndicator indicator;
+        LinearLayout avWheelsLayout;
         String avWheels = null;
         nestedScrollView = findViewById(R.id.nestedScrollView);
         viewPager = findViewById(R.id.viewPager);
         indicator = findViewById(R.id.indicator);
+        avWheelsLayout = findViewById(R.id.avWheelsLayout);
         try {
             if (extras != null) {
                 avWheels = extras.getString("avWheels").toLowerCase();
@@ -160,10 +163,9 @@ public class WheelsTuneActivity extends AppCompatActivity {
             }
             AvWheelsAdapter adapter = new AvWheelsAdapter(models, this);
             viewPager.setAdapter(adapter);
-            viewPager.setVisibility(View.VISIBLE);
+            avWheelsLayout.setVisibility(View.VISIBLE);
             nestedScrollView.getParent().requestChildFocus(nestedScrollView, nestedScrollView);
             indicator.setViewPager(viewPager);
-            indicator.setVisibility(View.VISIBLE);
         }
     }
 
