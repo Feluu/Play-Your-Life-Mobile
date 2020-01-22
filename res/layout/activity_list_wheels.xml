@@ -62,25 +62,44 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/viewPager"
+            <LinearLayout
+                android:id="@+id/avWheelsLayout"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:layout_gravity="top"
-                android:clipToPadding="false"
-                android:overScrollMode="never"
-                android:paddingStart="40dp"
-                android:paddingEnd="40dp"
-                android:visibility="gone" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" >
 
-            <me.relex.circleindicator.CircleIndicator
-                android:id="@+id/indicator"
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="2dp"
-                android:visibility="gone"
-                app:ci_drawable="@drawable/indicator" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/avail_wheels"
+                    android:textAlignment="center"
+                    android:textColor="?attr/textDark"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_gravity="top"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    android:paddingStart="40dp"
+                    android:paddingEnd="40dp"
+                    android:visibility="visible" />
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="2dp"
+                    android:visibility="visible"
+                    app:ci_drawable="@drawable/indicator" />
+
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
