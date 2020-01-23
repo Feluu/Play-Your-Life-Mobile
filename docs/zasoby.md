@@ -5,5 +5,6 @@
 - symulatorpylife.mtasa.eu - obrazki. Autor: Maszek
 - gta.rdy.jp - obrazki.
 - gtavision.com - obrazki.
-- pylife.pl - dane. Autor: TheBuldog
+- TheBuldog - dane.
 - feluu - obrazki, dane.
+- Msciciel - obrazki, dane.
