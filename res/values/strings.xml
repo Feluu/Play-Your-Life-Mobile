@@ -171,7 +171,7 @@
     <string name="elegant_name">Elegant</string>
     <string name="elegant_vmax">149km/h</string>
     <string name="elegant_vmaxfmk">184km/h</string>
-    <string name="elegant_tax">3.756€</string>
+    <string name="elegant_tax">4.050€</string>
     <string name="elegant_reset">N/A</string>
     <string name="elegy_name">Elegy</string>
     <string name="elegy_vmax">160km/h</string>
@@ -411,7 +411,7 @@
     <string name="sentinel_name">Sentinel</string>
     <string name="sentinel_vmax">146km/h</string>
     <string name="sentinel_vmaxfmk">181km/h</string>
-    <string name="sentinel_tax">1.050€</string>
+    <string name="sentinel_tax">1.800€</string>
     <string name="sentinel_reset">N/A</string>
     <string name="slamvan_name">Slamvan</string>
     <string name="slamvan_vmax">141km/h</string>
