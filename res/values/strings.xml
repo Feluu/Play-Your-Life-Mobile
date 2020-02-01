@@ -200,7 +200,7 @@
     <string name="faggio_reset">N/A</string>
     <string name="fcr900_name">FCR-900</string>
     <string name="fcr900_vmax">180km/h</string>
-    <string name="fcr900_vmaxfmk">250km/h</string>
+    <string name="fcr900_vmaxfmk">194km/h</string>
     <string name="fcr900_tax">3.450€</string>
     <string name="fcr900_reset">N/A</string>
     <string name="feltzer_name">Feltzer</string>
@@ -220,7 +220,7 @@
     <string name="fortune_reset">N/A</string>
     <string name="freeway_name">Freeway</string>
     <string name="freeway_vmax">177km/h</string>
-    <string name="freeway_vmaxfmk">215km/h</string>
+    <string name="freeway_vmaxfmk">194km/h</string>
     <string name="freeway_tax">4.500€</string>
     <string name="freeway_reset">N/A</string>
     <string name="glendale_name">Glendale</string>
@@ -310,7 +310,7 @@
     <string name="nebula_reset">56.700€</string>
     <string name="nrg500_name">NRG-500</string>
     <string name="nrg500_vmax">186km/h</string>
-    <string name="nrg500_vmaxfmk">250km/h</string>
+    <string name="nrg500_vmaxfmk">198km/h</string>
     <string name="nrg500_tax">10.200€</string>
     <string name="nrg500_reset">N/A</string>
     <string name="oceanic_name">Oceanic</string>
@@ -325,7 +325,7 @@
     <string name="patriot_reset">N/A</string>
     <string name="pcj600_name">PCJ-600</string>
     <string name="pcj600_vmax">181km/h</string>
-    <string name="pcj600_vmaxfmk">220km/h</string>
+    <string name="pcj600_vmaxfmk">194km/h</string>
     <string name="pcj600_tax">2.970€</string>
     <string name="pcj600_reset">N/A</string>
     <string name="perennial_name">Perennial</string>
