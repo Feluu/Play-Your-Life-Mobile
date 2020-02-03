@@ -17,7 +17,9 @@
         app:cardBackgroundColor="?attr/cardBackgroundColor"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
-        app:cardUseCompatPadding="true">
+        app:cardUseCompatPadding="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -35,15 +37,6 @@
                 android:padding="4dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/ahab" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="13dp"
-                android:layout_height="13dp"
-                android:layout_marginStart="-22dp"
-                android:layout_marginTop="15dp"
-                android:layout_toEndOf="@id/imageView2"
-                app:srcCompat="@drawable/circle" />
 
             <TextView
                 android:id="@+id/wheelsName"
