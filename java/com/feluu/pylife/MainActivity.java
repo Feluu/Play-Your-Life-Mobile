@@ -15,6 +15,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.cardview.widget.CardView;
 
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.AdRequest;
+
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -53,16 +59,19 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private Drawer result = null;
+    private InterstitialAd mInterstitialAd;
+    private InterstitialAd mInterstitialAd2;
 
     private ScrollView scroll;
     private BottomNavigationView navigation;
     private TextView title;
-    private CardView carsList, mechanicalTune, lightsTune, wheelsTune, spoilersTune, countersTune, casualJobs, lvJobs, sfJobs, fcJobs, lsJobs;
+    private CardView carsList, mechanicalTune, lightsTune, wheelsTune, spoilersTune, countersTune, uWizuTune, casualJobs, lvJobs, sfJobs, fcJobs, lsJobs;
     private LinearLayout moto, tune, jobs;
     private RelativeLayout home, info;
     private SharedPref sharedPref;
     private int selectedItem;
     private boolean isClicked;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
         wheelsTune = findViewById(R.id.card_view4);
         spoilersTune = findViewById(R.id.card_view11);
         countersTune = findViewById(R.id.card_view6);
+        uWizuTune = findViewById(R.id.card_view12);
         casualJobs = findViewById(R.id.card_view5);
         lvJobs = findViewById(R.id.card_view7);
         sfJobs = findViewById(R.id.card_view8);
@@ -106,6 +116,14 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         menuImg.setOnClickListener((View v) -> result.openDrawer());
+
+        MobileAds.initialize(this, (InitializationStatus initializationStatus) -> {
+                mInterstitialAd = new InterstitialAd(MainActivity.this);
+                mInterstitialAd.setAdUnitId("ca-app-pub-8752363920727159/7418950479");
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+                mInterstitialAd2 = new InterstitialAd(MainActivity.this);
+                mInterstitialAd2.setAdUnitId("ca-app-pub-8752363920727159/7418950479");
+        });
 
         try {
             URL url = new URL("https://feluu.github.io/Play-Your-Life-Mobile/wheels.txt");
@@ -180,6 +198,8 @@ public class MainActivity extends AppCompatActivity {
                         new PrimaryDrawerItem().withName(R.string.string_home).withIcon(FontAwesome.Icon.faw_home).withIdentifier(1),
                         new PrimaryDrawerItem().withName(R.string.string_report_error).withIcon(FontAwesome.Icon.faw_comment).withSelectable(false),
                         new SectionDrawerItem().withName(R.string.string_others),
+                        new SecondaryDrawerItem().withName(R.string.string_donation).withIcon(FontAwesome.Icon.faw_donate).withSelectable(false),
+                        new SecondaryDrawerItem().withName(R.string.string_ad).withIcon(FontAwesome.Icon.faw_ad).withSelectable(false),
                         new SecondaryDrawerItem().withName(R.string.string_info).withIcon(FontAwesome.Icon.faw_info)
                 )
                 .withOnDrawerItemClickListener((View view, int position, IDrawerItem drawerItem) -> {
@@ -202,6 +222,23 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i);
                     }
                     if (position == 4) {
+                        Intent intent = new Intent(MainActivity.this, DonationActivity.class);
+                        startActivity(intent);
+                    }
+                    if (position == 5) {
+                        if (mInterstitialAd.isLoaded()) {
+                            mInterstitialAd.show();
+                            mInterstitialAd2.loadAd(new AdRequest.Builder().build());
+                        }
+                        else if (mInterstitialAd2.isLoaded()) {
+                            mInterstitialAd2.show();
+                            mInterstitialAd.loadAd(new AdRequest.Builder().build());
+                        }
+                        else {
+                            Log.d("TAG", "The interstitial wasn't loaded yet.");
+                        }
+                    }
+                    if (position == 6) {
                         home.setVisibility(View.GONE);
                         info.setVisibility(View.VISIBLE);
                         navigation.setVisibility(View.GONE);
@@ -312,6 +349,7 @@ public class MainActivity extends AppCompatActivity {
         wheelsTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_up));
         spoilersTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_up));
         countersTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_up));
+        uWizuTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_up));
     }
 
     private void jobsAnim() {
@@ -367,6 +405,14 @@ public class MainActivity extends AppCompatActivity {
         if (!isClicked) {
             isClicked = true;
             Intent intent = new Intent(MainActivity.this, CountersTuneActivity.class);
+            startActivity(intent);
+        }
+    }
+
+    public void uniwersalneWizuPage(View v) {
+        if (!isClicked) {
+            isClicked = true;
+            Intent intent = new Intent(MainActivity.this, UWizuTuneActivity.class);
             startActivity(intent);
         }
     }
