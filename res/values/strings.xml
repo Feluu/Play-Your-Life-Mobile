@@ -452,7 +452,7 @@
     <string name="stretch_reset">N/A</string>
     <string name="sultan_name">Sultan</string>
     <string name="sultan_vmax">151km/h</string>
-    <string name="sultan_vmaxfmk">200km/h</string>
+    <string name="sultan_vmaxfmk">202km/h</string>
     <string name="sultan_tax">7.200€</string>
     <string name="sultan_reset">264.000€</string>
     <string name="sunrise_name">Sunrise</string>
@@ -730,13 +730,13 @@
     <string name="switch_demont">3.600€</string>
     <string name="timer_name">Timer [1085]</string>
     <string name="timer_price">12.000€</string>
-    <string name="timer_demont">N/A</string>
+    <string name="timer_demont">7.840€</string>
     <string name="twist_name">Twist [1078]</string>
     <string name="twist_price">2.400€</string>
     <string name="twist_demont">1.400€</string>
     <string name="virtual_name">Virtual [1097]</string>
     <string name="virtual_price">4.320€</string>
-    <string name="virtual_demont">N/A</string>
+    <string name="virtual_demont">2.822€</string>
     <string name="wires_name">Wires [1076]</string>
     <string name="wires_price">13.560€</string>
     <string name="wires_demont">8.640€</string>
