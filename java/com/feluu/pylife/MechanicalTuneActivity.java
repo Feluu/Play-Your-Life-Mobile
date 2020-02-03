@@ -61,7 +61,6 @@ public class MechanicalTuneActivity extends AppCompatActivity {
             mechanicalList.add(new ListModel(intToString(R.string.hydra_mechanical_name), intToString(R.string.hydra_allows), intToString(R.string.hydra_price), intToString(R.string.hydra_demont), null, R.drawable.ic_build_light));
             mechanicalList.add(new ListModel(intToString(R.string.taxo_mechanical_name), intToString(R.string.taxo_allows), intToString(R.string.taxo_price), intToString(R.string.taxo_demont), null, R.drawable.ic_build_light));
             mechanicalList.add(new ListModel(intToString(R.string.logi_mechanical_tune), intToString(R.string.logi_allows), intToString(R.string.logi_price), intToString(R.string.logi_demont), null, R.drawable.ic_build_light));
-            mechanicalList.add(new ListModel(intToString(R.string.nos_atrapa_name), intToString(R.string.nos_atrapa_allows), intToString(R.string.nos_atrapa_price), intToString(R.string.nos_atrapa_demont), null, R.drawable.atrapa_nos));
             mechanicalList.add(new ListModel(intToString(R.string.nos_ciagle_name), intToString(R.string.nos_ciagle_allows), intToString(R.string.nos_ciagle_price), intToString(R.string.nos_ciagle_demont), null, R.drawable.nos_ciagle));
             mechanicalList.add(new ListModel(intToString(R.string.nos_impulsowe_name), intToString(R.string.nos_impulsowe_allows), intToString(R.string.nos_impulsowe_price), intToString(R.string.nos_impulsowe_demont), null, R.drawable.nos_impulsowe));
         } else {
@@ -72,7 +71,6 @@ public class MechanicalTuneActivity extends AppCompatActivity {
             mechanicalList.add(new ListModel(intToString(R.string.hydra_mechanical_name), intToString(R.string.hydra_allows), intToString(R.string.hydra_price), intToString(R.string.hydra_demont), null, R.drawable.ic_build));
             mechanicalList.add(new ListModel(intToString(R.string.taxo_mechanical_name), intToString(R.string.taxo_allows), intToString(R.string.taxo_price), intToString(R.string.taxo_demont), null, R.drawable.ic_build));
             mechanicalList.add(new ListModel(intToString(R.string.logi_mechanical_tune), intToString(R.string.logi_allows), intToString(R.string.logi_price), intToString(R.string.logi_demont), null, R.drawable.ic_build));
-            mechanicalList.add(new ListModel(intToString(R.string.nos_atrapa_name), intToString(R.string.nos_atrapa_allows), intToString(R.string.nos_atrapa_price), intToString(R.string.nos_atrapa_demont), null, R.drawable.atrapa_nos));
             mechanicalList.add(new ListModel(intToString(R.string.nos_ciagle_name), intToString(R.string.nos_ciagle_allows), intToString(R.string.nos_ciagle_price), intToString(R.string.nos_ciagle_demont), null, R.drawable.nos_ciagle));
             mechanicalList.add(new ListModel(intToString(R.string.nos_impulsowe_name), intToString(R.string.nos_impulsowe_allows), intToString(R.string.nos_impulsowe_price), intToString(R.string.nos_impulsowe_demont), null, R.drawable.nos_impulsowe));
         }
