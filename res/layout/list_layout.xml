@@ -17,7 +17,8 @@
         app:cardBackgroundColor="?attr/cardBackgroundColor"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
-        app:cardUseCompatPadding="true">
+        app:cardUseCompatPadding="true"
+        android:foreground="?android:attr/selectableItemBackground">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -183,6 +184,19 @@
                 android:text="@string/admiral_reset"
                 android:textColor="?attr/textLight"
                 android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/wizu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/reset"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/layout_tuning_wizu"
+                android:textColor="?attr/textDark"
+                android:textSize="15sp"
+                android:visibility="gone" />
 
         </RelativeLayout>
 
