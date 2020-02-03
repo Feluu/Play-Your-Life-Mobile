@@ -11,7 +11,9 @@
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
         app:cardUseCompatPadding="true"
-        android:focusable="true">
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
