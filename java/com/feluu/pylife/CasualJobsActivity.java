@@ -66,8 +66,12 @@ public class CasualJobsActivity extends AppCompatActivity {
         models.add(new ViewModel(R.drawable.hol, intToString(R.string.hol_title), intToString(R.string.hol_earnings), intToString(R.string.hol_locations), intToString(R.string.hol_description)));
         models.add(new ViewModel(R.drawable.way, intToString(R.string.kata_title), intToString(R.string.kata_earnings), intToString(R.string.kata_locations), intToString(R.string.kata_description)));
         models.add(new ViewModel(R.drawable.aparat, intToString(R.string.photo_title), intToString(R.string.photo_earnings), intToString(R.string.photo_locations), intToString(R.string.photo_description)));
+        models.add(new ViewModel(R.drawable.tartak, intToString(R.string.tartak_title), intToString(R.string.tartak_earnings), intToString(R.string.tartak_locations), intToString(R.string.tartak_description)));
+        models.add(new ViewModel(R.drawable.farma, intToString(R.string.farma_title), intToString(R.string.farma_earnings), intToString(R.string.farma_locations), intToString(R.string.farma_description)));
         models.add(new ViewModel(R.drawable.kutr, intToString(R.string.ryb_title), intToString(R.string.ryb_earnings), intToString(R.string.ryb_locations), intToString(R.string.ryb_description)));
+        models.add(new ViewModel(R.drawable.lodolamacz, intToString(R.string.lodolamacz_title), intToString(R.string.lodolamacz_earnings), intToString(R.string.lodolamacz_locations), intToString(R.string.lodolamacz_description)));
         models.add(new ViewModel(R.drawable.kurier, intToString(R.string.kurier_title), intToString(R.string.kurier_earnings), intToString(R.string.kurier_locations), intToString(R.string.kurier_description)));
+        models.add(new ViewModel(R.drawable.nurek, intToString(R.string.nurek1_title), intToString(R.string.nurek1_earnings), intToString(R.string.nurek1_locations), intToString(R.string.nurek1_description)));
         models.add(new ViewModel(R.drawable.nurek, intToString(R.string.nurek_title), intToString(R.string.nurek_earnings), intToString(R.string.nurek_locations), intToString(R.string.nurek_description)));
         models.add(new ViewModel(R.drawable.sv, intToString(R.string.sv_title), intToString(R.string.sv_earnings), intToString(R.string.sv_locations), intToString(R.string.sv_description)));
         models.add(new ViewModel(R.drawable.bet, intToString(R.string.bet_title), intToString(R.string.bet_earnings), intToString(R.string.bet_locations), intToString(R.string.bet_description)));
