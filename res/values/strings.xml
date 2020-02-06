@@ -3,9 +3,6 @@
     <string name="string_home">Dom</string>
     <string name="string_report_error">Zgłoś błąd</string>
     <string name="string_others">Pozostałe</string>
-    <string name="string_donation">Dotacja</string>
-    <string name="donation_text">Hej, jeśli chcesz przyczynić się do rozwoju aplikacji i dodania jej do sklepu Play tutaj możesz wpłacić dotację. Nie możesz nic wpłacić, a chciałbyś mnie wspomóc? Możesz wspomóc na serwerze ;) \n\nKliknij w przycisk poniżej, a zostaniesz przeniesiony do przeglądarki, aby wpłacić dotację. Wielkie dzięki!</string>
-    <string name="donation_button">Wpłata</string>
     <string name="string_ad">Reklama</string>
     <string name="string_info">Informacje i opcje</string>
     <string name="app_report_info">Wybierz aplikację do wysyłania wiadomości e-mail</string>
@@ -14,8 +11,12 @@
     <string name="title_earnings">Zarobki</string>
     <string name="cars_list_activity">Lista Pojazdów</string>
     <string name="cars_list_desc">Lista pojazdów dostępnych na serwerze wraz z danymi na ich temat. Znajdziesz tu między innymi v-max oraz podatek. Klikając na niektóre pojazdy, możesz sprawdzić ich tuning wizualny.</string>
+    <string name="aso_list_activity">Asortyment Pojazdów</string>
+    <string name="aso_list_desc">Aktualna lista pojazdów dostępnych w salonie, komisie i u cygana.</string>
     <string name="mechanical_list_activity">Tuning Mechaniczny</string>
     <string name="mechanical_list_desc">Części do pojazdów dostępne do montażu na serwerze. Sprawdzisz tutaj między innymi cenę oraz zwrot z demontażu.</string>
+    <string name="wizu_list_activity">Tuning Wizualny</string>
+    <string name="wizu_list_desc">Części wizualne do zamontowania w twoim pojeździe. Możesz zobaczyć lampki, liczniki, spojlery oraz ich ceny.</string>
     <string name="lights_list_activity">Kolorowe Światła</string>
     <string name="lights_list_desc">Światła możliwe do zamontowania w twoim pojeździe. Możesz zobaczyć tutaj wygląd lampek oraz ich cenę.</string>
     <string name="wheels_list_activity">Felgi Samochodowe</string>
@@ -24,7 +25,7 @@
     <string name="spoilers_list_desc">Serwerowe spojlery dostępne do montażu w Twoim pojeździe.</string>
     <string name="counters_list_activity">Liczniki</string>
     <string name="counters_list_desc">Liczniki samochodowe dostępne na serwerze, które możesz zamontować w swoim pojeździe.</string>
-    <string name="wizu_uniwersalne_activity">Tuning Wizualny Uniwersalny</string>
+    <string name="wizu_uniwersalne_activity">Tuning Uniwersalny</string>
     <string name="wizu_uniwersalne_desc">Części wizualne niemające swojej dedykowanej kategorii, można je montować w każdym pojeździe.</string>
     <string name="casual_jobs_activity">Prace Dorywcze</string>
     <string name="casual_jobs_desc">Dane na temat poszczególnych prac dorywczych. Znajdziesz tutaj zarobki, umiejscowienie pracy oraz opis.</string>
@@ -42,6 +43,7 @@
     <string name="layout_reset">ZEROWANIE</string>
     <string name="layout_dem">DEMONTAŻ</string>
     <string name="layout_price_l">CENA</string>
+    <string name="layout_przebieg">PRZEBIEG</string>
     <string name="layout_1h">1H</string>
     <string name="layout_description">Opis</string>
     <string name="layout_allows">Umożliwia:</string>
@@ -62,6 +64,14 @@
     <string name="options_dark_theme">Tryb Ciemny</string>
     <string name="error">Coś poszło nie tak</string>
     <string name="avail_wheels">Dostępne felgi</string>
+    <string name="salon">Salon</string>
+    <string name="komis">Komis</string>
+    <string name="cygan">Cygan</string>
+    <string name="cygan_lv">Cygan LV Strip</string>
+    <string name="cygan_lb">Cygan Las Barrancas</string>
+    <string name="salon_doherty">Salon Doherty - Zamknięty</string>
+    <string name="salon_motocykli">Salon Motocykli</string>
+    <string name="salon_gold">Salon GOLD</string>
 
 
     <!-- Pojazdy -->
@@ -337,7 +347,7 @@
     <string name="pcj600_reset">N/A</string>
     <string name="perennial_name">Perennial</string>
     <string name="perennial_vmax">119km/h</string>
-    <string name="perennial_vmaxfmk">151km/h</string>
+    <string name="perennial_vmaxfmk">148km/h</string>
     <string name="perennial_tax">150€</string>
     <string name="perennial_reset">55.250€</string>
     <string name="phoenix_name">Phoenix</string>
@@ -472,7 +482,7 @@
     <string name="tahoma_reset">57.350€</string>
     <string name="tampa_name">Tampa</string>
     <string name="tampa_vmax">137km/h</string>
-    <string name="tampa_vmaxfmk">171km/h</string>
+    <string name="tampa_vmaxfmk">173km/h</string>
     <string name="tampa_tax">570€</string>
     <string name="tampa_reset">57.100€</string>
     <string name="tornado_name">Tornado</string>
@@ -919,6 +929,33 @@
     <string name="uranus_alien_wydech_demont">3.000€</string>
 
 
+    <!-- Komisy, cygany itd -->
+    <string name="cygan_bf_injection_przebieg">49708km</string>
+    <string name="cygan_bf_injection_cena">59.896€</string>
+    <string name="cygan_clover_przebieg">47000km</string>
+    <string name="cygan_clover_cena">31.000€</string>
+    <string name="cygan_perennial_przebieg">92518km</string>
+    <string name="cygan_perennial_cena">1.187€</string>
+    <string name="cygan_moonbeam_przebieg">88838€</string>
+    <string name="cygan_moonbeam_cena">1.619€</string>
+    <string name="salon_patriot_cena">500.000€</string>
+    <string name="salon_glendale_cena">90.000€</string>
+    <string name="salon_pcj_cena">159.463€</string>
+    <string name="salon_wayfarer_cena">131.294€</string>
+    <string name="salon_freeway_cena">119.475€</string>
+    <string name="salon_quadbike_cena">20.846€</string>
+    <string name="salon_blade_cena">N/A</string>
+    <string name="salon_banshee_cena">N/A</string>
+    <string name="salon_rancher_cena">N/A</string>
+    <string name="komis_sgt_cena">145.000€</string>
+    <string name="komis_camper_cena">45.000€</string>
+    <string name="komis_tampa_cena">34.000€</string>
+    <string name="komis_burrito_cena">55.000€</string>
+    <string name="komis_solair_cena">65.000€</string>
+    <string name="komis_sabre_cena">31.500€</string>
+    <string name="komis_premier_cena">31.500€</string>
+    <string name="komis_buff_cena">68.000€</string>
+
     <!-- Liczniki -->
     <string name="standard_counter_name">Standardowy</string>
     <string name="standard_counter_range">0–260km/h</string>
@@ -978,6 +1015,14 @@
     <string name="wed_earnings">1.130–2.500€</string>
     <string name="wed_locations">Las Venturas, San Fierro, Los Santos, Tierra Robada, Angel Pine, Palomino Creek, Red County</string>
     <string name="wed_description">Przyjemna praca, w której trzeba wykazać się umiejętnościami i niezwykłą cierpliwością. Wymagane posiadanie karty wędkarskiej.</string>
+    <string name="tartak_title">Tartak</string>
+    <string name="tartak_earnings">700€</string>
+    <string name="tartak_locations">Flint County, Blueberry</string>
+    <string name="tartak_description">W pracy ścinamy drzewa lub przewozimy deski do składu.</string>
+    <string name="farma_title">Farma</string>
+    <string name="farma_earnings">850€</string>
+    <string name="farma_locations">Flint County</string>
+    <string name="farma_description">Naszym zadaniem jest koszenie zboża kombajnem lub zwożenie leżących beli widlakiem.</string>
     <string name="bus_title">Kierowca autobusu</string>
     <string name="bus_earnings">640–800€</string>
     <string name="bus_locations">Las Venturas, San Fierro, Los Santos, Fort Carson</string>
@@ -1002,10 +1047,18 @@
     <string name="kurier_earnings">3.000–4.300€</string>
     <string name="kurier_locations">Los Santos, Red County, Angel Pine, Bayside Marina</string>
     <string name="kurier_description">Praca polega na dostarczaniu uprzednio załadowanych przesyłek do ich odbiorców.</string>
+    <string name="nurek1_title">N1 - Nurek</string>
+    <string name="nurek1_earnings">N/A</string>
+    <string name="nurek1_locations">Tierra Robada - Tama</string>
+    <string name="nurek1_description">W pracy łowimy śmieci znajdujące się w wodzie.</string>
     <string name="nurek_title">N2 – Nurek</string>
     <string name="nurek_earnings">2.500€</string>
-    <string name="nurek_locations">San Fierro, Bayside Marina</string>
+    <string name="nurek_locations">San Fierro, Los Santos, Tierra Robada - Tama, Bayside Marina</string>
     <string name="nurek_description">W pracy montujemy balony z helem do pojazdów które znajdują się w wodzie.</string>
+    <string name="lodolamacz_title">Lodołamacz</string>
+    <string name="lodolamacz_earnings">3.500€</string>
+    <string name="lodolamacz_locations">Bayside Marina</string>
+    <string name="lodolamacz_description">Praca polega na kruszeniu lodu. Aby przystąpić do pracy, wymagana jest karta pływacka i wykonanie 6 pełnych kursów na kutrach w ciągu tygodnia.</string>
     <string name="taxi1_title">Kierowca taxi - LV.1</string>
     <string name="taxi1_earnings">300–700€</string>
     <string name="taxi2_title">Kierowca taxi - LV.2</string>
