@@ -30,7 +30,7 @@ public class VisualActivity extends AppCompatActivity {
             setTheme(R.style.AppTheme);
         }
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_visual);
+        setContentView(R.layout.activity_list);
 
         ImageView leaveActivity;
         ImageView bgMain;
