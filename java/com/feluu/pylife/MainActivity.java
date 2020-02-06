@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     private ScrollView scroll;
     private BottomNavigationView navigation;
     private TextView title;
-    private CardView carsList, mechanicalTune, lightsTune, wheelsTune, spoilersTune, countersTune, uWizuTune, casualJobs, lvJobs, sfJobs, fcJobs, lsJobs;
+    private CardView carsList, asoList, mechanicalTune, wizuTune, wheelsTune, casualJobs, lvJobs, sfJobs, fcJobs, lsJobs;
     private LinearLayout moto, tune, jobs;
     private RelativeLayout home, info;
     private SharedPref sharedPref;
@@ -100,12 +100,10 @@ public class MainActivity extends AppCompatActivity {
         jobs = findViewById(R.id.jobs);
         line = findViewById(R.id.line);
         carsList = findViewById(R.id.card_view1);
+        asoList = findViewById(R.id.card_view11);
         mechanicalTune = findViewById(R.id.card_view2);
-        lightsTune = findViewById(R.id.card_view3);
+        wizuTune = findViewById(R.id.card_view3);
         wheelsTune = findViewById(R.id.card_view4);
-        spoilersTune = findViewById(R.id.card_view11);
-        countersTune = findViewById(R.id.card_view6);
-        uWizuTune = findViewById(R.id.card_view12);
         casualJobs = findViewById(R.id.card_view5);
         lvJobs = findViewById(R.id.card_view7);
         sfJobs = findViewById(R.id.card_view8);
@@ -165,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (moto.getVisibility() == View.VISIBLE) {
-            carsList.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_left));
+            motoAnim();
         } else if (tune.getVisibility() == View.VISIBLE) {
             tuneAnim();
         } else if (jobs.getVisibility() == View.VISIBLE) {
@@ -198,7 +196,6 @@ public class MainActivity extends AppCompatActivity {
                         new PrimaryDrawerItem().withName(R.string.string_home).withIcon(FontAwesome.Icon.faw_home).withIdentifier(1),
                         new PrimaryDrawerItem().withName(R.string.string_report_error).withIcon(FontAwesome.Icon.faw_comment).withSelectable(false),
                         new SectionDrawerItem().withName(R.string.string_others),
-                        new SecondaryDrawerItem().withName(R.string.string_donation).withIcon(FontAwesome.Icon.faw_donate).withSelectable(false),
                         new SecondaryDrawerItem().withName(R.string.string_ad).withIcon(FontAwesome.Icon.faw_ad).withSelectable(false),
                         new SecondaryDrawerItem().withName(R.string.string_info).withIcon(FontAwesome.Icon.faw_info)
                 )
@@ -222,23 +219,17 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i);
                     }
                     if (position == 4) {
-                        Intent intent = new Intent(MainActivity.this, DonationActivity.class);
-                        startActivity(intent);
-                    }
-                    if (position == 5) {
                         if (mInterstitialAd.isLoaded()) {
                             mInterstitialAd.show();
                             mInterstitialAd2.loadAd(new AdRequest.Builder().build());
-                        }
-                        else if (mInterstitialAd2.isLoaded()) {
+                        } else if (mInterstitialAd2.isLoaded()) {
                             mInterstitialAd2.show();
                             mInterstitialAd.loadAd(new AdRequest.Builder().build());
-                        }
-                        else {
+                        } else {
                             Log.d("TAG", "The interstitial wasn't loaded yet.");
                         }
                     }
-                    if (position == 6) {
+                    if (position == 5) {
                         home.setVisibility(View.GONE);
                         info.setVisibility(View.VISIBLE);
                         navigation.setVisibility(View.GONE);
@@ -310,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
                     return false;
                 case R.id.navigation_cars:
                     title.setText(R.string.title_cars);
-                    carsList.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_left));
+                    motoAnim();
                     tune.setVisibility(View.GONE);
                     jobs.setVisibility(View.GONE);
                     moto.setVisibility(View.VISIBLE);
@@ -343,13 +334,15 @@ public class MainActivity extends AppCompatActivity {
         return getResources().getString(Res);
     }
 
+    private void motoAnim() {
+        carsList.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_left));
+        asoList.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_left));
+    }
+
     private void tuneAnim() {
-        mechanicalTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_up));
-        lightsTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_up));
-        wheelsTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_up));
-        spoilersTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_up));
-        countersTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_up));
-        uWizuTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_transition_up));
+        mechanicalTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_scale));
+        wizuTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_scale));
+        wheelsTune.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_scale));
     }
 
     private void jobsAnim() {
@@ -368,6 +361,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void asoListPage(View v) {
+        if (!isClicked) {
+            isClicked = true;
+            Intent intent = new Intent(MainActivity.this, AsoListActivity.class);
+            startActivity(intent);
+        }
+    }
+
     public void mechanicalTunePage(View v) {
         if (!isClicked) {
             isClicked = true;
@@ -376,10 +377,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void lightsTunePage(View v) {
+    public void wizuTunePage(View v) {
         if (!isClicked) {
             isClicked = true;
-            Intent intent = new Intent(MainActivity.this, LightsTuneActivity.class);
+            Intent intent = new Intent(MainActivity.this, WizuTuneActivity.class);
             startActivity(intent);
         }
     }
@@ -389,30 +390,6 @@ public class MainActivity extends AppCompatActivity {
             isClicked = true;
             Intent intent = new Intent(MainActivity.this, WheelsTuneActivity.class);
             intent.putExtra("avWheels", sharedPref.loadAvailableWheels());
-            startActivity(intent);
-        }
-    }
-
-    public void spoilersTunePage(View v) {
-        if (!isClicked) {
-            isClicked = true;
-            Intent intent = new Intent(MainActivity.this, SpoilersTuneActivity.class);
-            startActivity(intent);
-        }
-    }
-
-    public void countersTunePage(View v) {
-        if (!isClicked) {
-            isClicked = true;
-            Intent intent = new Intent(MainActivity.this, CountersTuneActivity.class);
-            startActivity(intent);
-        }
-    }
-
-    public void uniwersalneWizuPage(View v) {
-        if (!isClicked) {
-            isClicked = true;
-            Intent intent = new Intent(MainActivity.this, UWizuTuneActivity.class);
             startActivity(intent);
         }
     }
