@@ -264,7 +264,7 @@
     <string name="huntley_vmax">141km/h</string>
     <string name="huntley_vmaxfmk">175km/h</string>
     <string name="huntley_tax">3.450€</string>
-    <string name="huntley_reset">N/A</string>
+    <string name="huntley_reset">181.500€</string>
     <string name="hustler_name">Hustler</string>
     <string name="hustler_vmax">131km/h</string>
     <string name="hustler_vmaxfmk">164km/h</string>
@@ -429,7 +429,7 @@
     <string name="sentinel_vmax">146km/h</string>
     <string name="sentinel_vmaxfmk">181km/h</string>
     <string name="sentinel_tax">1.800€</string>
-    <string name="sentinel_reset">N/A</string>
+    <string name="sentinel_reset">60.000€</string>
     <string name="slamvan_name">Slamvan</string>
     <string name="slamvan_vmax">141km/h</string>
     <string name="slamvan_vmaxfmk">175km/h</string>
