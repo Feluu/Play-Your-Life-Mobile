@@ -72,8 +72,7 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
                 .error(R.drawable.ic_error)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.imageView2);
-        if (cars.getFirst().equalsIgnoreCase("elegy") || cars.getFirst().equalsIgnoreCase("jester") || cars.getFirst().equalsIgnoreCase("uranus") || cars.getFirst().equalsIgnoreCase("sultan")) {
-            Log.d("JD", cars.getFirst());
+        if (cars.getFirst().equalsIgnoreCase("elegy") || cars.getFirst().equalsIgnoreCase("jester") || cars.getFirst().equalsIgnoreCase("uranus") || cars.getFirst().equalsIgnoreCase("sultan") || cars.getFirst().equalsIgnoreCase("stratum") || cars.getFirst().equalsIgnoreCase("perennial") || cars.getFirst().equalsIgnoreCase("premier") || cars.getFirst().equalsIgnoreCase("zr-350") || cars.getFirst().equalsIgnoreCase("phoenix")) {
             holder.textViewWizu.setVisibility(View.VISIBLE);
         } else {
             holder.textViewWizu.setVisibility(View.GONE);
@@ -144,7 +143,7 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
         public void onClick(View v) {
             TextView carName = v.findViewById(R.id.wheelsName);
             String carNameS = carName.getText().toString();
-            if (carNameS.equalsIgnoreCase("elegy") || carNameS.equalsIgnoreCase("jester") || carNameS.equalsIgnoreCase("sultan") || carNameS.equalsIgnoreCase("uranus")) {
+            if (carNameS.equalsIgnoreCase("elegy") || carNameS.equalsIgnoreCase("jester") || carNameS.equalsIgnoreCase("sultan") || carNameS.equalsIgnoreCase("uranus") || carNameS.equalsIgnoreCase("stratum") || carNameS.equalsIgnoreCase("perennial") || carNameS.equalsIgnoreCase("premier") || carNameS.equalsIgnoreCase("zr-350") || carNameS.equalsIgnoreCase("phoenix")) {
                 Intent intent = new Intent(activity, VisualActivity.class);
                 intent.putExtra("carName", carNameS);
                 activity.startActivity(intent);
