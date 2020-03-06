@@ -52,8 +52,8 @@
     <string name="layout_range">ZAKRES</string>
     <string name="content_back">Powrót</string>
     <string name="content_menu">Menu</string>
-    <string name="info_author">Autor</string>
-    <string name="info_author_name">Feluu</string>
+    <string name="info_author">Autorzy</string>
+    <string name="info_author_name">Feluu | Pomoc: Msciciel</string>
     <string name="info_app_version">Wersja aplikacji</string>
     <string name="info_used">Użyte zasoby</string>
     <string name="info_used_2">Przytrzymaj, aby zobaczyć</string>
@@ -110,7 +110,7 @@
     <string name="blade_vmaxfmk">191km/h</string>
     <string name="blade_tax">2.250€</string>
     <string name="blade_reset">N/A</string>
-    <string name="blista_name">Blista Compact</string>
+    <string name="blista_name">Blista</string>
     <string name="blista_vmax">145km/h</string>
     <string name="blista_vmaxfmk">190km/h</string>
     <string name="blista_tax">1.050€</string>
@@ -992,7 +992,7 @@
     <string name="tornado_chrome_zderzak_przod_demont">4.160€</string>
     <string name="tornado_chrome_zderzak_tyl_nazwa">Zderzak tył Chrome [1192]</string>
     <string name="tornado_chrome_zderzak_tyl_cena">11.640€</string>
-    <string name="tornado_chrome_zderzak_tyl_demont">7.760€</string>    
+    <string name="tornado_chrome_zderzak_tyl_demont">7.760€</string>
     <string name="tornado_chrome_progi_nazwa">Progi Chrome [1134/1137]</string>
     <string name="tornado_chrome_progi_cena">4.800€</string>
     <string name="tornado_chrome_progi_demont">3.200€</string>
@@ -1004,7 +1004,7 @@
     <string name="tornado_slamin_zderzak_przod_demont">4.800€</string>
     <string name="tornado_slamin_zderzak_tyl_nazwa">Zderzak tył Slamin [1193]</string>
     <string name="tornado_slamin_zderzak_tyl_cena">6.600€</string>
-    <string name="tornado_slamin_zderzak_tyl_demont">4.400€</string>    
+    <string name="tornado_slamin_zderzak_tyl_demont">4.400€</string>
     <string name="tornado_slamin_wydech_nazwa">Wydech Slamin [1135]</string>
     <string name="tornado_slamin_wydech_cena">9.000€</string>
     <string name="tornado_slamin_wydech_demont">6.000€</string>
@@ -1016,7 +1016,7 @@
     <string name="perennial_progi_demont">5.200€</string>
     <string name="perennial_twincylinder_wydech_nazwa">Wydech Twin Cylinder [1019]</string>
     <string name="perennial_twincylinder_wydech_cena">42.000€</string>
-    <string name="perennial_twincylinder_wydech_demont">28.200€</string>  
+    <string name="perennial_twincylinder_wydech_demont">28.200€</string>
     <string name="perennial_medium_wydech_nazwa">Wydech Medium [1021]</string>
     <string name="perennial_medium_wydech_cena">12.000€</string>
     <string name="perennial_medium_wydech_demont">8.200€</string>
@@ -1034,7 +1034,7 @@
     <string name="premier_wloty_demont">3.200€</string>
     <string name="premier_twincylinder_wydech_nazwa">Wydech Twin Cylinder [1019]</string>
     <string name="premier_twincylinder_wydech_cena">42.000€</string>
-    <string name="premier_twincylinder_wydech_demont">28.200€</string>  
+    <string name="premier_twincylinder_wydech_demont">28.200€</string>
     <string name="premier_medium_wydech_nazwa">Wydech Medium [1021]</string>
     <string name="premier_medium_wydech_cena">12.000€</string>
     <string name="premier_medium_wydech_demont">8.200€</string>
@@ -1052,10 +1052,10 @@
     <string name="phoenix_progi_demont">5.200€</string>
     <string name="phoenix_upsweptc_wydech_nazwa">Wydech Upsweptc [1018]</string>
     <string name="phoenix_upsweptc_wydech_cena">21.000€</string>
-    <string name="phoenix_upsweptc_wydech_demont">14.000€</string> 
+    <string name="phoenix_upsweptc_wydech_demont">14.000€</string>
     <string name="phoenix_twincylinder_wydech_nazwa">Wydech Twin Cylinder [1019]</string>
     <string name="phoenix_twincylinder_wydech_cena">42.000€</string>
-    <string name="phoenix_twincylinder_wydech_demont">28.200€</string> 
+    <string name="phoenix_twincylinder_wydech_demont">28.200€</string>
     <string name="phoenix_large_wydech_nazwa">Wydech Large [1020]</string>
     <string name="phoenix_large_wydech_cena">15.000€</string>
     <string name="phoenix_large_wydech_demont">6.000€</string>
@@ -1067,10 +1067,10 @@
     <string name="zr350_progi_demont">5.200€</string>
     <string name="zr350_upsweptc_wydech_nazwa">Wydech Upsweptc [1018]</string>
     <string name="zr350_upsweptc_wydech_cena">21.000€</string>
-    <string name="zr350_upsweptc_wydech_demont">14.000€</string> 
+    <string name="zr350_upsweptc_wydech_demont">14.000€</string>
     <string name="zr350_twincylinder_wydech_nazwa">Wydech Twin Cylinder [1019]</string>
     <string name="zr350_twincylinder_wydech_cena">42.000€</string>
-    <string name="zr350_twincylinder_wydech_demont">28.200€</string> 
+    <string name="zr350_twincylinder_wydech_demont">28.200€</string>
     <string name="zr350_large_wydech_nazwa">Wydech Large [1020]</string>
     <string name="zr350_large_wydech_cena">15.000€</string>
     <string name="zr350_large_wydech_demont">6.000€</string>
@@ -1091,11 +1091,11 @@
     <string name="blista_progi_demont">5.200€</string>
     <string name="blista_twincylinder_wydech_nazwa">Wydech Twin Cylinder [1019]</string>
     <string name="blista_twincylinder_wydech_cena">42.000€</string>
-    <string name="blista_twincylinder_wydech_demont">28.200€</string> 
+    <string name="blista_twincylinder_wydech_demont">28.200€</string>
     <string name="blista_large_wydech_nazwa">Wydech Large [1020]</string>
     <string name="blista_large_wydech_cena">15.000€</string>
     <string name="blista_large_wydech_demont">6.000€</string>
-   
+
     <!-- Komisy, cygany itd -->
     <string name="cygan_bf_injection_przebieg">49708km</string>
     <string name="cygan_bf_injection_cena">59.896€</string>
@@ -1139,6 +1139,9 @@
     <string name="smart_name">Smart</string>
     <string name="smart_range">0–120km/h</string>
     <string name="smart_price">1.000€</string>
+    <string name="sportowy_name">Sportowy</string>
+    <string name="sportowy_range">0–240km/h</string>
+    <string name="sportowy_price">750€</string>
 
 
     <!-- Prace -->
