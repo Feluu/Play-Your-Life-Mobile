@@ -9,7 +9,6 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -72,7 +71,7 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
                 .error(R.drawable.ic_error)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.imageView2);
-        if (cars.getFirst().equalsIgnoreCase("elegy") || cars.getFirst().equalsIgnoreCase("jester") || cars.getFirst().equalsIgnoreCase("uranus") || cars.getFirst().equalsIgnoreCase("sultan") || cars.getFirst().equalsIgnoreCase("stratum") || cars.getFirst().equalsIgnoreCase("perennial") || cars.getFirst().equalsIgnoreCase("premier") || cars.getFirst().equalsIgnoreCase("zr-350") || cars.getFirst().equalsIgnoreCase("phoenix")) {
+        if (cars.getFirst().equalsIgnoreCase("elegy") || cars.getFirst().equalsIgnoreCase("jester") || cars.getFirst().equalsIgnoreCase("uranus") || cars.getFirst().equalsIgnoreCase("sultan") || cars.getFirst().equalsIgnoreCase("stratum") || cars.getFirst().equalsIgnoreCase("perennial") || cars.getFirst().equalsIgnoreCase("premier") || cars.getFirst().equalsIgnoreCase("zr-350") || cars.getFirst().equalsIgnoreCase("phoenix") || cars.getFirst().equalsIgnoreCase("flash") || cars.getFirst().equalsIgnoreCase("tornado") || cars.getFirst().equalsIgnoreCase("blista")) {
             holder.textViewWizu.setVisibility(View.VISIBLE);
         } else {
             holder.textViewWizu.setVisibility(View.GONE);
@@ -143,7 +142,7 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
         public void onClick(View v) {
             TextView carName = v.findViewById(R.id.wheelsName);
             String carNameS = carName.getText().toString();
-            if (carNameS.equalsIgnoreCase("elegy") || carNameS.equalsIgnoreCase("jester") || carNameS.equalsIgnoreCase("sultan") || carNameS.equalsIgnoreCase("uranus") || carNameS.equalsIgnoreCase("stratum") || carNameS.equalsIgnoreCase("perennial") || carNameS.equalsIgnoreCase("premier") || carNameS.equalsIgnoreCase("zr-350") || carNameS.equalsIgnoreCase("phoenix")) {
+            if (carNameS.equalsIgnoreCase("elegy") || carNameS.equalsIgnoreCase("jester") || carNameS.equalsIgnoreCase("sultan") || carNameS.equalsIgnoreCase("uranus") || carNameS.equalsIgnoreCase("stratum") || carNameS.equalsIgnoreCase("perennial") || carNameS.equalsIgnoreCase("premier") || carNameS.equalsIgnoreCase("zr-350") || carNameS.equalsIgnoreCase("phoenix") || carNameS.equalsIgnoreCase("flash") || carNameS.equalsIgnoreCase("tornado") || carNameS.equalsIgnoreCase("blista")) {
                 Intent intent = new Intent(activity, VisualActivity.class);
                 intent.putExtra("carName", carNameS);
                 activity.startActivity(intent);
