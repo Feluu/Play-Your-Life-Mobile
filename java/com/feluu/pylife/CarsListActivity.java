@@ -5,8 +5,10 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.feluu.pylife.adapters.CarsAdapter;
+import com.feluu.pylife.adapters.WheelsAdapter;
 import com.feluu.pylife.models.ListModel;
 import com.feluu.pylife.utils.SharedPref;
 
@@ -154,7 +156,7 @@ public class CarsListActivity extends AppCompatActivity {
         carsList.add(new ListModel(intToString(R.string.windsor_name), intToString(R.string.windsor_vmax), intToString(R.string.windsor_vmaxfmk), intToString(R.string.windsor_tax), intToString(R.string.windsor_reset), R.drawable.windsor));
         carsList.add(new ListModel(intToString(R.string.yosemite_name), intToString(R.string.yosemite_vmax), intToString(R.string.yosemite_vmaxfmk), intToString(R.string.yosemite_tax), intToString(R.string.yosemite_reset), R.drawable.yosemite));
         carsList.add(new ListModel(intToString(R.string.zr350_name), intToString(R.string.zr350_vmax), intToString(R.string.zr350_vmaxfmk), intToString(R.string.zr350_tax), intToString(R.string.zr350_reset), R.drawable.zr350));
-        CarsAdapter adapter = new CarsAdapter(this, carsList);
+        CarsAdapter adapter = new CarsAdapter(this,this, carsList);
         recyclerView.setAdapter(adapter);
     }
 
