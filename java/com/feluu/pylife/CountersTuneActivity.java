@@ -60,6 +60,7 @@ public class CountersTuneActivity extends AppCompatActivity {
         countersList.add(new ListModel(intToString(R.string.one_name), intToString(R.string.one_price), intToString(R.string.one_range), null, null, R.drawable.one));
         countersList.add(new ListModel(intToString(R.string.style_name), intToString(R.string.style_price), intToString(R.string.style_range), null, null, R.drawable.style));
         countersList.add(new ListModel(intToString(R.string.smart_name), intToString(R.string.smart_price), intToString(R.string.smart_range), null, null, R.drawable.smart));
+        countersList.add(new ListModel(intToString(R.string.sportowy_name), intToString(R.string.sportowy_price), intToString(R.string.sportowy_range), null, null, R.drawable.sportowy));
 
         CountersAdapter adapter = new CountersAdapter(this, countersList);
         recyclerView.setAdapter(adapter);
