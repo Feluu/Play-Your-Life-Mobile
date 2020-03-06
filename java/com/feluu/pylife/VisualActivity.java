@@ -153,34 +153,31 @@ public class VisualActivity extends AppCompatActivity {
             }
             if (car.equalsIgnoreCase("flash")) {
                 models.add(new ListModel(intToString(R.string.flash_xflow_zderzak_przod_nazwa), intToString(R.string.flash_xflow_zderzak_przod_cena), intToString(R.string.flash_xflow_zderzak_przod_demont), null, null, R.drawable.przedni_zderzak_xflow_flash));
-				models.add(new ListModel(intToString(R.string.flash_alien_zderzak_przod_nazwa), intToString(R.string.flash_alien_zderzak_przod_cena), 
-				intToString(R.string.flash_alien_zderzak_przod_demont), null, null, R.drawable.przedni_zderzak_alien_flash));
-				models.add(new ListModel(intToString(R.string.flash_xflow_zderzak_tyl_nazwa), intToString(R.string.flash_xflow_zderzak_tyl_cena), intToString(R.string.flash_xflow_zderzak_tyl_demont), null, null, R.drawable.tylni_zderzak_xflow_flash));
-				models.add(new ListModel(intToString(R.string.flash_alien_zderzak_tyl_nazwa), intToString(R.flash_stratum_alien_zderzak_tyl_cena), 
-				models.add(new ListModel(intToString(R.string.flash_xflow_progi_nazwa), intToString(R.string.flash_xflow_progi_cena), intToString(R.string.flash_xflow_progi_demont), null, null, R.drawable.progi_xflow_flash));
-				models.add(new ListModel(intToString(R.string.flash_alien_progi_nazwa), intToString(R.string.flash_alien_progi_cena), 
-				intToString(R.string.flash_alien_progi_demont), null, null, R.drawable.progi_alien_flash));
-				models.add(new ListModel(intToString(R.string.flash_xflow_wloty_dach_nazwa), intToString(R.string.flash_xflow_wloty_dach_cena), intToString(R.string.flash_xflow_wloty_dach_demont), null, null, R.drawable.wloty_xflow_flash));
+                models.add(new ListModel(intToString(R.string.flash_alien_zderzak_przod_nazwa), intToString(R.string.flash_alien_zderzak_przod_cena), intToString(R.string.flash_alien_zderzak_przod_demont), null, null, R.drawable.przedni_zderzak_alien_flash));
+                models.add(new ListModel(intToString(R.string.flash_xflow_zderzak_tyl_nazwa), intToString(R.string.flash_xflow_zderzak_tyl_cena), intToString(R.string.flash_xflow_zderzak_tyl_demont), null, null, R.drawable.tylni_zderzak_xflow_flash));
+                models.add(new ListModel(intToString(R.string.flash_alien_zderzak_tyl_nazwa), intToString(R.string.flash_alien_zderzak_tyl_cena), intToString(R.string.flash_alien_zderzak_tyl_demont), null, null, R.drawable.tylni_zderzak_alien_flash));
+                models.add(new ListModel(intToString(R.string.flash_xflow_progi_nazwa), intToString(R.string.flash_xflow_progi_cena), intToString(R.string.flash_xflow_progi_demont), null, null, R.drawable.progi_xflow_flash));
+                models.add(new ListModel(intToString(R.string.flash_alien_progi_nazwa), intToString(R.string.flash_alien_progi_cena), intToString(R.string.flash_alien_progi_demont), null, null, R.drawable.progi_alien_flash));
+                models.add(new ListModel(intToString(R.string.flash_xflow_wloty_dach_nazwa), intToString(R.string.flash_xflow_wloty_dach_cena), intToString(R.string.flash_xflow_wloty_dach_demont), null, null, R.drawable.wloty_xflow_flash));
                 models.add(new ListModel(intToString(R.string.flash_alien_wloty_dach_nazwa), intToString(R.string.flash_alien_wloty_dach_cena), intToString(R.string.flash_alien_wloty_dach_demont), null, null, R.drawable.wloty_alien_flash));
-				models.add(new ListModel(intToString(R.string.flash_xflow_wydech_nazwa), intToString(R.string.flash_xflow_wydech_cena), intToString(R.string.flash_xflow_wydech_demont), null, null, R.drawable.wydech_xflow_flash));
+                models.add(new ListModel(intToString(R.string.flash_xflow_wydech_nazwa), intToString(R.string.flash_xflow_wydech_cena), intToString(R.string.flash_xflow_wydech_demont), null, null, R.drawable.wydech_xflow_flash));
                 models.add(new ListModel(intToString(R.string.flash_alien_wydech_nazwa), intToString(R.string.flash_alien_wydech_cena), intToString(R.string.flash_alien_wydech_demont), null, null, R.drawable.wydech_alien_flash));
             }
-			 if (car.equalsIgnoreCase("tornado")) {
+            if (car.equalsIgnoreCase("tornado")) {
                 models.add(new ListModel(intToString(R.string.tornado_chrome_zderzak_przod_nazwa), intToString(R.string.tornado_chrome_zderzak_przod_cena), intToString(R.string.tornado_chrome_zderzak_przod_demont), null, null, R.drawable.przedni_zderzak_chrome_tornado));
-				models.add(new ListModel(intToString(R.string.tornado_slamin_zderzak_przod_nazwa), intToString(R.string.tornado_slamin_zderzak_przod_cena), intToString(R.string.tornado_slamin_zderzak_przod_demont), null, null, R.drawable.przedni_zderzak_slamin_tornado));                
-                models.add(new ListModel(intToString(R.string.tornado_chrome_zderzak_tyl_nazwa), intToString(R.string.tornado_chrome_zderzak_tyl_cena), intToString(R.string.tornado_chrome_zderzak_tyl_demont), null, null, R.drawable.tylni_zderzak_chrome_tornado));				
-				models.add(new ListModel(intToString(R.string.tornado_slamin_zderzak_tyl_nazwa), intToString(R.string.tornado_slamin_zderzak_tyl_cena), intToString(R.string.tornado_slamin_zderzak_tyl_demont), null, null, R.drawable.tylni_zderzak_slamin_tornado));
-				models.add(new ListModel(intToString(R.string.tornado_chrome_progi_nazwa), intToString(R.string.tornado_chrome_progi_cena), intToString(R.string.tornado_chrome_progi_demont), null, null, R.drawable.progi_chrome_tornado));
-				models.add(new ListModel(intToString(R.string.tornado_chrome_wydech_nazwa), intToString(R.string.tornado_chrome_wydech_cena), intToString(R.string.tornado_chrome_wydech_demont), null, null, R.drawable.wydech_chrome_tornado));
-				models.add(new ListModel(intToString(R.string.tornado_slamin_wydech_nazwa), intToString(R.string.tornado_slamin_wydech_cena), intToString(R.string.tornado_slamin_wydech_demont), null, null, R.drawable.wydech_slamin__tornado));  
+                models.add(new ListModel(intToString(R.string.tornado_slamin_zderzak_przod_nazwa), intToString(R.string.tornado_slamin_zderzak_przod_cena), intToString(R.string.tornado_slamin_zderzak_przod_demont), null, null, R.drawable.przedni_zderzak_slamin_tornado));
+                models.add(new ListModel(intToString(R.string.tornado_chrome_zderzak_tyl_nazwa), intToString(R.string.tornado_chrome_zderzak_tyl_cena), intToString(R.string.tornado_chrome_zderzak_tyl_demont), null, null, R.drawable.tylni_zderzak_chrome_tornado));
+                models.add(new ListModel(intToString(R.string.tornado_slamin_zderzak_tyl_nazwa), intToString(R.string.tornado_slamin_zderzak_tyl_cena), intToString(R.string.tornado_slamin_zderzak_tyl_demont), null, null, R.drawable.tylni_zderzak_slamin_tornado));
+                models.add(new ListModel(intToString(R.string.tornado_chrome_progi_nazwa), intToString(R.string.tornado_chrome_progi_cena), intToString(R.string.tornado_chrome_progi_demont), null, null, R.drawable.progi_chrome_tornado));
+                models.add(new ListModel(intToString(R.string.tornado_chrome_wydech_nazwa), intToString(R.string.tornado_chrome_wydech_cena), intToString(R.string.tornado_chrome_wydech_demont), null, null, R.drawable.wydech_chrome_tornado));
+                models.add(new ListModel(intToString(R.string.tornado_slamin_wydech_nazwa), intToString(R.string.tornado_slamin_wydech_cena), intToString(R.string.tornado_slamin_wydech_demont), null, null, R.drawable.wydech_slamin_tornado));
             }
-			 if (car.equalsIgnoreCase("blista")) {
-                models.add(new ListModel(intToString(R.string.blista_race_maska_nazwa), intToString(R.string.blista_race_maska_cena), intToString(R.string.blista_race_maska_demont), null, null, R.drawable.maska_race_blista));                
-                models.add(new ListModel(intToString(R.string.blista_oval_wentylacja_nazwa), intToString(R.string.blista_oval_wentylacja_cena), 
-				intToString(R.string.blista_oval_wentylacja_demont), null, null, R.drawable.wentylacja_oval_blista));               
-                models.add(new ListModel(intToString(R.string.blista_wloty_nazwa), intToString(R.string.blista_wloty_cena), intToString(R.string.blista_wloty_demont), null, null, R.drawable.wloty_blista));                
-				models.add(new ListModel(intToString(R.string.blista_progi_nazwa), intToString(R.string.blista_progi_cena), intToString(R.string.blista_progi_demont), null, null, R.drawable.progi_blista));
-                models.add(new ListModel(intToString(R.string.blista_twincylinder_wydech_nazwa), intToString(R.string.blista_twincylinder_wydech_cena), intToString(R.string.blista_twincylinder_wydech_demont), null, null, R.drawable.wydechy_twincylinder_blista));
+            if (car.equalsIgnoreCase("blista")) {
+                models.add(new ListModel(intToString(R.string.blista_race_maska_nazwa), intToString(R.string.blista_race_maska_cena), intToString(R.string.blista_race_maska_demont), null, null, R.drawable.maska_race_blista));
+                models.add(new ListModel(intToString(R.string.blista_oval_wentylacja_nazwa), intToString(R.string.blista_oval_wentylacja_cena), intToString(R.string.blista_oval_wentylacja_demont), null, null, R.drawable.wentylacja_oval_blista));
+                models.add(new ListModel(intToString(R.string.blista_wloty_nazwa), intToString(R.string.blista_wloty_cena), intToString(R.string.blista_wloty_demont), null, null, R.drawable.wloty_blista));
+                models.add(new ListModel(intToString(R.string.blista_progi_nazwa), intToString(R.string.blista_progi_cena), intToString(R.string.blista_progi_demont), null, null, R.drawable.progi_blista));
+                models.add(new ListModel(intToString(R.string.blista_twincylinder_wydech_nazwa), intToString(R.string.blista_twincylinder_wydech_cena), intToString(R.string.blista_twincylinder_wydech_demont), null, null, R.drawable.wydech_twincylinder_blista));
                 models.add(new ListModel(intToString(R.string.blista_large_wydech_nazwa), intToString(R.string.blista_large_wydech_cena), intToString(R.string.blista_large_wydech_demont), null, null, R.drawable.wydech_large_blista));
             }
             WheelsAdapter adapter = new WheelsAdapter(this, models);
