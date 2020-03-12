@@ -180,6 +180,36 @@ public class VisualActivity extends AppCompatActivity {
                 models.add(new ListModel(intToString(R.string.blista_twincylinder_wydech_nazwa), intToString(R.string.blista_twincylinder_wydech_cena), intToString(R.string.blista_twincylinder_wydech_demont), null, null, R.drawable.wydech_twincylinder_blista));
                 models.add(new ListModel(intToString(R.string.blista_large_wydech_nazwa), intToString(R.string.blista_large_wydech_cena), intToString(R.string.blista_large_wydech_demont), null, null, R.drawable.wydech_large_blista));
             }
+            if (car.equalsIgnoreCase("bravura")) {
+                models.add(new ListModel(intToString(R.string.bravura_przeciwmgielne_nazwa), intToString(R.string.bravura_przeciwmgielne_cena), intToString(R.string.bravura_przeciwmgielne_demont), null, null, R.drawable.przeciwmgielne_bravura));
+				models.add(new ListModel(intToString(R.string.bravura_oval_wentylacja_nazwa), intToString(R.string.bravura_oval_wentylacja_cena), intToString(R.string.bravura_oval_wentylacja_demont), null, null, R.drawable.wentylacja_oval_bravura));
+                models.add(new ListModel(intToString(R.string.bravura_square_wentylacja_nazwa), intToString(R.string.bravura_square_wentylacja_cena), intToString(R.string.bravura_square_wentylacja_demont), null, null, R.drawable.wentylacja_square_bravura));
+	            models.add(new ListModel(intToString(R.string.bravura_wloty_nazwa), intToString(R.string.bravura_wloty_cena), intToString(R.string.bravura_wloty_demont), null, null, R.drawable.wloty_bravura));
+                models.add(new ListModel(intToString(R.string.bravura_progi_nazwa), intToString(R.string.bravura_progi_cena), intToString(R.string.bravura_progi_demont), null, null, R.drawable.progi_bravura));
+                models.add(new ListModel(intToString(R.string.bravura_twincylinder_wydech_nazwa), intToString(R.string.bravura_twincylinder_wydech_cena), intToString(R.string.bravura_twincylinder_wydech_demont), null, null, R.drawable.wydechy_twincylinder_bravura));
+                models.add(new ListModel(intToString(R.string.bravura_large_wydech_nazwa), intToString(R.string.bravura_large_wydech_cena), intToString(R.string.bravura_large_wydech_demont), null, null, R.drawable.wydechy_large_bravura));
+            }
+	        if (car.equalsIgnoreCase("cadrona")) {
+	            models.add(new ListModel(intToString(R.string.cadrona_progi_nazwa), intToString(R.string.cadrona_progi_cena), intToString(R.string.cadrona_progi_demont), null, null, R.drawable.progi_cadrona));
+                models.add(new ListModel(intToString(R.string.cadrona_upsweptc_wydech_nazwa), intToString(R.string.cadrona_upsweptc_wydech_cena), intToString(R.string.cadrona_upsweptc_wydech_demont), null, null, R.drawable.wydechy_upsweptc_cadrona));
+                models.add(new ListModel(intToString(R.string.cadrona_large_wydech_nazwa), intToString(R.string.cadrona_large_wydech_cena), intToString(R.string.cadrona_large_wydech_demont), null, null, R.drawable.wydechy_large_cadrona));
+                models.add(new ListModel(intToString(R.string.cadrona_medium_wydech_nazwa), intToString(R.string.cadrona_medium_wydech_cena), intToString(R.string.cadrona_medium_wydech_demont), null, null, R.drawable.wydechy_medium_cadrona));
+	        }
+	        if (car.equalsIgnoreCase("clover")) {
+	            models.add(new ListModel(intToString(R.string.clover_square_wentylacja_nazwa), intToString(R.string.clover_square_wentylacja_cena), intToString(R.string.clover_square_wentylacja_demont), null, null, R.drawable.wentylacja_square_clover));
+				models.add(new ListModel(intToString(R.string.clover_upsweptc_wydech_nazwa), intToString(R.string.clover_upsweptc_wydech_cena), intToString(R.string.clover_upsweptc_wydech_demont), null, null, R.drawable.wydechy_upsweptc_clover));
+                models.add(new ListModel(intToString(R.string.clover_twincylinder_wydech_nazwa), intToString(R.string.clover_twincylinder_wydech_cena), intToString(R.string.clover_twincylinder_wydech_demont), null, null, R.drawable.wydechy_twincylinder_clover));
+                models.add(new ListModel(intToString(R.string.clover_large_wydech_nazwa), intToString(R.string.clover_large_wydech_cena), intToString(R.string.clover_large_wydech_demont), null, null, R.drawable.wydechy_large_clover));
+				models.add(new ListModel(intToString(R.string.clover_medium_wydech_nazwa), intToString(R.string.clover_medium_wydech_cena), intToString(R.string.clover_medium_wydech_demont), null, null, R.drawable.wydechy_medium_clover));
+	         }
+	         if (car.equalsIgnoreCase("majestic")) {
+                models.add(new ListModel(intToString(R.string.majestic_oval_wentylacja_nazwa), intToString(R.string.majestic_oval_wentylacja_cena), intToString(R.string.majestic_oval_wentylacja_demont), null, null, R.drawable.wentylacja_oval_majestic));
+                models.add(new ListModel(intToString(R.string.majestic_square_wentylacja_nazwa), intToString(R.string.majestic_square_wentylacja_cena), intToString(R.string.majestic_square_wentylacja_demont), null, null, R.drawable.wentylacja_square_majestic));
+                models.add(new ListModel(intToString(R.string.majestic_progi_nazwa), intToString(R.string.majestic_progi_cena), intToString(R.string.majestic_progi_demont), null, null, R.drawable.progi_majestic));
+                models.add(new ListModel(intToString(R.string.majestic_upsweptc_wydech_nazwa), intToString(R.string.majestic_upsweptc_wydech_cena), intToString(R.string.majestic_upsweptc_wydech_demont), null, null, R.drawable.wydechy_upsweptc_majestic));
+                models.add(new ListModel(intToString(R.string.majestic_twincylinder_wydech_nazwa), intToString(R.string.majestic_twincylinder_wydech_cena), intToString(R.string.majestic_twincylinder_wydech_demont), null, null, R.drawable.wydechy_twincylinder_majestic));
+                models.add(new ListModel(intToString(R.string.majestic_large_wydech_nazwa), intToString(R.string.majestic_large_wydech_cena), intToString(R.string.majestic_large_wydech_demont), null, null, R.drawable.wydechy_large_majestic));
+		     }
             WheelsAdapter adapter = new WheelsAdapter(this, models);
             recyclerView.setAdapter(adapter);
         }
