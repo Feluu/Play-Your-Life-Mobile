@@ -15,11 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.cardview.widget.CardView;
 
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.AdRequest;
-
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -59,8 +54,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private Drawer result = null;
-    private InterstitialAd mInterstitialAd;
-    private InterstitialAd mInterstitialAd2;
 
     private ScrollView scroll;
     private BottomNavigationView navigation;
@@ -115,16 +108,8 @@ public class MainActivity extends AppCompatActivity {
 
         menuImg.setOnClickListener((View v) -> result.openDrawer());
 
-        MobileAds.initialize(this, (InitializationStatus initializationStatus) -> {
-                mInterstitialAd = new InterstitialAd(MainActivity.this);
-                mInterstitialAd.setAdUnitId("ca-app-pub-8752363920727159/7418950479");
-                mInterstitialAd.loadAd(new AdRequest.Builder().build());
-                mInterstitialAd2 = new InterstitialAd(MainActivity.this);
-                mInterstitialAd2.setAdUnitId("ca-app-pub-8752363920727159/7418950479");
-        });
-
         try {
-            URL url = new URL("https://feluu.github.io/Play-Your-Life-Mobile/wheels.txt");
+            URL url = new URL("https://msciciel55.github.io/Play-Your-Life-Mobile/wheels.txt");
             new ReadWheelsTask(this).execute(url);
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -141,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
         new AppUpdater(this)
             .setUpdateFrom(UpdateFrom.GITHUB)
-            .setGitHubUserAndRepo("Feluu", "Play-Your-Life-Mobile")
+            .setGitHubUserAndRepo("Msciciel55", "Play-Your-Life-Mobile")
             .start();
 
         themeSwitch.setOnCheckedChangeListener((CompoundButton buttonView, boolean isChecked) -> {
@@ -196,7 +181,6 @@ public class MainActivity extends AppCompatActivity {
                         new PrimaryDrawerItem().withName(R.string.string_home).withIcon(FontAwesome.Icon.faw_home).withIdentifier(1),
                         new PrimaryDrawerItem().withName(R.string.string_report_error).withIcon(FontAwesome.Icon.faw_comment).withSelectable(false),
                         new SectionDrawerItem().withName(R.string.string_others),
-                        new SecondaryDrawerItem().withName(R.string.string_ad).withIcon(FontAwesome.Icon.faw_ad).withSelectable(false),
                         new SecondaryDrawerItem().withName(R.string.string_info).withIcon(FontAwesome.Icon.faw_info)
                 )
                 .withOnDrawerItemClickListener((View view, int position, IDrawerItem drawerItem) -> {
@@ -219,17 +203,6 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i);
                     }
                     if (position == 4) {
-                        if (mInterstitialAd.isLoaded()) {
-                            mInterstitialAd.show();
-                            mInterstitialAd2.loadAd(new AdRequest.Builder().build());
-                        } else if (mInterstitialAd2.isLoaded()) {
-                            mInterstitialAd2.show();
-                            mInterstitialAd.loadAd(new AdRequest.Builder().build());
-                        } else {
-                            Log.d("TAG", "The interstitial wasn't loaded yet.");
-                        }
-                    }
-                    if (position == 5) {
                         home.setVisibility(View.GONE);
                         info.setVisibility(View.VISIBLE);
                         navigation.setVisibility(View.GONE);
