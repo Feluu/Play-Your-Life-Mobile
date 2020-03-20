@@ -27,6 +27,7 @@ import com.feluu.pylife.VisualActivity;
 import com.feluu.pylife.models.ListModel;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder> implements Filterable {
@@ -36,6 +37,8 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
     private List<ListModel> carsListFull;
     private Activity activity;
     private final OnClickListener mOnClickListener = new MyOnClickListener();
+    private String[] autaWizu = {"elegy", "jester", "uranus", "sultan", "stratum", "perennial", "premier", "zr-350", "phoenix", "flash", "tornado", "blista", "bravura", "cadrona", "clover", "majestic"};
+    List<String> listaAut = Arrays.asList(autaWizu);
 
     public CarsAdapter(Activity a, Context mCtx, List<ListModel> carsList) {
         this.activity = a;
@@ -71,7 +74,7 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
                 .error(R.drawable.ic_error)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.imageView2);
-        if (cars.getFirst().equalsIgnoreCase("elegy") || cars.getFirst().equalsIgnoreCase("jester") || cars.getFirst().equalsIgnoreCase("uranus") || cars.getFirst().equalsIgnoreCase("sultan") || cars.getFirst().equalsIgnoreCase("stratum") || cars.getFirst().equalsIgnoreCase("perennial") || cars.getFirst().equalsIgnoreCase("premier") || cars.getFirst().equalsIgnoreCase("zr-350") || cars.getFirst().equalsIgnoreCase("phoenix") || cars.getFirst().equalsIgnoreCase("flash") || cars.getFirst().equalsIgnoreCase("tornado") || cars.getFirst().equalsIgnoreCase("blista")) {
+        if (listaAut.contains(cars.getFirst().toLowerCase())) {
             holder.textViewWizu.setVisibility(View.VISIBLE);
         } else {
             holder.textViewWizu.setVisibility(View.GONE);
@@ -142,7 +145,7 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
         public void onClick(View v) {
             TextView carName = v.findViewById(R.id.wheelsName);
             String carNameS = carName.getText().toString();
-            if (carNameS.equalsIgnoreCase("elegy") || carNameS.equalsIgnoreCase("jester") || carNameS.equalsIgnoreCase("sultan") || carNameS.equalsIgnoreCase("uranus") || carNameS.equalsIgnoreCase("stratum") || carNameS.equalsIgnoreCase("perennial") || carNameS.equalsIgnoreCase("premier") || carNameS.equalsIgnoreCase("zr-350") || carNameS.equalsIgnoreCase("phoenix") || carNameS.equalsIgnoreCase("flash") || carNameS.equalsIgnoreCase("tornado") || carNameS.equalsIgnoreCase("blista")) {
+            if (listaAut.contains(carNameS.toLowerCase())) {
                 Intent intent = new Intent(activity, VisualActivity.class);
                 intent.putExtra("carName", carNameS);
                 activity.startActivity(intent);
