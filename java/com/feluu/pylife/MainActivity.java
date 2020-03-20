@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         try {
-            URL url = new URL("https://feluu.github.io/Play-Your-Life-Mobile/wheels.txt");
+            URL url = new URL("https://msciciel55.github.io/Play-Your-Life-Mobile/wheels.txt");
             new ReadWheelsTask(this).execute(url);
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
 
         new AppUpdater(this)
             .setUpdateFrom(UpdateFrom.GITHUB)
-            .setGitHubUserAndRepo("Feluu", "Play-Your-Life-Mobile")
+            .setGitHubUserAndRepo("Msciciel55", "Play-Your-Life-Mobile")
             .start();
 
         themeSwitch.setOnCheckedChangeListener((CompoundButton buttonView, boolean isChecked) -> {
