@@ -37,7 +37,7 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
     private List<ListModel> carsListFull;
     private Activity activity;
     private final OnClickListener mOnClickListener = new MyOnClickListener();
-    private String[] autaWizu = {"elegy", "jester", "uranus", "sultan", "stratum", "perennial", "premier", "zr-350", "phoenix", "flash", "tornado", "blista", "bravura", "cadrona", "clover", "majestic"};
+    private String[] autaWizu = {"elegy", "jester", "uranus", "sultan", "stratum", "perennial", "premier", "zr-350", "phoenix", "flash", "tornado", "blista", "bravura", "cadrona", "clover", "majestic", "manana", "previon", "stallion", "tampa", "emperor"};
     List<String> listaAut = Arrays.asList(autaWizu);
 
     public CarsAdapter(Activity a, Context mCtx, List<ListModel> carsList) {
