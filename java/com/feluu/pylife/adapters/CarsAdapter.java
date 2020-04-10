@@ -5,7 +5,6 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -37,8 +36,8 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
     private List<ListModel> carsListFull;
     private Activity activity;
     private final OnClickListener mOnClickListener = new MyOnClickListener();
-    private String[] autaWizu = {"elegy", "jester", "uranus", "sultan", "stratum", "perennial", "premier", "zr-350", "phoenix", "flash", "tornado", "blista", "bravura", "cadrona", "clover", "majestic", "manana", "previon", "stallion", "tampa", "emperor"};
-    List<String> listaAut = Arrays.asList(autaWizu);
+    private String[] autaWizu = {"elegy", "jester", "uranus", "sultan", "stratum", "perennial", "premier", "zr-350", "phoenix", "flash", "tornado", "blista", "bravura", "cadrona", "clover", "majestic"};
+    private List<String> listaAut = Arrays.asList(autaWizu);
 
     public CarsAdapter(Activity a, Context mCtx, List<ListModel> carsList) {
         this.activity = a;
@@ -68,7 +67,7 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
         holder.textViewReset.setText(cars.getFifth());
         Glide
                 .with(mCtx)
-                .load(ContextCompat.getDrawable(mCtx, cars.getImage()))
+                .load(cars.getImage())
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_error)
