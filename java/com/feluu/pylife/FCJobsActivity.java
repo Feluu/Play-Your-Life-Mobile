@@ -55,11 +55,11 @@ public class FCJobsActivity extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             getWindow().setStatusBarColor(getResources().getColor(R.color.statusColor));
             bgMain.setImageResource(R.drawable.bg_dark);
-            models.add(new ViewModel(R.drawable.ic_build_light, intToString(R.string.mech_fc_title), intToString(R.string.mech_fc_earnings), intToString(R.string.mech_fc_locations), intToString(R.string.mech_fc_description)));
-            models.add(new ViewModel(R.drawable.ic_build_light, intToString(R.string.mech_ba_title), intToString(R.string.mech_ba_earnings), intToString(R.string.mech_ba_locations), intToString(R.string.mech_ba_description)));
+            models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/mechanikjasny.png", intToString(R.string.mech_fc_title), intToString(R.string.mech_fc_earnings), intToString(R.string.mech_fc_locations), intToString(R.string.mech_fc_description)));
+            models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/mechanikjasny.png", intToString(R.string.mech_ba_title), intToString(R.string.mech_ba_earnings), intToString(R.string.mech_ba_locations), intToString(R.string.mech_ba_description)));
         } else {
-            models.add(new ViewModel(R.drawable.ic_build, intToString(R.string.mech_fc_title), intToString(R.string.mech_fc_earnings), intToString(R.string.mech_fc_locations), intToString(R.string.mech_fc_description)));
-            models.add(new ViewModel(R.drawable.ic_build, intToString(R.string.mech_ba_title), intToString(R.string.mech_ba_earnings), intToString(R.string.mech_ba_locations), intToString(R.string.mech_ba_description)));
+            models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/mechanik.png", intToString(R.string.mech_fc_title), intToString(R.string.mech_fc_earnings), intToString(R.string.mech_fc_locations), intToString(R.string.mech_fc_description)));
+            models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/mechanik.png", intToString(R.string.mech_ba_title), intToString(R.string.mech_ba_earnings), intToString(R.string.mech_ba_locations), intToString(R.string.mech_ba_description)));
         }
 
         adapter = new JobsAdapter(models, this);

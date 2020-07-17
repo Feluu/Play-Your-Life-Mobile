@@ -55,13 +55,14 @@ public class CountersTuneActivity extends AppCompatActivity {
 
         countersList = new ArrayList<>();
 
-        countersList.add(new ListModel(intToString(R.string.standard_counter_name), intToString(R.string.standard_counter_price), intToString(R.string.standard_counter_range), null, null, R.drawable.standard_licznik));
-        countersList.add(new ListModel(intToString(R.string.neo_name), intToString(R.string.neo_price), intToString(R.string.neo_range), null, null, R.drawable.neo));
-        countersList.add(new ListModel(intToString(R.string.one_name), intToString(R.string.one_price), intToString(R.string.one_range), null, null, R.drawable.one));
-        countersList.add(new ListModel(intToString(R.string.style_name), intToString(R.string.style_price), intToString(R.string.style_range), null, null, R.drawable.style));
-        countersList.add(new ListModel(intToString(R.string.smart_name), intToString(R.string.smart_price), intToString(R.string.smart_range), null, null, R.drawable.smart));
-        countersList.add(new ListModel(intToString(R.string.sportowy_name), intToString(R.string.sportowy_price), intToString(R.string.sportowy_range), null, null, R.drawable.sportowy));
-
+        countersList.add(new ListModel(intToString(R.string.standard_counter_name), intToString(R.string.standard_counter_price), intToString(R.string.standard_counter_range), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/standard_licznik.png"));
+        countersList.add(new ListModel(intToString(R.string.sportowy_name), intToString(R.string.sportowy_price), intToString(R.string.sportowy_range), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/sportowy.png"));
+        countersList.add(new ListModel(intToString(R.string.neo_name), intToString(R.string.neo_price), intToString(R.string.neo_range), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/neo.png"));
+        countersList.add(new ListModel(intToString(R.string.style_name), intToString(R.string.style_price), intToString(R.string.style_range), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/style.png"));
+        countersList.add(new ListModel(intToString(R.string.ufo_name), intToString(R.string.ufo_price), intToString(R.string.ufo_range), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/ufo.png"));
+        countersList.add(new ListModel(intToString(R.string.smart_name), intToString(R.string.smart_price), intToString(R.string.smart_range), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/smart.png"));
+        countersList.add(new ListModel(intToString(R.string.classicl_name), intToString(R.string.classicl_price), intToString(R.string.classicl_range), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/classicl.png"));
+        countersList.add(new ListModel(intToString(R.string.one_name), intToString(R.string.one_price), intToString(R.string.one_range), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/one.png"));
         CountersAdapter adapter = new CountersAdapter(this, countersList);
         recyclerView.setAdapter(adapter);
     }

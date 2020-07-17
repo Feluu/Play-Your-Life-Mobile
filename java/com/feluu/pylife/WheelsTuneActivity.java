@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.feluu.pylife.adapters.WideningWheelsAdapter;
 import com.feluu.pylife.adapters.AvWheelsAdapter;
 import com.feluu.pylife.adapters.WheelsAdapter;
 import com.feluu.pylife.models.ListModel;
@@ -59,6 +60,7 @@ public class WheelsTuneActivity extends AppCompatActivity {
 
         setWheels();
         setAvailableWheels();
+        setWideningWheels();
     }
 
     private void setWheels(){
@@ -67,23 +69,23 @@ public class WheelsTuneActivity extends AppCompatActivity {
 
         List<ListModel> wheelsList;
         wheelsList = new ArrayList<>();
-        wheelsList.add(new ListModel(intToString(R.string.ahab_name), intToString(R.string.ahab_price), intToString(R.string.ahab_demont), null, null, R.drawable.ahab));
-        wheelsList.add(new ListModel(intToString(R.string.classic_name), intToString(R.string.classic_price), intToString(R.string.classic_demont), null, null, R.drawable.classic));
-        wheelsList.add(new ListModel(intToString(R.string.cutter_name), intToString(R.string.cutter_price), intToString(R.string.cutter_demont), null, null, R.drawable.cutter));
-        wheelsList.add(new ListModel(intToString(R.string.dollar_name), intToString(R.string.dollar_price), intToString(R.string.dollar_demont), null, null, R.drawable.dollar));
-        wheelsList.add(new ListModel(intToString(R.string.grove_name), intToString(R.string.grove_price), intToString(R.string.grove_demont), null, null, R.drawable.grove));
-        wheelsList.add(new ListModel(intToString(R.string.import_name), intToString(R.string.import_price), intToString(R.string.import_demont), null, null, R.drawable.importy));
-        wheelsList.add(new ListModel(intToString(R.string.mega_name), intToString(R.string.mega_price), intToString(R.string.mega_demont), null, null, R.drawable.mega));
-        wheelsList.add(new ListModel(intToString(R.string.mesh_name), intToString(R.string.mesh_price), intToString(R.string.mesh_demont), null, null, R.drawable.mesh));
-        wheelsList.add(new ListModel(intToString(R.string.offroad_name), intToString(R.string.offroad_price), intToString(R.string.offroad_demont), null, null, R.drawable.offroad));
-        wheelsList.add(new ListModel(intToString(R.string.rimshine_name), intToString(R.string.rimshine_price), intToString(R.string.rimshine_demont), null, null, R.drawable.rimshine));
-        wheelsList.add(new ListModel(intToString(R.string.rittle_name), intToString(R.string.rittle_price), intToString(R.string.rittle_demont), null, null, R.drawable.rittle));
-        wheelsList.add(new ListModel(intToString(R.string.stalowe_name), intToString(R.string.stalowe_price), intToString(R.string.stalowe_demont), null, null, R.drawable.stalowe));
-        wheelsList.add(new ListModel(intToString(R.string.switch_name), intToString(R.string.switch_price), intToString(R.string.switch_demont), null, null, R.drawable.switche));
-        wheelsList.add(new ListModel(intToString(R.string.timer_name), intToString(R.string.timer_price), intToString(R.string.timer_demont), null, null, R.drawable.timer));
-        wheelsList.add(new ListModel(intToString(R.string.twist_name), intToString(R.string.twist_price), intToString(R.string.twist_demont), null, null, R.drawable.twist));
-        wheelsList.add(new ListModel(intToString(R.string.virtual_name), intToString(R.string.virtual_price), intToString(R.string.virtual_demont), null, null, R.drawable.virtual));
-        wheelsList.add(new ListModel(intToString(R.string.wires_name), intToString(R.string.wires_price), intToString(R.string.wires_demont), null, null, R.drawable.wires));
+        wheelsList.add(new ListModel(intToString(R.string.ahab_name), intToString(R.string.ahab_price), intToString(R.string.ahab_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/ahab.png"));
+        wheelsList.add(new ListModel(intToString(R.string.classic_name), intToString(R.string.classic_price), intToString(R.string.classic_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/classic.png"));
+        wheelsList.add(new ListModel(intToString(R.string.cutter_name), intToString(R.string.cutter_price), intToString(R.string.cutter_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/cutter.png"));
+        wheelsList.add(new ListModel(intToString(R.string.dollar_name), intToString(R.string.dollar_price), intToString(R.string.dollar_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/dollar.png"));
+        wheelsList.add(new ListModel(intToString(R.string.grove_name), intToString(R.string.grove_price), intToString(R.string.grove_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/grove.png"));
+        wheelsList.add(new ListModel(intToString(R.string.import_name), intToString(R.string.import_price), intToString(R.string.import_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/importy.png"));
+        wheelsList.add(new ListModel(intToString(R.string.mega_name), intToString(R.string.mega_price), intToString(R.string.mega_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/mega.png"));
+        wheelsList.add(new ListModel(intToString(R.string.mesh_name), intToString(R.string.mesh_price), intToString(R.string.mesh_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/mesh.png"));
+        wheelsList.add(new ListModel(intToString(R.string.offroad_name), intToString(R.string.offroad_price), intToString(R.string.offroad_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/offroad.png"));
+        wheelsList.add(new ListModel(intToString(R.string.rimshine_name), intToString(R.string.rimshine_price), intToString(R.string.rimshine_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/rimshine.png"));
+        wheelsList.add(new ListModel(intToString(R.string.rittle_name), intToString(R.string.rittle_price), intToString(R.string.rittle_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/rittle.png"));
+        wheelsList.add(new ListModel(intToString(R.string.stalowe_name), intToString(R.string.stalowe_price), intToString(R.string.stalowe_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/stalowe.png"));
+        wheelsList.add(new ListModel(intToString(R.string.switch_name), intToString(R.string.switch_price), intToString(R.string.switch_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/switche.png"));
+        wheelsList.add(new ListModel(intToString(R.string.timer_name), intToString(R.string.timer_price), intToString(R.string.timer_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/timer.png"));
+        wheelsList.add(new ListModel(intToString(R.string.twist_name), intToString(R.string.twist_price), intToString(R.string.twist_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/twist.png"));
+        wheelsList.add(new ListModel(intToString(R.string.virtual_name), intToString(R.string.virtual_price), intToString(R.string.virtual_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/virtual.png"));
+        wheelsList.add(new ListModel(intToString(R.string.wires_name), intToString(R.string.wires_price), intToString(R.string.wires_demont), null, null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/wires.png"));
         WheelsAdapter adapter = new WheelsAdapter(this, wheelsList);
         recyclerView.setAdapter(adapter);
     }
@@ -111,55 +113,55 @@ public class WheelsTuneActivity extends AppCompatActivity {
             List<ViewModel> models;
             models = new ArrayList<>();
             if (avWheels.contains("ahab")) {
-                models.add(new ViewModel(R.drawable.ahab, intToString(R.string.ahab_name), intToString(R.string.ahab_price), intToString(R.string.ahab_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/ahab.png", intToString(R.string.ahab_name), intToString(R.string.ahab_price), intToString(R.string.ahab_demont), null));
             }
             if (avWheels.contains("classic")) {
-                models.add(new ViewModel(R.drawable.classic, intToString(R.string.classic_name), intToString(R.string.classic_price), intToString(R.string.classic_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/classic.png", intToString(R.string.classic_name), intToString(R.string.classic_price), intToString(R.string.classic_demont), null));
             }
             if (avWheels.contains("cutter")) {
-                models.add(new ViewModel(R.drawable.cutter, intToString(R.string.cutter_name), intToString(R.string.cutter_price), intToString(R.string.cutter_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/cutter.png", intToString(R.string.cutter_name), intToString(R.string.cutter_price), intToString(R.string.cutter_demont), null));
             }
             if (avWheels.contains("dollar")) {
-                models.add(new ViewModel(R.drawable.dollar, intToString(R.string.dollar_name), intToString(R.string.dollar_price), intToString(R.string.dollar_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/dollar.png", intToString(R.string.dollar_name), intToString(R.string.dollar_price), intToString(R.string.dollar_demont), null));
             }
             if (avWheels.contains("grove")) {
-                models.add(new ViewModel(R.drawable.grove, intToString(R.string.grove_name), intToString(R.string.grove_price), intToString(R.string.grove_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/grove.png", intToString(R.string.grove_name), intToString(R.string.grove_price), intToString(R.string.grove_demont), null));
             }
             if (avWheels.contains("import")) {
-                models.add(new ViewModel(R.drawable.importy, intToString(R.string.import_name), intToString(R.string.import_price), intToString(R.string.import_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/importy.png", intToString(R.string.import_name), intToString(R.string.import_price), intToString(R.string.import_demont), null));
             }
             if (avWheels.contains("mega") || (avWheels.contains("megi"))) {
-                models.add(new ViewModel(R.drawable.mega, intToString(R.string.mega_name), intToString(R.string.mega_price), intToString(R.string.mega_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/mega.png", intToString(R.string.mega_name), intToString(R.string.mega_price), intToString(R.string.mega_demont), null));
             }
             if (avWheels.contains("mesh")) {
-                models.add(new ViewModel(R.drawable.mesh, intToString(R.string.mesh_name), intToString(R.string.mesh_price), intToString(R.string.mesh_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/mesh.png", intToString(R.string.mesh_name), intToString(R.string.mesh_price), intToString(R.string.mesh_demont), null));
             }
             if (avWheels.contains("offroad") || avWheels.contains("off-road")) {
-                models.add(new ViewModel(R.drawable.offroad, intToString(R.string.offroad_name), intToString(R.string.offroad_price), intToString(R.string.offroad_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/offroad.png", intToString(R.string.offroad_name), intToString(R.string.offroad_price), intToString(R.string.offroad_demont), null));
             }
             if (avWheels.contains("rimshine")) {
-                models.add(new ViewModel(R.drawable.rimshine, intToString(R.string.rimshine_name), intToString(R.string.rimshine_price), intToString(R.string.rimshine_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/rimshine.png", intToString(R.string.rimshine_name), intToString(R.string.rimshine_price), intToString(R.string.rimshine_demont), null));
             }
             if (avWheels.contains("rittle")) {
-                models.add(new ViewModel(R.drawable.rittle, intToString(R.string.rittle_name), intToString(R.string.rittle_price), intToString(R.string.rittle_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/rittle.png", intToString(R.string.rittle_name), intToString(R.string.rittle_price), intToString(R.string.rittle_demont), null));
             }
             if (avWheels.contains("stalowe")) {
-                models.add(new ViewModel(R.drawable.stalowe, intToString(R.string.stalowe_name), intToString(R.string.stalowe_price), intToString(R.string.stalowe_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/stalowe.png", intToString(R.string.stalowe_name), intToString(R.string.stalowe_price), intToString(R.string.stalowe_demont), null));
             }
             if (avWheels.contains("switch")) {
-                models.add(new ViewModel(R.drawable.switche, intToString(R.string.switch_name), intToString(R.string.switch_price), intToString(R.string.switch_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/switche.png", intToString(R.string.switch_name), intToString(R.string.switch_price), intToString(R.string.switch_demont), null));
             }
             if (avWheels.contains("timer")) {
-                models.add(new ViewModel(R.drawable.timer, intToString(R.string.timer_name), intToString(R.string.timer_price), intToString(R.string.timer_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/timer.png", intToString(R.string.timer_name), intToString(R.string.timer_price), intToString(R.string.timer_demont), null));
             }
             if (avWheels.contains("twist")) {
-                models.add(new ViewModel(R.drawable.twist, intToString(R.string.twist_name), intToString(R.string.twist_price), intToString(R.string.twist_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/twist.png", intToString(R.string.twist_name), intToString(R.string.twist_price), intToString(R.string.twist_demont), null));
             }
             if (avWheels.contains("virtual")) {
-                models.add(new ViewModel(R.drawable.virtual, intToString(R.string.virtual_name), intToString(R.string.virtual_price), intToString(R.string.virtual_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/virtual.png", intToString(R.string.virtual_name), intToString(R.string.virtual_price), intToString(R.string.virtual_demont), null));
             }
             if (avWheels.contains("wires")) {
-                models.add(new ViewModel(R.drawable.wires, intToString(R.string.wires_name), intToString(R.string.wires_price), intToString(R.string.wires_demont), null));
+                models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/wires.png", intToString(R.string.wires_name), intToString(R.string.wires_price), intToString(R.string.wires_demont), null));
             }
             AvWheelsAdapter adapter = new AvWheelsAdapter(models, this);
             viewPager.setAdapter(adapter);
@@ -167,6 +169,21 @@ public class WheelsTuneActivity extends AppCompatActivity {
             nestedScrollView.getParent().requestChildFocus(nestedScrollView, nestedScrollView);
             indicator.setViewPager(viewPager);
         }
+    }
+    private void setWideningWheels() {
+        ViewPager viewPager;
+        CircleIndicator indicator;
+        viewPager = findViewById(R.id.viewPager11);
+
+        List<ViewModel> models;
+        models = new ArrayList<>();
+        models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/oponyjasny.png", intToString(R.string.uw_name), intToString(R.string.uw_price), intToString(R.string.uw_demont), null));
+        models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/oponyjasny.png", intToString(R.string.szerokie_name), intToString(R.string.szerokie_price), intToString(R.string.szerokie_demont), null));
+        models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/oponyjasny.png", intToString(R.string.waskie_name), intToString(R.string.waskie_price), intToString(R.string.waskie_demont), null));
+        models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/oponyjasny.png", intToString(R.string.ut_name), intToString(R.string.ut_price), intToString(R.string.ut_demont), null));
+        WideningWheelsAdapter adapter = new WideningWheelsAdapter(models, this);
+        viewPager.setAdapter(adapter);
+
     }
 
     private String intToString(int Res) {

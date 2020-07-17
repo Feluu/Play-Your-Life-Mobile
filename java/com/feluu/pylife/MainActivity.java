@@ -210,10 +210,10 @@ public class MainActivity extends AppCompatActivity {
                         backBtn = findViewById(R.id.menuToggle);
                         title.setText(R.string.string_info);
                         ArrayList<ListModel> infoData = new ArrayList<>();
-                        infoData.add(new ListModel(intToString(R.string.info_author), intToString(R.string.info_author_name), null, null, null, 0));
-                        infoData.add(new ListModel(intToString(R.string.info_app_version), intToString(R.string.versionName), null, null, null, 0));
-                        infoData.add(new ListModel(intToString(R.string.info_used), intToString(R.string.info_used_2), null, null, null, 0));
-                        infoData.add(new ListModel(intToString(R.string.info_github), intToString(R.string.info_github_link), null, null, null, 0));
+                        infoData.add(new ListModel(intToString(R.string.info_author), intToString(R.string.info_author_name), null, null, null, null, null));
+                        infoData.add(new ListModel(intToString(R.string.info_app_version), intToString(R.string.versionName), null, null, null, null,null));
+                        infoData.add(new ListModel(intToString(R.string.info_used), intToString(R.string.info_used_2), null, null, null, null,null));
+                        infoData.add(new ListModel(intToString(R.string.info_github), intToString(R.string.info_github_link), null, null, null, null,null));
                         ListView listView;
                         listView = findViewById(R.id.listView);
 
@@ -223,19 +223,19 @@ public class MainActivity extends AppCompatActivity {
 
                         listView.setOnItemLongClickListener((AdapterView<?> parent, View view_, int position_, long id) -> {
                             if (position_ == 0) {
-                                String url = "https://pylife.pl/profile/31118-feluu/";
+                                String url = "https://pylife.pl/profile/5235-msciciel/";
                                 Intent i = new Intent(Intent.ACTION_VIEW);
                                 i.setData(Uri.parse(url));
                                 startActivity(i);
                             }
                             if (position_ == 2) {
-                                String url = "https://feluu.github.io/Play-Your-Life-Mobile/zasoby.html";
+                                String url = "https://feluu.github.io/Play-Your-Life-Mobile/zasoby.htm";
                                 Intent i = new Intent(Intent.ACTION_VIEW);
                                 i.setData(Uri.parse(url));
                                 startActivity(i);
                             }
                             if (position_ == 3) {
-                                String url = "https://github.com/Feluu/Play-Your-Life-Mobile";
+                                String url = "https://github.com/Msciciel55/Play-Your-Life-Mobile";
                                 Intent i = new Intent(Intent.ACTION_VIEW);
                                 i.setData(Uri.parse(url));
                                 startActivity(i);

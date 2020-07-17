@@ -54,9 +54,9 @@ public class UWizuTuneActivity extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             getWindow().setStatusBarColor(getResources().getColor(R.color.statusColor));
             bgMain.setImageResource(R.drawable.bg_dark);
-            modelList.add(new ListModel(intToString(R.string.nos_atrapa_name), intToString(R.string.nos_atrapa_allows), intToString(R.string.nos_atrapa_price), intToString(R.string.nos_atrapa_demont), null, R.drawable.atrapa_nos));
+            modelList.add(new ListModel(intToString(R.string.nos_atrapa_name), intToString(R.string.nos_atrapa_allows), intToString(R.string.nos_atrapa_price), intToString(R.string.nos_atrapa_demont), null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/atrapa_nos.png"));
         } else {
-            modelList.add(new ListModel(intToString(R.string.nos_atrapa_name), intToString(R.string.nos_atrapa_allows), intToString(R.string.nos_atrapa_price), intToString(R.string.nos_atrapa_demont), null, R.drawable.atrapa_nos));
+            modelList.add(new ListModel(intToString(R.string.nos_atrapa_name), intToString(R.string.nos_atrapa_allows), intToString(R.string.nos_atrapa_price), intToString(R.string.nos_atrapa_demont), null, null,"https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/atrapa_nos.png"));
         }
 
         MechanicalAdapter adapter = new MechanicalAdapter(this, modelList);

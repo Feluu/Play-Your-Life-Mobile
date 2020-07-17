@@ -55,13 +55,13 @@ public class LSJobsActivity extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             getWindow().setStatusBarColor(getResources().getColor(R.color.statusColor));
             bgMain.setImageResource(R.drawable.bg_dark);
-            models.add(new ViewModel(R.drawable.ic_build_light, intToString(R.string.mech_ls_title), intToString(R.string.mech_ls_earnings), intToString(R.string.mech_ls_locations), intToString(R.string.mech_ls_description)));
-            models.add(new ViewModel(R.drawable.ic_build_light, intToString(R.string.mech_pc_title), intToString(R.string.mech_pc_earnings), intToString(R.string.mech_pc_locations), intToString(R.string.mech_pc_description)));
-            models.add(new ViewModel(R.drawable.ic_badge_light, intToString(R.string.sm_ls_title), intToString(R.string.sm_ls_earnings), intToString(R.string.sm_ls_locations), intToString(R.string.sm_ls_description)));
+            models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/mechanikjasny.png", intToString(R.string.mech_ls_title), intToString(R.string.mech_ls_earnings), intToString(R.string.mech_ls_locations), intToString(R.string.mech_ls_description)));
+            models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/mechanikjasny.png", intToString(R.string.mech_pc_title), intToString(R.string.mech_pc_earnings), intToString(R.string.mech_pc_locations), intToString(R.string.mech_pc_description)));
+            models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/strazjasny.png", intToString(R.string.sm_ls_title), intToString(R.string.sm_ls_earnings), intToString(R.string.sm_ls_locations), intToString(R.string.sm_ls_description)));
         } else {
-            models.add(new ViewModel(R.drawable.ic_build, intToString(R.string.mech_ls_title), intToString(R.string.mech_ls_earnings), intToString(R.string.mech_ls_locations), intToString(R.string.mech_ls_description)));
-            models.add(new ViewModel(R.drawable.ic_build, intToString(R.string.mech_pc_title), intToString(R.string.mech_pc_earnings), intToString(R.string.mech_pc_locations), intToString(R.string.mech_pc_description)));
-            models.add(new ViewModel(R.drawable.ic_badge, intToString(R.string.sm_ls_title), intToString(R.string.sm_ls_earnings), intToString(R.string.sm_ls_locations), intToString(R.string.sm_ls_description)));
+            models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/mechanik.png", intToString(R.string.mech_ls_title), intToString(R.string.mech_ls_earnings), intToString(R.string.mech_ls_locations), intToString(R.string.mech_ls_description)));
+            models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/mechanik.png", intToString(R.string.mech_pc_title), intToString(R.string.mech_pc_earnings), intToString(R.string.mech_pc_locations), intToString(R.string.mech_pc_description)));
+            models.add(new ViewModel("https://raw.githubusercontent.com/Msciciel55/Play-Your-Life-Mobile/master/res/drawable/straz.png", intToString(R.string.sm_ls_title), intToString(R.string.sm_ls_earnings), intToString(R.string.sm_ls_locations), intToString(R.string.sm_ls_description)));
         }
 
         adapter = new JobsAdapter(models, this);
