@@ -28,15 +28,14 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="5dp"
                 android:contentDescription="@string/ahab_name"
                 android:padding="4dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/ahab" />
+                android:scaleType="fitXY"/>
 
             <TextView
                 android:id="@+id/wheelsName"
@@ -48,7 +47,7 @@
                 android:layout_toStartOf="@+id/imageView2"
                 android:text="@string/ahab_name"
                 android:textColor="?attr/textDark"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -58,10 +57,10 @@
                 android:layout_below="@+id/wheelsName"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
                 android:contentDescription="@string/layout_price_l"
                 android:tint="?attr/textDark"
-                app:srcCompat="@drawable/ic_earnings_24dp" />
+                app:srcCompat="@drawable/dollar" />
 
             <TextView
                 android:id="@+id/priceT"
@@ -70,7 +69,7 @@
                 android:layout_below="@+id/wheelsName"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="43dp"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="10.5dp"
                 android:text="C"
                 android:textColor="?attr/textDark"
                 android:textSize="10sp" />
@@ -82,7 +81,7 @@
                 android:layout_below="@+id/wheelsName"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="52dp"
-                android:layout_marginTop="8.5dp"
+                android:layout_marginTop="6.5dp"
                 android:text="@string/ahab_price"
                 android:textColor="?attr/textLight"
                 android:textSize="15sp" />
@@ -93,11 +92,11 @@
                 android:layout_below="@+id/imageViewPrice"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginBottom="5dp"
                 android:contentDescription="@string/layout_dem"
                 android:tint="?attr/textDark"
-                app:srcCompat="@drawable/ic_earnings_24dp" />
+                app:srcCompat="@drawable/dollar" />
 
             <TextView
                 android:id="@+id/demontT"
@@ -106,7 +105,7 @@
                 android:layout_below="@+id/imageViewPrice"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="43dp"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginBottom="5dp"
                 android:text="D"
                 android:textColor="?attr/textDark"
@@ -119,7 +118,7 @@
                 android:layout_below="@+id/imageViewPrice"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="52dp"
-                android:layout_marginTop="8.5dp"
+                android:layout_marginTop="7dp"
                 android:layout_marginBottom="5dp"
                 android:text="@string/ahab_demont"
                 android:textColor="?attr/textLight"

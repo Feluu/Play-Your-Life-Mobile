@@ -54,7 +54,7 @@
                     android:layout_below="@id/title"
                     android:layout_marginTop="5dp"
                     android:tint="?attr/textDark"
-                    app:srcCompat="@drawable/ic_earnings_24dp" />
+                    app:srcCompat="@drawable/dollar" />
 
                 <TextView
                     android:id="@+id/textView12"

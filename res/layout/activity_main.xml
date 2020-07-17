@@ -45,7 +45,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/navigation"
-        android:layout_below="@id/top" />
+        android:layout_below="@id/top"
+        android:visibility="visible" />
 
     <include
         android:id="@+id/infoScreen"

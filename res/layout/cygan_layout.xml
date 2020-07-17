@@ -30,11 +30,9 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="5dp"
-                android:contentDescription="@string/bf_name"
+                android:contentDescription="@string/stratum_name"
                 android:padding="4dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/ahab"
-                app:srcCompat="@drawable/bf" />
+                android:scaleType="fitXY" />
 
             <TextView
                 android:id="@+id/wheelsName"
@@ -70,7 +68,7 @@
                 android:layout_marginStart="3dp"
                 android:layout_marginTop="8.5dp"
                 android:layout_toEndOf="@id/priceT"
-                android:text="@string/cygan_bf_injection_cena"
+                android:text=""
                 android:textColor="?attr/textLight"
                 android:textSize="17sp" />
 
@@ -97,7 +95,7 @@
                 android:layout_marginTop="8.5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_toEndOf="@id/przebiegT"
-                android:text="@string/cygan_bf_injection_przebieg"
+                android:text=""
                 android:textColor="?attr/textLight"
                 android:textSize="17sp" />
 

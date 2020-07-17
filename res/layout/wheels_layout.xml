@@ -35,8 +35,8 @@
                 android:layout_marginTop="5dp"
                 android:contentDescription="@string/ahab_name"
                 android:padding="4dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/ahab" />
+                android:scaleType="fitXY"/>
+               
 
             <TextView
                 android:id="@+id/wheelsName"
@@ -61,7 +61,7 @@
                 android:layout_marginTop="5dp"
                 android:contentDescription="@string/layout_price_l"
                 android:tint="?attr/textDark"
-                app:srcCompat="@drawable/ic_earnings_24dp" />
+                app:srcCompat="@drawable/dollar" />
 
             <TextView
                 android:id="@+id/priceT"
@@ -97,7 +97,7 @@
                 android:layout_marginBottom="5dp"
                 android:contentDescription="@string/layout_dem"
                 android:tint="?attr/textDark"
-                app:srcCompat="@drawable/ic_earnings_24dp" />
+                app:srcCompat="@drawable/dollar" />
 
             <TextView
                 android:id="@+id/demontT"

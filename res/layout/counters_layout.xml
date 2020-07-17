@@ -35,8 +35,7 @@
                 android:layout_marginTop="5dp"
                 android:contentDescription="@string/standard_counter_name"
                 android:padding="4dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/standard_licznik" />
+                android:scaleType="fitXY"/>
 
             <TextView
                 android:id="@+id/wheelsName"
@@ -61,7 +60,7 @@
                 android:layout_marginTop="5dp"
                 android:contentDescription="@string/layout_price_l"
                 android:tint="?attr/textDark"
-                app:srcCompat="@drawable/ic_earnings_24dp" />
+                app:srcCompat="@drawable/dollar" />
 
             <TextView
                 android:layout_width="wrap_content"

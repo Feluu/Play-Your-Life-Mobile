@@ -41,7 +41,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:gravity="center_horizontal|top"
-            android:text="@string/wheels_list_activity"
+            android:text="@string/aso_list_activity"
             android:textColor="?attr/textDark"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -57,32 +57,31 @@
         android:fillViewport="true"
         android:overScrollMode="never">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent" >
 
             <LinearLayout
-                android:id="@+id/avWheelsLayout"
+                android:id="@+id/salon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone" >
+                android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/salonText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="@string/avail_wheels"
+                    android:text="@string/salon_gold"
                     android:textAlignment="center"
                     android:textColor="?attr/textDark"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:visibility="visible" />
 
                 <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/viewPager"
+                    android:id="@+id/viewPager1"
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
+                    android:layout_height="170dp"
                     android:layout_gravity="top"
                     android:clipToPadding="false"
                     android:overScrollMode="never"
@@ -91,7 +90,7 @@
                     android:visibility="visible" />
 
                 <me.relex.circleindicator.CircleIndicator
-                    android:id="@+id/indicator"
+                    android:id="@+id/indicator1"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
                     android:layout_gravity="bottom"
@@ -102,27 +101,67 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/WideningWheelsLayout"
+                android:id="@+id/komis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/avWheelsLayout"
-                android:orientation="vertical"
-                android:visibility="visible" >
+                android:layout_below="@id/salon"
+                android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/komisText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="@string/rodzaje_felg"
+                    android:text="@string/komis"
                     android:textAlignment="center"
                     android:textColor="?attr/textDark"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:visibility="visible" />
 
                 <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/viewPager11"
+                    android:id="@+id/viewPager2"
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="top"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    android:paddingStart="45dp"
+                    android:paddingEnd="40dp"
+                    android:visibility="visible" />
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indicator2"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="2dp"
+                    android:visibility="visible"
+                    app:ci_drawable="@drawable/indicator" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cygan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/komis"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cyganText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/cygan_lv"
+                    android:textAlignment="center"
+                    android:textColor="?attr/textDark"
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager3"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
                     android:layout_gravity="top"
                     android:clipToPadding="false"
                     android:overScrollMode="never"
@@ -130,15 +169,18 @@
                     android:paddingEnd="40dp"
                     android:visibility="visible" />
 
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indicator3"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="2dp"
+                    android:visibility="visible"
+                    app:ci_drawable="@drawable/indicator" />
 
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:overScrollMode="never" />
-        </LinearLayout>
+        </RelativeLayout>
 
     </androidx.core.widget.NestedScrollView>
 
