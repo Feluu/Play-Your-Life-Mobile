@@ -2,13 +2,13 @@ package com.feluu.pylife.models;
 
 public class ViewModel {
 
-    private int image;
+    private String image;
     private String first;
     private String second;
     private String third;
     private String fourth;
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
@@ -28,7 +28,7 @@ public class ViewModel {
         return fourth;
     }
 
-    public ViewModel(int image, String first, String second, String third, String fourth) {
+    public ViewModel(String image, String first, String second, String third, String fourth) {
         this.image = image;
         this.first = first;
         this.second = second;

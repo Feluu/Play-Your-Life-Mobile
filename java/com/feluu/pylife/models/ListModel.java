@@ -7,7 +7,8 @@ public class ListModel {
     private String third;
     private String fourth;
     private String fifth;
-    private int image;
+    private String sixth;
+    private String image;
 
     public String getFirst() {
         return first;
@@ -29,16 +30,17 @@ public class ListModel {
         return fifth;
     }
 
-    public int getImage() {
-        return image;
-    }
+    public String getSixth() { return sixth; }
 
-    public ListModel(String first, String second, String third, String fourth, String fifth, int image) {
+    public String getImage() { return image; }
+
+    public ListModel(String first, String second, String third, String fourth, String fifth, String sixth, String image) {
         this.first = first;
         this.second = second;
         this.third = third;
         this.fourth = fourth;
         this.fifth = fifth;
+        this.sixth = sixth;
         this.image = image;
     }
 
