@@ -2,7 +2,6 @@ package com.feluu.pylife.adapters;
 
 import android.content.Context;
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.PagerAdapter;
 
 import android.util.TypedValue;
@@ -61,7 +60,7 @@ public class JobsAdapter extends PagerAdapter {
 
         Glide
                 .with(mCtx)
-                .load(ContextCompat.getDrawable(mCtx, models.get(position).getImage()))
+                .load(models.get(position).getImage())
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_error)

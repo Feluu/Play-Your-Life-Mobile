@@ -36,7 +36,7 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
     private List<ListModel> carsListFull;
     private Activity activity;
     private final OnClickListener mOnClickListener = new MyOnClickListener();
-    private String[] autaWizu = {"elegy", "jester", "uranus", "sultan", "stratum", "perennial", "premier", "zr-350", "phoenix", "flash", "tornado", "blista", "bravura", "cadrona", "clover", "majestic"};
+    private String[] autaWizu = {"elegy", "jester", "uranus", "sultan", "stratum", "perennial", "premier", "zr-350", "phoenix", "flash", "tornado", "blista", "bravura", "cadrona", "clover", "majestic", "manana", "previon", "stallion", "tampa", "emperor", "greenwood", "intruder", "merit", "nebula", "primo", "sentinel", "remington"};
     private List<String> listaAut = Arrays.asList(autaWizu);
 
     public CarsAdapter(Activity a, Context mCtx, List<ListModel> carsList) {
@@ -65,6 +65,7 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
         holder.textViewVMaxFMK.setText(cars.getThird());
         holder.textViewTax.setText(cars.getFourth());
         holder.textViewReset.setText(cars.getFifth());
+        holder.textViewCena.setText(cars.getSixth());
         Glide
                 .with(mCtx)
                 .load(cars.getImage())
@@ -120,7 +121,7 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
 
     class CarsViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView textViewName, textViewVMax, textViewVMaxFMK, textViewTax, textViewReset, textViewWizu;
+        private TextView textViewName, textViewVMax, textViewVMaxFMK, textViewTax, textViewReset, textViewCena, textViewWizu;
         private ImageView imageView2;
         private CardView cardContainer;
 
@@ -133,6 +134,7 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.CarsViewHolder
             textViewVMaxFMK = itemView.findViewById(R.id.vMaxFMK);
             textViewTax = itemView.findViewById(R.id.tax);
             textViewReset = itemView.findViewById(R.id.reset);
+            textViewCena = itemView.findViewById(R.id.cena);
             textViewWizu = itemView.findViewById(R.id.wizu);
             imageView2 = itemView.findViewById(R.id.imageView2);
         }

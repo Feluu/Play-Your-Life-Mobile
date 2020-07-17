@@ -4,7 +4,6 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,7 +53,7 @@ public class LightsAdapter extends RecyclerView.Adapter<LightsAdapter.LightsView
         holder.textViewPrice.setText(lights.getSecond());
         Glide
                 .with(mCtx)
-                .load(ContextCompat.getDrawable(mCtx, lights.getImage()))
+                .load(lights.getImage())
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_error)

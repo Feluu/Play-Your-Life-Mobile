@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
@@ -61,7 +60,7 @@ public class CyganAdapter extends PagerAdapter {
         przebieg.setText(models.get(position).getThird());
         Glide
                 .with(context)
-                .load(ContextCompat.getDrawable(context, models.get(position).getImage()))
+                .load(models.get(position).getImage())
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_error)

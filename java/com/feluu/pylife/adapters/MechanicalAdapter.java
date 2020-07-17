@@ -4,7 +4,6 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,7 +55,7 @@ public class MechanicalAdapter extends RecyclerView.Adapter<MechanicalAdapter.Me
         holder.textViewReturn.setText(mechanical.getFourth());
         Glide
                 .with(mCtx)
-                .load(ContextCompat.getDrawable(mCtx, mechanical.getImage()))
+                .load(mechanical.getImage())
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_error)
