@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VehListActivity"
+    android:background="@color/bgColor">
+
+
+    <ImageView
+        android:id="@+id/bg_home2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="@string/tlo"
+        android:scaleType="fitEnd"
+        app:srcCompat="@drawable/bg" />
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="17dp"
+        android:drawableStart="@drawable/ic_back"
+        android:gravity="center_vertical"
+        android:text="@string/lista_pojazdow"
+        android:textColor="@color/text"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <com.nicolettilu.hiddensearchwithrecyclerview.HiddenSearchWithRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title"
+        android:theme="@style/AppTheme"
+        app:scrollToBottomBeforeHide="true"
+        app:scrollToTopBeforeShow="true"
+        app:visibleAtInit="true">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.nicolettilu.hiddensearchwithrecyclerview.HiddenSearchWithRecyclerView>
+</RelativeLayout>

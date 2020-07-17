@@ -2,70 +2,36 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/bgColor">
 
-    <RelativeLayout
-        android:id="@+id/top"
+    <ImageView
+        android:id="@+id/bg_home"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/backgroundColor">
-
-        <ImageView
-            android:id="@+id/menuToggle"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:contentDescription="@string/content_menu"
-            android:scaleType="fitCenter"
-            android:tint="?attr/textDark"
-            app:srcCompat="@drawable/ic_menu" />
-
-        <TextView
-            android:id="@+id/top_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center_horizontal|top"
-            android:text="@string/title_cars"
-            android:textColor="?attr/textDark"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:typeface="sans" />
-
-    </RelativeLayout>
-
-    <include
-        android:id="@+id/mainScreen"
-        layout="@layout/main_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/navigation"
-        android:layout_below="@id/top"
-        android:visibility="visible" />
-
-    <include
-        android:id="@+id/infoScreen"
-        layout="@layout/settings_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/navigation"
-        android:layout_below="@id/top"
-        android:visibility="gone" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
-        android:background="?attr/backgroundColor"
-        app:itemIconTint="@drawable/nav_states"
-        app:itemTextColor="@drawable/nav_states"
-        app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/navigation" />
+        android:layout_marginBottom="60dp"
+        android:contentDescription="@string/tlo"
+        android:scaleType="fitEnd"
+        app:srcCompat="@drawable/bg" />
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/nav"
+        android:background="@android:color/transparent" />
+
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bgColor"
+        android:elevation="16dp"
+        android:gravity="center"
+        app:cnb_menuResource="@menu/bottom_menu"
+        app:cnb_unselectedColor="@color/text"/>
 </RelativeLayout>

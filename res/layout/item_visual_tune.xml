@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/cardBackgroundColor"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+
+        <ImageView
+            android:id="@+id/pojazdObraz"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/obraz_pojazdu" />
+
+        <TextView
+            android:id="@+id/nazwaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_toStartOf="@id/pojazdObraz"
+            android:textColor="@color/text"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ikonaCena"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_below="@id/nazwaText"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/ikona_dolara"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/ic_dollar_2" />
+
+        <TextView
+            android:id="@+id/cena"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_below="@id/nazwaText"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toEndOf="@id/ikonaCena"
+            android:gravity="bottom"
+            android:text="@string/cena"
+            android:textColor="@color/colorPrimary"
+            android:textSize="10sp"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/cenaText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_below="@id/nazwaText"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toStartOf="@id/pojazdObraz"
+            android:layout_toEndOf="@id/cena"
+            android:gravity="center_vertical"
+            android:textColor="@color/text"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/ikonaDemont"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_below="@id/cenaText"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/ikona_dolara"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/ic_dollar_2" />
+
+        <TextView
+            android:id="@+id/demont"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_below="@id/cenaText"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/ikonaDemont"
+            android:gravity="bottom"
+            android:text="@string/demont"
+            android:textColor="@color/colorPrimary"
+            android:textSize="10sp"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/demontText"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_below="@id/cenaText"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            android:layout_toStartOf="@id/pojazdObraz"
+            android:layout_toEndOf="@id/demont"
+            android:gravity="center_vertical"
+            android:textColor="@color/text"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

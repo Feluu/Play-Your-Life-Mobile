@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cnb_unselectedColor="#666666">
+
+    <item
+        android:id="@+id/dom"
+        android:icon="@drawable/ic_home"
+        android:title="@string/dom"
+        app:cnb_iconColor="@color/colorPrimary" />
+
+    <item
+        android:id="@+id/tuning"
+        android:icon="@drawable/ic_gauge"
+        android:title="@string/tuning"
+        app:cnb_iconColor="@color/colorPrimary" />
+    <item
+        android:id="@+id/prace"
+        android:icon="@drawable/ic_dollar"
+        android:title="@string/prace"
+        app:cnb_iconColor="@color/colorPrimary" />
+
+</menu>
