@@ -110,14 +110,11 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
                 case R.id.asortymentPojazdow:
-                    Toast.makeText(this, "Aso pojazdów", Toast.LENGTH_SHORT).show();
+                    Intent intent2 = new Intent(getApplicationContext(), StockVehiclesActivity.class);
+                    startActivity(intent2);
                     break;
                 case R.id.poradniki:
                     Toast.makeText(this, "Poradniki", Toast.LENGTH_SHORT).show();
-                    break;
-                case R.id.radio:
-                    Toast.makeText(this, "Radio", Toast.LENGTH_SHORT).show();
-                    //startStream();
                     break;
                 case R.id.premiePrace:
                     //Toast.makeText(this, "Premie prace", Toast.LENGTH_SHORT).show();
@@ -152,28 +149,4 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
-    /*private void startStream() {
-        Intent serviceIntent = new Intent(MainActivity.this, MusicService.class);
-        serviceIntent.setAction(MusicService.ACTION_PLAY);
-        startService(serviceIntent);
-        bindService(serviceIntent, mConnection, Context.BIND_AUTO_CREATE);
-    }
-
-    private ServiceConnection mConnection = new ServiceConnection() {
-
-        @Override
-        public void onServiceConnected(ComponentName className,
-                                       IBinder _service) {
-
-            MusicService.LocalBinder binder = (MusicService.LocalBinder) _service;
-            service = binder.getServiceInstance(); //Get instance of your service!
-            service.registerClient(MainActivity.this); //Activity register in the service as client for callabcks!
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName arg0) {
-
-        }
-    };*/
 }

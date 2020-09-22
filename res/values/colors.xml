@@ -6,5 +6,6 @@
     <color name="statusColor">#282C2F</color>
     <color name="bgColor">#282C2F</color>
     <color name="cardBackgroundColor">#323639</color>
+    <color name="cardBackgroundColorSecond">#424242</color>
     <color name="text">#E4F0FC</color>
 </resources>

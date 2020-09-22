@@ -7,6 +7,8 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:statusBarColor">@color/statusColor</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="fontFamily">@font/sfprodisplay</item>
+        <item name="android:fontFamily">@font/sfprodisplay</item>
     </style>
 
 </resources>

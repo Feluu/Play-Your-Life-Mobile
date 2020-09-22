@@ -15,14 +15,16 @@
     <string name="urzedowe_ls">Prace urzędowe Los Santos</string>
     <string name="dorywcze">Prace dorywcze</string>
     <string name="tuning_wizualny">Kliknij, aby zobaczyć tuning wizualny</string>
+    <string name="dodatkowe_informacje">DODATKOWE INFORMACJE</string>
 
     <!-- Layout dopiski !-->
     <string name="fmk">FMK</string>
     <string name="podatek">PODATEK</string>
     <string name="zerowanie">ZEROWANIE</string>
-    <string name="cena_katalogowa">CENA KATALOGOWA</string>
+    <string name="cena_katalogowa">CENA</string>
     <string name="cena">CENA</string>
     <string name="demont">DEMONTAŻ</string>
+    <string name="miejsce">MIEJSCE</string>
 
     <!-- Nawigacja !-->
     <string name="dom">Dom</string>
@@ -37,6 +39,8 @@
     <string name="obraz_pojazdu">Obraz pojazdu</string>
     <string name="ikona_vmax">Ikona V-Max</string>
     <string name="ikona_dolara">Ikona dolara</string>
+    <string name="ikona_miejsca">Ikona miejsca</string>
+    <string name="ikona_info">Ikona informacji</string>
     <string name="tlo">Tło</string>
     <string name="przycisk_wyjscie">Przycisk wyjścia</string>
     <string name="obraz">Obraz</string>

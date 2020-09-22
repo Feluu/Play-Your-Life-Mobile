@@ -8,7 +8,10 @@
     app:cardCornerRadius="10dp"
     app:cardElevation="6dp"
     app:cardUseCompatPadding="true"
-    android:layout_margin="5dp">
+    android:layout_margin="5dp"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true">
 
     <RelativeLayout
         android:id="@+id/root"
@@ -23,7 +26,9 @@
             android:layout_height="100dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
             android:contentDescription="@string/obraz_pojazdu" />
 
         <TextView
@@ -31,11 +36,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
+            android:layout_marginEnd="3dp"
             android:layout_toStartOf="@id/pojazdObraz"
             android:textColor="@color/text"
-            android:textSize="17sp"
+            android:textSize="19sp"
             android:textStyle="bold" />
 
         <ImageView
@@ -44,11 +50,11 @@
             android:layout_height="24dp"
             android:layout_below="@id/nazwaText"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:contentDescription="@string/ikona_dolara"
-            android:tint="@color/colorPrimary"
-            app:srcCompat="@drawable/ic_dollar_2" />
+            app:srcCompat="@drawable/ic_dollar_2"
+            app:tint="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/cena"
@@ -67,16 +73,17 @@
         <TextView
             android:id="@+id/cenaText"
             android:layout_width="wrap_content"
-            android:layout_height="24dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/nazwaText"
             android:layout_marginStart="3dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="3dp"
             android:layout_marginBottom="5dp"
             android:layout_toStartOf="@id/pojazdObraz"
             android:layout_toEndOf="@id/cena"
             android:gravity="center_vertical"
             android:textColor="@color/text"
-            android:textSize="15sp" />
+            android:textSize="16sp" />
 
         <ImageView
             android:id="@+id/ikonaDemont"
@@ -84,10 +91,10 @@
             android:layout_height="24dp"
             android:layout_below="@id/cenaText"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:contentDescription="@string/ikona_dolara"
-            android:tint="@color/colorPrimary"
+            app:tint="@color/colorPrimary"
             app:srcCompat="@drawable/ic_dollar_2" />
 
         <TextView
@@ -106,15 +113,16 @@
         <TextView
             android:id="@+id/demontText"
             android:layout_width="wrap_content"
-            android:layout_height="24dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/cenaText"
             android:layout_marginStart="3dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="3dp"
             android:layout_toStartOf="@id/pojazdObraz"
             android:layout_toEndOf="@id/demont"
             android:gravity="center_vertical"
             android:textColor="@color/text"
-            android:textSize="15sp" />
+            android:textSize="16sp" />
 
     </RelativeLayout>
 

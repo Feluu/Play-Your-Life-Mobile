@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
+        android:fontFamily="@font/sfprodisplay"
         android:text="Nazwa aktywności"
         android:textColor="@color/text"
         android:textSize="28sp"
