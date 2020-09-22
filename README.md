@@ -6,8 +6,8 @@
 -   Minimalna wersja androida: Android Marshmallow (6.0)
 -   Testowane na androidzie: 8, 10
 ## Funkcje
--   Lista pojazdów ✓
--	Asortyment pojazdów ✓
+-   Lista pojazdów
+-	Asortyment pojazdów
 -   Tuning mechaniczny
 -   Tuning wizualny
 -   Liczniki pojazdów
